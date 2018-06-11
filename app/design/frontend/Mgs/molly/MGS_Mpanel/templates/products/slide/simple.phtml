@@ -1,0 +1,66 @@
+<?php if($this->attributeExist($this->getData('attribute'))): ?>
+	<?php $customClass = $this->getCustomClass();?>
+	<div class="title-inline">
+	<?php if($this->hasData('title')): ?>
+		<h3 class="heading"><span><?php echo $this->getData('title') ?></span></h3>
+	<?php endif ?>
+	<?php if($this->hasData('note_text')): ?>
+		<div class="text-desc"><span><?php echo $this->getData('note_text') ?></span></div>
+	<?php endif ?>
+	</div>
+	<div class="padding20">&nbsp;</div>
+	<div class="product-carousel attribute-carousel<?php if($customClass): ?> <?php echo $customClass ?><?php endif ?>">
+		<?php if($this->hasData('attribute')): ?>
+			<?php $_productCollection = $this->getProductCollection($this->getData('attribute')); ?>
+			<?php if (!$_productCollection->count()): ?>
+				<div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
+			<?php else: ?>
+				<div class="products wrapper grid products-grid row">
+					<ol class="products list items product-items owl-carousel" id="<?php echo $this->getData('attribute') ?>-carousel-simple">
+						<?php 
+							$html = $this->getLayout()
+								->createBlock('MGS\Mpanel\Block\Products\Attributes')
+								->setAdditionalData($this->getData('attribute'))
+								->setItemType('slider')
+								->setProductsCount($this->getProductsCount())
+								->setPerRow($this->getProductsPerRow())
+								->setTemplate('products/items.phtml')
+								->toHtml();
+							echo $html;
+						?>
+					</ol>
+				</div>
+				<script type="text/javascript">
+					require([
+						'jquery',
+						'mgs/owlcarousel'
+					], function(jQuery){
+						(function($) {
+							$("#<?php echo $this->getData('attribute') ?>-carousel-simple").owlCarousel({
+								//itemElement: 'li',
+								items: <?php echo $this->getProductsPerRow() ?>,
+								nav: <?php echo $this->getNav() ?>,
+								navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+								dots: <?php echo $this->getDots() ?>,
+								autoplay: <?php echo $this->getAutoplay() ?>,
+								responsive:{
+									0 : {items: 2},
+									480 : {items: 2},
+									768 : {items: 2},
+									980 : {items: 4},
+									1200 : {items: <?php echo $this->getProductsPerRow() ?>}
+								}
+							});
+						})(jQuery);
+					});
+				</script>
+			<?php endif ?>
+		<?php else: ?>
+			<div class="message info empty"><div><?php echo __('We can\'t find products matching the selection.') ?></div></div>
+		<?php endif ?>
+	</div>
+<?php else: ?>
+	<div class="alert alert-danger no-product-display">
+        <p><?php echo __('There are no products matching the selection. Attribute %1 is not exist.', $this->getData('attribute')) ?></p>
+    </div>
+<?php endif ?>

@@ -1,0 +1,45 @@
+<?php
+$helper = $this->helper('MGS\Brand\Helper\Data');
+$params = $this->getRequest()->getParams();
+?>
+<div class="brands-search">
+	<div class="title-inline">
+		<h4 class="heading full text-uppercase"><?php echo __('Brands Search') ?></h4>
+	</div>
+    <form id="search_brand_form" action="" method="get">
+        <div class="fields">
+            <div class="control">
+                <input id="search_brand"
+                       type="text"
+                       name="keyword"
+                       value="<?php if (isset($params['keyword'])) {
+                           echo $params['keyword'];
+                       } ?>"
+                       placeholder="<?php echo __('Search brand here...'); ?>"
+                       class="input-text"
+                       autocomplete="off"/>
+                <?php if (isset($params['char']) && $params['char'] != ''): ?>
+                    <input id="search_brand_by_char"
+                           type="hidden"
+                           name="char"
+                           value="<?php echo $params['char']; ?>"/>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="actions">
+            <button type="submit"
+                    title="<?php echo $block->escapeHtml(__('Search')) ?>"
+                    class="action search btn btn-primary btn-lg">
+                <span><?php echo __('Search'); ?></span>
+            </button>
+            <?php if (isset($params['keyword']) || isset($params['char'])): ?>
+                <button type="button"
+                        onclick="window.location.href='<?php echo $helper->getBrandUrl(); ?>'"
+                        title="<?php echo $block->escapeHtml(__('Reset Filter')) ?>"
+                        class="action search btn btn-lg btn-secondary">
+                    <span><?php echo __('Reset Filter'); ?></span>
+                </button>
+            <?php endif; ?>
+        </div>
+    </form>
+</div>

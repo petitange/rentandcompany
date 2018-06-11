@@ -1,0 +1,23 @@
+.social-login-options .social-facebook, .social-login-options .social-google ,.social-login-options  .social-twitter {
+  display: inline-block;
+}
+  .header .top-header-content .top-bar-right .social-login-options.switcher .dropdown-menu {min-width: 130px;}
+  .header .top-header-content .top-bar-right .social-login-options.switcher.switcher .dropdown-menu a {padding: 3px 15px;}
+.customer-account-login .login-container .social-login-options {
+	float: left;
+    padding:  0 20px;
+    width: 100%;
+	margin-top: 30px;
+}
+.customer-account-login .login-container .social-login-options a {
+	border: 1px solid #e3e3e3;
+	display: block;
+	padding: 13px 29px;
+	margin-right: 10px;
+}
+.customer-account-login .login-container .social-login-options a  .fa {
+	margin-right: 10px;
+}
+.customer-account-login .login-container .social-login-options a:hover {
+	border-color: #e74c3c;
+}

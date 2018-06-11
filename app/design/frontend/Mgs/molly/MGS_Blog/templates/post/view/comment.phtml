@@ -1,0 +1,108 @@
+<?php
+$helper = $this->helper('MGS\Blog\Helper\Data');
+$post = $block->getCurrentPost();
+?>
+<?php if ($this->getConfig('comment_settings/enabled')): ?>
+    <div class="comment-blog">
+        <a name="comment-box"></a>
+        <?php echo $block->getChildHtml('post_view_comment_list'); ?>
+		<div class="title-inline">
+			<h3 class="text-uppercase heading full"><span><?php echo __('Leave a Comment') ?></span></h3>
+		</div>
+        <?php if ($this->getConfig('comment_settings/login_required')): ?>
+            <?php if ($helper->checkLoggedIn()): ?>
+                <form class="form post-comment"
+                      action="<?php echo $this->getUrl('blog/post/comment'); ?>"
+                      id="post-comment-form"
+                      method="post"
+                      data-hasrequired="<?php echo __('* Required Fields') ?>"
+                      data-mage-init='{"validation":{}}'>
+					
+                    <fieldset class="fieldset">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<div class="field form-group name required">
+									<div class="control">
+										<input name="name" id="name" placeholder="<?php echo __('Name *') ?>" title="<?php echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<div class="field form-group email required">
+									<div class="control">
+										<input name="email" id="email" placeholder="<?php echo __('Email *') ?>" title="<?php echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <div class="field comment required">
+                            <div class="control">
+                                <textarea name="content" id="content" placeholder="<?php echo __('Content *') ?>" title="<?php echo __('Content') ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+                            </div>
+                        </div>
+                        <?php if ($this->getConfig('recaptcha_settings/enabled')): ?>
+                            <script src='https://www.google.com/recaptcha/api.js'></script>
+                            <div class="g-recaptcha" data-sitekey="<?php echo $this->getConfig('recaptcha_settings/site_key'); ?>"></div>
+                        <?php endif; ?>
+                    </fieldset>
+                    <input type="hidden" name="post_id" value="<?php echo $post->getId(); ?>"/>
+                    <div class="actions-toolbar">
+                        <div class="primary">
+                            <button type="submit" title="<?php echo __('Submit') ?>" class="btn btn-default btn-lg action submit">
+                                <span><?php echo __('Submit') ?></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            <?php else: ?>
+			<div class="alert alert-danger">
+                <p><?php echo __('You must be logged in to post a comment.'); ?></p>
+                <p><a href="<?php echo $this->getUrl('customer/account/login'); ?>"><?php echo __('Click here'); ?></a> <?php echo __('to log in'); ?></p>
+			</div>
+            <?php endif; ?>
+        <?php else: ?>
+            <form class="form post-comment"
+                  action="<?php echo $this->getUrl('blog/post/comment'); ?>"
+                  id="post-comment-form"
+                  method="post"
+                  data-hasrequired="<?php echo __('* Required Fields') ?>"
+                  data-mage-init='{"validation":{}}'>
+                <fieldset class="fieldset">
+					<div class="row">
+						<div class="col-sm-6 col-xs-12">
+							<div class="field form-group name required">
+								<div class="control">
+									<input name="name" id="name" placeholder="<?php echo __('Name') ?> *" title="<?php echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-12">
+							<div class="field form-group email required">
+								<div class="control">
+									<input name="email" id="email" placeholder="<?php echo __('Email') ?> *"  title="<?php echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+								</div>
+							</div>
+						</div>
+					</div>
+                    <div class="field comment required">
+                        <div class="control">
+                            <textarea name="content" placeholder="<?php echo __('Content') ?> *" id="content" title="<?php echo __('Content') ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+                        </div>
+                    </div>
+                    <?php if ($this->getConfig('recaptcha_settings/enabled')): ?>
+                        <script src='https://www.google.com/recaptcha/api.js'></script>
+                        <div class="g-recaptcha" style="margin-bottom: 30px;" data-sitekey="<?php echo $this->getConfig('recaptcha_settings/site_key'); ?>"></div>
+                    <?php endif; ?>
+                </fieldset>
+                <input type="hidden" name="post_id" value="<?php echo $post->getId(); ?>"/>
+                <div class="actions-toolbar">
+                    <div class="primary">
+                        <button type="submit" title="<?php echo __('Submit') ?>" class="btn btn-default btn-lg action submit">
+                            <span><?php echo __('Submit') ?></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>

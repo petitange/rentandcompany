@@ -1,0 +1,60 @@
+<?php $block = $this->getBlock() ?>
+<?php $welcomeMessage = $block->getWelcome(); ?>
+<div class="top-header-content header-v3">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-4 col-sm-5 col-xs-12 top-bar-left">
+				<div class="header-social">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('molly_social')->toHtml();?>
+				</div>
+			</div>
+			<div class="col-lg-9 col-md-8 col-sm-7 col-xs-12 top-bar-right">
+				<div class="header-account">
+					<?php echo $block->getChildHtml('topSearch') ?>
+					<?php echo $block->getChildHtml('minicart') ?>
+					<?php include ($block->getTemplateFile('Magento_Newsletter::header-subscribe.phtml')) ?>
+					<?php echo $block->getChildHtml('store_language') ?>
+					<?php echo $block->getChildHtml('currency') ?>
+					<div class="switcher top-links" id="top-links">
+						<span class="name" data-mage-init='{"dropdown":{}}' data-toggle="dropdown">
+								<span><span class="hidden-sm hidden-xs"><?php echo __('My Account')?></span><i class="fa fa-user hidden-lg hidden-md"></i><i class="fa fa-angle-down"></i></span>		
+						</span>
+						<ul class="menu dropdown switcher-dropdown ui-dialog-content ui-widget-content" data-target="dropdown" style="display:none;" data-mage-init='{"dropdownDialog":{
+								"appendTo":"#top-links",
+								"triggerTarget":"#top-links > .name",
+								"closeOnMouseLeave": false,
+								"triggerClass":"active",
+								"parentClass":"active",
+								"defaultDialogClass":"dropdown-menu",
+								"buttons":null}}'>
+							<?php echo $block->getChildHtml('top.links') ?>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="middle-header-content navbar-collapse header-v3">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 logo-block"><?php echo $block->getChildHtml('logo') ?></div>
+			<div class="col-lg-10 col-md-10 col-xs-12 col-sm-12">
+				<button class="btn btn-responsive-nav btn-inverse"> <em class="fa fa-bars">&nbsp;</em> </button>
+				<?php echo $block->getChildHtml('megamenu') ?>
+			</div>
+		</div>
+	</div>
+</div>
+<!--div class="section-headertop header-v1">
+	<div class="container">	
+		<div class="row">
+			<div class="col-md-9 col-sm-12 col-xs-12 topsearch-block pull-right">
+				<?php echo $block->getChildHtml('topSearchShow') ?>
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 vertical-block pull-left">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('molly_vertical_menu')->toHtml();?>
+			</div>
+		</div>
+	</div>
+</div-->

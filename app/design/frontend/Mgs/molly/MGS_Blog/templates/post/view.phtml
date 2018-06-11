@@ -1,0 +1,59 @@
+<?php
+$helper = $this->helper('MGS\Blog\Helper\Data');
+$post = $block->getCurrentPost();
+$showImage = $this->getConfig('general_settings/show_image');
+if ($this->getConfig('general_settings/image_width') != '') {
+    $width = $this->getConfig('general_settings/image_width');
+} else {
+    $width = 1240;
+}
+if ($this->getConfig('general_settings/image_height') != '') {
+    $height = $this->getConfig('general_settings/image_height');
+} else {
+    $height = 600;
+}
+?>
+<div class="blog-post post-detail">
+	<h2 class="title-blog"><?php echo $post->getTitle(); ?></h2>
+	<div class="latest-post-decs text-desc">
+		<span class="user-author"><?php if ($post->getUpdatedByUser()): ?><?php echo $post->getUpdatedByUser() ?><?php else: ?><?php echo $post->getUser() ?><?php endif ?></span>
+		<span class="create-time"><?php echo __('%1', $block->formatDate($post->getCreatedAt(), \IntlDateFormatter::MEDIUM, false)); ?></span>
+		<?php if ($this->getConfig('comment_settings/enabled')): ?>
+			<?php $manyCm = ""; ?><?php if($post->getCommentCount() > 1){ $manyCm = "s"; } ?>
+			<span class="comments"><?php echo __('%1 Comment%2',$post->getCommentCount(), $manyCm) ?></span>
+		<?php endif; ?>
+	</div>
+	<?php if ($showImage): ?>
+		<div class="post-img">
+			<img class="img-responsive" alt="<?php echo $post->getTitle(); ?>" src="<?php echo $post->getImageUrl(); ?>">
+		</div>
+	<?php endif ?>
+    <?php if ($post->getTags()): ?>
+        <?php $tags = explode(',', $post->getTags()); ?>
+        <div class="tags">
+			<ul class="tags">
+				<li class="title text-desc"><?php echo __('Tags: '); ?></li>
+				<?php foreach ($tags as $tag): ?>
+					<li><a title="<?php echo trim($tag); ?>" href="<?php echo $helper->getTagUrl(trim($tag)); ?>" class="a-tags"><?php echo trim($tag); ?></a></li>
+				<?php endforeach; ?>
+			</ul>
+        </div>
+    <?php endif; ?>
+	<?php if ($post->getContent()): ?>
+        <div class="postContent">
+            <?php echo $post->getContent(); ?>
+        </div>
+    <?php endif; ?>
+    <?php if ($this->getConfig('general_settings/use_sharethis')): ?>
+        <div class="post-sharethis">
+            <span class="title"> <?php echo __('Share This: ') ?></span>
+            <span class='st_facebook' st_url='<?php echo $block->getPostUrl(); ?>' st_title='<?php echo $post->getTitle(); ?>' displayText='<?php echo __('Facebook'); ?>'></span>
+            <span class='st_googleplus' st_url='<?php echo $block->getPostUrl(); ?>' st_title='<?php echo $post->getTitle(); ?>' displayText='<?php echo __('Google +'); ?>'></span>
+            <span class='st_twitter' st_url='<?php echo $block->getPostUrl(); ?>' st_title='<?php echo $post->getTitle(); ?>' displayText='<?php echo __('Tweet'); ?>'></span>
+            <span class='st_linkedin' st_url='<?php echo $block->getPostUrl(); ?>' st_title='<?php echo $post->getTitle(); ?>' displayText='<?php echo __('LinkedIn'); ?>'></span>
+            <span class='st_pinterest' st_url='<?php echo $block->getPostUrl(); ?>' st_title='<?php echo $post->getTitle(); ?>' displayText='<?php echo __('Pinterest'); ?>'></span>
+            <span class='st_email' st_url='<?php echo $block->getPostUrl(); ?>' st_title='<?php echo $post->getTitle(); ?>' displayText='<?php echo __('Email'); ?>'></span>
+        </div>
+    <?php endif; ?>
+    <?php echo $block->getChildHtml('post_view_comment'); ?>
+</div>

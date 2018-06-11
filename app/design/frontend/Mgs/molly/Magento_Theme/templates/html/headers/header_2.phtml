@@ -1,0 +1,58 @@
+<?php $block = $this->getBlock() ?>
+<?php $welcomeMessage = $block->getWelcome(); ?>
+<div class="header-v2">
+<div class="top-header-content">
+	<div class="row">
+		<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 top-bar-left pull-left">
+			<div class="header-social">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('molly_social')->toHtml();?>
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('molly_phone')->toHtml();?>
+			</div>
+		</div>
+		<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 top-bar-right pull-right">
+			<div class="header-account">
+				<?php echo $block->getChildHtml('topSearch') ?>
+				<?php echo $block->getChildHtml('minicart') ?>
+				<?php include ($block->getTemplateFile('Magento_Newsletter::header-subscribe.phtml')) ?>
+				<?php echo $block->getChildHtml('store_language') ?>
+				<?php echo $block->getChildHtml('currency') ?>
+				<div class="switcher top-links" id="top-links">
+					<span class="name" data-mage-init='{"dropdown":{}}' data-toggle="dropdown">
+							<span><span class="hidden-sm hidden-xs"><?php echo __('My Account')?></span><i class="fa fa-user hidden-lg hidden-md"></i><i class="fa fa-angle-down"></i></span>		
+					</span>
+					<ul class="menu dropdown switcher-dropdown ui-dialog-content" data-target="dropdown" style="display:none;" data-mage-init='{"dropdownDialog":{
+							"appendTo":"#top-links",
+							"triggerTarget":"#top-links > .name",
+							"closeOnMouseLeave": false,
+							"triggerClass":"active",
+							"parentClass":"active",
+							"defaultDialogClass":"dropdown-menu",
+							"buttons":null}}'>
+						<?php echo $block->getChildHtml('top.links') ?>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="logo-container">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<?php echo $block->getChildHtml('logo') ?>
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('molly_titlelogo')->toHtml();?>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="middle-header-content navbar-collapse">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<button class="btn btn-responsive-nav btn-inverse"> <em class="fa fa-bars">&nbsp;</em> </button>
+				<?php echo $block->getChildHtml('megamenu') ?>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

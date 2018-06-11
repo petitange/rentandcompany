@@ -1,0 +1,45 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper('Magento\Catalog\Helper\Output');
+    $_product = $block->getProduct();
+	$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+	$themeSettings = $themeHelper->getThemeSettings();
+?>
+<?php $cats = $_product->getCategoryIds(); ?>
+<?php if($themeSettings['product_details']['sku'] || count($cats) > 0): ?>
+<table class="table product-info">
+	<tbody>
+		<?php if($themeSettings['product_details']['sku']): ?>
+		<tr>
+			<td class="title"><?php /* @escapeNotVerified */ echo __('SKU') ?>:</td>
+			<td class="text-desc"><?php echo $_product->getSku(); ?></td>
+		</tr>
+		<?php endif ?>
+		<?php if(count($cats) > 0): ?> 
+			<tr>
+				<td class="title"><?php /* @escapeNotVerified */ echo __('Categories') ?>:</td>
+				<td class="text-desc">
+					<?php $j=0; foreach ($cats as $category_id): $j++; ?>
+						<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+						<?php $currentCate = $objectManager->create('Magento\Catalog\Model\Category')->load($category_id); ?>
+						<a href="<?php echo $currentCate->getUrl(); ?>"><?php echo $currentCate->getName(); ?></a><?php if($j != count($cats)): ?><span>,</span><?php endif ?>
+					<?php endforeach; ?>
+				</td>
+			</tr>
+		<?php endif ?>
+	</tbody>
+</table>
+<?php endif ?>

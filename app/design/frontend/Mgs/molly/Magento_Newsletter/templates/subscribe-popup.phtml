@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="block block-subscribe">
+	<form class="form subscribe"
+		novalidate
+		action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+		method="post"
+		data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+		id="newsletter-validate-detail">
+		<div class="field newsletter">
+			<div class="control">
+				<input class="input-text" name="email" type="email" id="newsletter-popup"
+							placeholder="<?php /* @escapeNotVerified */ echo __('Enter your email address') ?>"
+							data-validate="{required:true, 'validate-email':true}"/>
+			</div>
+		</div>
+		<div class="actions">
+			<button class="action subscribe primary btn" title="<?php /* @escapeNotVerified */ echo __('Subscribe') ?>" type="submit">
+				<span><i class="fa fa-long-arrow-right">&nbsp;</i></span>
+			</button>
+		</div>
+	</form>
+</div>

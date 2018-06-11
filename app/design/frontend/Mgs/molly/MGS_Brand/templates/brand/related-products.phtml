@@ -1,0 +1,155 @@
+<?php 
+$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+$themeSettings = $themeHelper->getThemeSettings(); 
+$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+?>
+<?php if ($block->getConfig('general_settings/enabled')): ?>
+    <?php if ($block->getConfig('product_page_settings/show_related_products_by_brand')): ?>
+        <?php if ($brand = $block->getBrand()): ?>
+            <?php
+            $_productCollection = $block->getProductCollection();
+            $_helper = $this->helper('Magento\Catalog\Helper\Output');
+            ?>
+            <?php if (count($_productCollection)): ?>
+                <div class="brand-related-products">
+                    <div class="title-inline">
+						<h3 id="block-heading" role="heading" aria-level="2" class="heading full text-uppercase">
+							<span><?php echo $block->getConfig('product_page_settings/title_related_products'); ?></span>
+						</h3>
+                    </div>
+                    <div class="block-content content" aria-labelledby="block-heading">
+                        <div class="products wrapper grid products-grid products-related">
+                            <ol class="products list items product-items owl-carousel" id="related-products-by-brand">
+                                <?php $iterator = 1; ?>
+                                <?php foreach ($_productCollection as $_product): ?>
+                                    <li class="item product product-item">
+                                        <div class="product-item-info product-content">
+											<div class="product-top">
+												<a href="<?php echo $_product->getProductUrl() ?>" class="product photo product-item-photo">
+													<?php echo $block->getImage($_product, 'related_products_list')->toHtml(); ?>
+												</a>
+											</div>
+											<div class="product-desc">
+												<div class="top-desc">
+													<div class="text-desc cate-name">
+														<?php $cats = $_product->getCategoryIds(); ?>
+														<?php if(count($cats) > 0): ?>
+															<?php $j=0; foreach ($cats as $category_id): $j++; ?>
+																<?php if($j ==2 ){ break; } ?>
+																<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+																<?php $currentCate = $objectManager->create('Magento\Catalog\Model\Category')->load($category_id); ?>
+																<div class="text">
+																	<span><?php echo $currentCate->getName(); ?></span>
+																</div>
+															<?php endforeach; ?>
+														<?php else: ?>
+															<div class="text">
+																<span>&nbsp;</span>
+															</div>
+														<?php endif ?>
+													</div>
+													<div class="controls">
+														<?php if(!$themeSettings['catalog']['wishlist_button'] || !$themeSettings['catalog']['compare_button']): ?>
+														<ul data-role="add-to-links" class="actions-secondary">
+															<?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && !$themeSettings['catalog']['wishlist_button']): ?>
+																<li><a href="#"
+																   class="action towishlist <?php if(!$themeHelper->checkInWishilist($_product->getId())): ?>no-active<?php endif ?>"
+																   title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+																   aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+																   data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_product); ?>'
+																   data-action="add-to-wishlist"
+																   role="button">
+																	<i class="fa <?php if($themeHelper->checkInWishilist($_product->getId())): ?>fa-heart active<?php else: ?>fa-heart-o<?php endif ?>"></i>
+																</a></li>
+															<?php endif; ?>
+															<?php
+															$compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
+															?>
+															<?php if(!$themeSettings['catalog']['compare_button']): ?>
+																<li><a href="#"
+																   class="action tocompare"
+																   title="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+																   aria-label="<?php echo $block->escapeHtml(__('Add to Compare')); ?>"
+																   data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_product); ?>'
+																   role="button">
+																	<i class="fa fa-sliders"></i>
+																</a></li>
+															<?php endif ?>
+														</ul>
+													<?php endif ?>
+													</div>
+												</div>
+												<p class="product name product-item-name">
+													<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $block->escapeHtml($_product->getName()) ?>" class="product-item-link">
+														<?php echo $block->escapeHtml($_product->getName()) ?></a>
+												</p>
+												<div class="desc-prd">
+													<div class="information-prd">
+														<?php echo $block->getProductPrice($_product); ?>
+														<?php echo $block->getReviewsSummaryHtml($_product, $templateType,true); ?>
+													</div>
+													<div class="add-cart-item">
+														<div class="product actions product-item-actions">
+															<div class="actions-primary">
+																<?php if ($_product->isSaleable()): ?>
+																	<?php 
+																	$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+																	$postParams = $objectManager->create('Magento\Catalog\Block\Product\ListProduct')->getAddToCartPostParams($_product);
+																	//$postParams = $block->getAddToCartPostParams($_product); 									
+																	?>
+																	<form data-role="tocart-form" action="<?php /* @escapeNotVerified */ echo $postParams['action']; ?>" method="post">
+																		<input type="hidden" name="product" value="<?php /* @escapeNotVerified */ echo $postParams['data']['product']; ?>">
+																		
+																		<?php echo $block->getBlockHtml('formkey')?>
+																		<button type="submit"
+																				title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>">
+																			<span><span class="fa fa-shopping-cart"></span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+																		</button>
+																	</form>
+																<?php else: ?>
+																	<?php if ($_product->getIsSalable()): ?>
+																		<div class="stock available"><span><?php /* @escapeNotVerified */ echo __('In stock') ?></span></div>
+																	<?php else: ?>
+																		<div class="stock unavailable"><span><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span></div>
+																	<?php endif; ?>
+																<?php endif; ?>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>                                            
+                                        </div>
+                                    </li>
+                                <?php endforeach ?>
+                            </ol>
+							<script type="text/javascript">
+								require([
+									'jquery',
+									'mgs/owlcarousel'
+								], function(jQuery){
+									(function($) {
+										$("#related-products-by-brand").owlCarousel({
+											itemElement: 'li',
+											items: 4,
+											nav: true,
+											dots: false,
+											navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+											autoplay: true,
+											margin: 30,
+											responsive:{
+												0 : {items: 2},
+												480 : {items: 2},
+												768 : {items: 2},
+												980 : {items: 4}
+											}
+										});
+									})(jQuery);
+								});
+							</script>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>

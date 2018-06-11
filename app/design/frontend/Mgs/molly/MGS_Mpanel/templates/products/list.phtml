@@ -1,0 +1,45 @@
+<?php if($this->attributeExist($this->getData('attribute'))): ?>
+
+	<div class="block product-list-block box-collateral">
+		<?php $customClass = $this->getCustomClass() ;
+		?>
+		<?php if($this->hasData('title')): ?>
+			<div class="title-block">
+				<h4 class="title"><span><?php echo $this->getData('title') ?></span></h4>
+			</div>
+		<?php endif ?>
+		<?php if($this->hasData('note_text')): ?>
+			<div class="note-text">
+				<span><?php echo $this->getData('note_text') ?></span>
+			</div>
+		<?php endif ?>
+		<div class="block-content">
+			<?php if($this->hasData('attribute')): ?>
+				<?php $_productCollection = $block->getProductCollection($this->getData('attribute')); ?>
+				<?php if (!$_productCollection->count()): ?>
+					<div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We dd can\'t find products matching the selection.') ?></div></div>
+				<?php else: ?>
+					<div class="products wrapper grid products-grid">
+						<ol class="products list items product-items">
+							<?php 
+								$html = $this->getLayout()
+									->createBlock('MGS\Mpanel\Block\Products\Attributes')
+									->setAdditionalData($this->getData('attribute'))
+									->setProductsCount($this->getProductsCount())
+									->setTemplate('products/items-list.phtml')
+									->toHtml();
+								echo $html;
+							?>
+						</ol>
+					</div>
+				<?php endif ?>
+			<?php else: ?>
+				<div class="message info empty"><div><?php echo __('We can\'t find products matching the selection.') ?></div></div>
+			<?php endif ?>
+		</div>
+	</div>
+<?php else: ?>
+	<div class="alert alert-danger no-product-display">
+        <p><?php echo __('There are no products matching the selection. Attribute %1 is not exist.', $this->getData('attribute')) ?></p>
+    </div>
+<?php endif ?>

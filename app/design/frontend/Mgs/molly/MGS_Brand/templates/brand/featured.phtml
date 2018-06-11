@@ -1,0 +1,106 @@
+<?php
+$params = $this->getRequest()->getParams();
+$helper = $this->helper('MGS\Brand\Helper\Data');
+$collection = $block->getCollection();
+if ($this->getConfig('list_page_settings/small_image_width') != '') {
+    $width = $this->getConfig('list_page_settings/small_image_width');
+} else {
+    $width = 240;
+}
+if ($this->getConfig('list_page_settings/small_image_height') != '') {
+    $height = $this->getConfig('list_page_settings/small_image_height');
+} else {
+    $height = 180;
+}
+?>
+<?php if ($collection->count()): ?>
+    <div class="featured-brands brand-list">
+        <div class="title-inline">
+            <h3 class="heading full text-uppercase"><?php echo __('Featured Brands'); ?></h3>
+        </div>
+        <div class="content row">
+            <ul class="featured-brand-list owl-carousel" id="brand-list-carousel">
+                <?php foreach ($collection as $brand): ?>
+                    <?php if (isset($params['char']) && $params['char'] != '' && $params['char'] == '0-9') : ?>
+                        <?php $letter = strtoupper(substr($brand->getName(), 0, 1)); ?>
+                        <?php if (ctype_digit($letter)): ?>
+                            <li class="item">
+								<div class="brand-content">
+									<div class="brand-image">
+										<a title="<?php echo $brand->getName(); ?>"
+										   href="<?php echo $brand->getUrl(); ?>">
+											<img style="height: <?php echo $height; ?>px;" class="brand-small-image"
+												 alt="<?php echo $brand->getName(); ?>"
+												 src="<?php echo $brand->getSmallImageUrl(); ?>">
+										</a>
+									</div>
+									<?php if ($this->getConfig('list_page_settings/show_brand_name')): ?>
+										<h3 class="brand-title">
+											<a title="<?php echo $brand->getName(); ?>" href="<?php echo $brand->getUrl(); ?>">
+												<?php echo $brand->getName(); ?>
+												<?php if ($this->getConfig('list_page_settings/show_product_count')): ?>
+													<span><?php echo __('(%1)', $block->getProductCount($brand)); ?></span>
+												<?php endif; ?>
+											</a>
+										</h3>
+									<?php endif; ?>
+								</div>
+                            </li>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <li class="item">
+							<div class="brand-content">
+								<div class="brand-image">
+									<a title="<?php echo $brand->getName(); ?>"
+									   href="<?php echo $brand->getUrl(); ?>">
+										<img style="height: <?php echo $height; ?>px;" class="brand-small-image"
+											 alt="<?php echo $brand->getName(); ?>"
+											 src="<?php echo $brand->getSmallImageUrl(); ?>">
+									</a>
+								</div>
+								<?php if ($this->getConfig('list_page_settings/show_brand_name')): ?>
+									<h3 class="brand-title">
+										<a title="<?php echo $brand->getName(); ?>" href="<?php echo $brand->getUrl(); ?>">
+											<?php echo $brand->getName(); ?>
+											<?php if ($this->getConfig('list_page_settings/show_product_count')): ?>
+												<span><?php echo __('(%1)', $block->getProductCount($brand)); ?></span>
+											<?php endif; ?>
+										</a>
+									</h3>
+								<?php endif; ?>
+							</div>
+                        </li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+				<li class="clear"></li>
+            </ul>
+			<script type="text/javascript">
+				require([
+					'jquery',
+					'owlcarousel'
+				], function(jQuery){
+					(function($) {
+						$("#brand-list-carousel").owlCarousel({
+							itemElement: 'li',
+							items: 5,
+							naviagtion: true,
+							navigationText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
+							autoplay: true,
+							pagination: false,
+							lazyLoad : true,
+							itemsCustom: false,
+							responsive:{
+								0 : {items: 2},
+								480 : {items: 2},
+								600 : {items: 3},
+								768 : {items: 3},
+								980 : {items: 5},
+								1200 : {items: 5}
+							}
+						});
+					})(jQuery);
+				});
+			</script>
+        </div>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,11 @@
+<?php $helper = $this->helper('MGS\Social\Helper\Data'); ?>
+<?php if ($helper->getConfig('general_settings/active') && $helper->getConfig('general_settings/show_social_login_on_customer_login') && !$helper->checkLoggedIn()): ?>
+	<div class="block-title">
+        <strong><?php echo __('Social Login') ?></strong>
+    </div>
+    <div class="social-login-options">
+        <?php echo $block->getChildHtml('social.login.customer.links.facebook'); ?>
+        <?php echo $block->getChildHtml('social.login.customer.links.google'); ?>
+        <?php echo $block->getChildHtml('social.login.customer.links.twitter'); ?>
+    </div>
+<?php endif; ?>

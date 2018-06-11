@@ -1,0 +1,54 @@
+<?php 
+$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+$themeSettings = $themeHelper->getThemeSettings();
+?>
+<?php $typeSlider = $themeSettings['banner_slider']['slider_tyle']; ?>
+
+<!-- Static Block Slider -->
+<?php $idenBlock = $themeSettings['banner_slider']['identifier_block']; ?>
+<?php if($idenBlock != null): ?>
+	<?php $owlAuto = $themeSettings['banner_slider']['banner_owl_auto']; ?>
+	<?php $autoSpeed = $themeSettings['banner_slider']['banner_owl_speed']; ?>
+	<?php $owlNav = $themeSettings['banner_slider']['banner_owl_nav']; ?>
+	<?php $owlDot = $themeSettings['banner_slider']['banner_owl_dot']; ?>
+	<?php $owlLoop = $themeSettings['banner_slider']['banner_owl_loop']; ?>
+	<?php
+		if ($owlAuto) { $owlAuto = 'true'; } else { $owlAuto = 'false'; }
+		if ($owlNav) { $owlNav = 'true'; } else { $owlNav = 'false'; }
+		if ($owlDot) { $owlDot = 'true'; } else { $owlDot = 'false'; }
+		if ($owlLoop) { $owlLoop = 'true'; } else { $owlLoop = 'false'; }
+	?>
+	<?php if($autoSpeed == null){ $autoSpeed = 3000; } ?>
+	<div class="slider_mgs_carousel owl-carousel">
+		<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId($idenBlock)->toHtml();?>
+	</div>
+	<script type="text/javascript">
+		require([
+			'jquery',
+			'mgs/owlcarousel'
+		], function(jQuery){
+			(function($) {
+				$(".slider_mgs_carousel").owlCarousel({
+					items: 1,
+					loop: <?php echo $owlLoop ?>,
+					nav: <?php echo $owlNav ?>,
+					dots: <?php echo $owlDot ?>,
+					autoplayTimeout: <?php echo $autoSpeed ?>,
+					navText: ["<i class='fa fa-angle-left'	></i>","<i class='fa fa-angle-right'></i>"],
+					autoplay: <?php echo $owlAuto ?>,
+					responsive:{
+						0 : {items: 1},
+						480 : {items: 1},
+						768 : {items: 1},
+						980 : {items: 1},
+						1200 : {items: 1}
+					}
+				});
+			})(jQuery);
+		});
+	</script>
+<?php else: ?>
+	<div class="message-notice notice message">
+		<div><?php echo __('You need to input identifier for your slider.') ?></div>
+	</div>
+<?php endif ?>

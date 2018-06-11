@@ -1,0 +1,29 @@
+<?php $products = $this->getProductCollection() ?>
+
+<?php $customClass = $this->getCustomClass() ?>
+<div class="deal-container block-to-deals">
+	<?php if($this->hasData('title')): ?>
+		<div class="title-inline<?php if($customClass): ?> <?php echo $customClass ?>-title<?php endif ?>">
+			<h3 class="heading full text-uppercase"><span><?php echo $this->getData('title') ?></span></h3>
+		</div>
+	<?php endif ?>
+	
+	<?php if($this->hasData('note_text')): ?>
+		<div class="molly_sub_title_deals">
+			<span><?php echo $this->getData('note_text') ?></span>
+		</div>
+	<?php endif ?>
+
+	<?php if(count($products)>0): ?>
+		<?php foreach($products as $_product): ?>
+			<?php echo $this->getLayout()->createBlock('MGS\Mpanel\Block\Products\Deals')->setProduct($_product)->setTemplate('MGS_Mpanel::products/deals/item.phtml')->toHtml() ?>
+			<div class="bottom-button">
+				<a class="btn btn-primary btn-lg" href="<?php echo $_product->getProductUrl() ?>">
+					<?php echo __('Shop now') ?>
+				</a>
+			</div>
+		<?php endforeach ?>
+	<?php else: ?>
+		<div class="message info empty"><div><?php echo __('We can\'t find deals matching the selection.') ?></div></div>
+	<?php endif ?>
+</div>

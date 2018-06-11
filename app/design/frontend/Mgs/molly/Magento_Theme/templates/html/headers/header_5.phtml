@@ -1,0 +1,74 @@
+<?php $block = $this->getBlock() ?>
+<?php $mpanel = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+<?php $welcomeMessage = $block->getWelcome(); ?>
+<div class="header-v5">
+	<div class="top-header-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-2 col-sm-4 col-xs-12 top-bar-left" data-bind="scope: 'customer'">
+					<span class="welcome-title" data-bind="text: customer().fullname ? $t('Welcome, %1!').replace('%1', customer().fullname) : '<?php echo $block->escapeHtml($welcomeMessage) ?>'">
+						<?php echo $block->escapeHtml($welcomeMessage) ?>
+					</span>
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('molly_phone_h5')->toHtml();?>
+				</div>
+				<div class="col-lg-9 col-md-10 col-sm-8 col-xs-12 top-bar-right">
+					<div class="header-account">
+						<?php echo $block->getChildHtml('topSearchShow') ?>
+						<?php echo $block->getChildHtml('store_language') ?>
+						<?php echo $block->getChildHtml('currency') ?>
+						<div class="switcher top-links" id="top-links">
+							<span class="name" data-mage-init='{"dropdown":{}}' data-toggle="dropdown">
+									<span><span class="hidden-sm hidden-xs"><?php echo __('My Account')?></span><i class="fa fa-user hidden-lg hidden-md"></i><i class="fa fa-angle-down"></i></span>		
+							</span>
+							<div class="menu dropdown switcher-dropdown ui-dialog-content ui-widget-content" data-target="dropdown" style="display:none;" data-mage-init='{"dropdownDialog":{
+									"appendTo":"#top-links",
+									"triggerTarget":"#top-links > .name",
+									"closeOnMouseLeave": false,
+									"triggerClass":"active",
+									"parentClass":"active",
+									"defaultDialogClass":"dropdown-menu",
+									"buttons":null}}'>
+								<?php echo $block->getChildHtml('top.links') ?>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="logo-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-4 col-sm-3 col-xs-12">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('molly_social_h5')->toHtml();?>
+				</div>
+				<div class="col-lg-6 col-md-4 col-sm-6 col-xs-6 sticky-logo">
+					<?php echo $block->getChildHtml('logo') ?>
+				</div>
+				<div class="col-lg-3 col-md-4 col-sm-3 col-xs-6 header-cart">
+					<?php echo $block->getChildHtml('minicart') ?>
+				</div>
+				<div class=""></div>
+			</div>
+		</div>
+	</div>
+	<div class="section-headertop">
+		<div class="container">	
+			<div class="row">
+				<div class="col-md-3 col-sm-12 col-xs-12 vertical-block">
+					<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('molly_vertical_menu_h5')->toHtml();?>
+				</div>
+				<div class="col-md-9 col-sm-12 col-xs-12 menu-block">
+					<button class="btn btn-responsive-nav btn-inverse">
+						<i class="fa fa-bars"></i>
+					</button>
+					<div class="megamenu-content navbar-collapse">
+						<?php echo $block->getChildHtml('megamenu') ?>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

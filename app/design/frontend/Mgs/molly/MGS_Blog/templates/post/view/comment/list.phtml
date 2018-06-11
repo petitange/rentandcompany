@@ -1,0 +1,28 @@
+<?php
+$helper = $this->helper('MGS\Blog\Helper\Data');
+$post = $block->getCurrentPost();
+$collection = $block->getCollection();
+?>
+<?php if (count($collection)): ?>
+	<div class="comment-box">
+		<div class="title-inline">
+			<h3 class="text-uppercase heading full"><?php echo __('Comments') ?></h3>
+		</div>
+		<?php foreach ($collection as $comment): ?>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="commentWrapper">
+						<div class="commentContent">
+							<?php echo $comment->getContent(); ?>
+						</div>
+						<div class="commentDetails">
+							<div class="pull-left text-uppercase"><?php echo $comment->getName(); ?></div>
+							<div class="pull-right text-desc"><?php echo $block->formatDate($comment->getCreatedAt(), \IntlDateFormatter::MEDIUM, false); ?></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php endforeach; ?>
+		<div class="toolbar-bottom blog-toolbar"><div class="toolbar"><?php echo $block->getPagerHtml(); ?></div></div>
+	</div>
+<?php endif; ?>

@@ -1,0 +1,74 @@
+<?php $categories = $this->getCategoryByIds() ?>
+<?php $customClass = $this->getCustomClass() ?>
+<div class="title-inline">
+	<?php if($this->hasData('title')): ?>
+		<h3 class="heading"><span><?php echo $this->getData('title') ?></span></h3>
+	<?php endif; ?>
+	<?php if($this->hasData('note_text')): ?>
+		<div class="text-desc"><span><?php echo $this->getData('note_text') ?></span></div>
+	<?php endif; ?>
+</div>
+<?php if(count($categories)>0): ?>
+	<div class="category-tabs">
+		<div class="tab-product-menu">
+			<ul class="nav nav-tabs tab-product category-tabs">
+				<?php $i=0; foreach($categories as $category): $i++ ?>
+					<li class="item title <?php if( $i == 1 ): ?>active<?php endif ?>">
+						<a data-number="<?php echo $i ?>" data-toggle="tab" href="#cttab-<?php echo $category->getId() ?>"><?php echo $category->getName(); ?></a>
+					</li>
+				<?php endforeach ?>
+			</ul>
+			<div class="tab-content row">
+				<?php $j=0; foreach($categories as $category): $j++; ?>
+					<div id="cttab-<?php echo $category->getId() ?>" class="tab-pane tab-pane<?php echo $j ?> fade <?php if( $j == 1 ): ?>in active<?php endif ?>">
+						<div class="products wrapper grid products-grid">
+							<ol class="products list items product-items" id="new-products<?php echo $category->getId(); ?>-carousel">
+								<?php 
+									$html = $this->getLayout()
+										->createBlock('MGS\Mpanel\Block\Products\Category\NewProducts')
+										->setAdditionalData($category)
+										->setItemType('slider')
+										->setProductsCount($this->getProductsCount())
+										->setPerRow($this->getProductsPerRow())
+										->setTemplate('products/items.phtml')
+										->toHtml();
+									if($html == null){
+										$html = __('<div class="col-xs-12">No Products on Categories</div>');
+									}
+									echo $html;
+								?>
+							</ol>
+						</div>
+					</div>
+					<?php if($html != null): ?>
+						<script type="text/javascript">
+							require([
+								'jquery',
+								'mgs/owlcarousel'
+							], function(jQuery){
+								(function($) {
+									$("#cttab-<?php echo $category->getId(); ?> .products-grid .product-items").owlCarousel({
+										items: <?php echo $this->getProductsPerRow() ?>,
+										nav: <?php echo $this->getNav() ?>,
+										navText: ["<i class='fa fa-angle-left'	></i>","<i class='fa fa-angle-right'></i>"],
+										dots: <?php echo $this->getDots() ?>,
+										autoplay: <?php echo $this->getAutoplay() ?>,
+										responsive:{
+											0 : {items: 2},
+											480 : {items: 2},
+											768 : {items: 2},
+											991 : {items: 3},
+											1200 : {items: <?php echo $this->getProductsPerRow() ?>}
+										}
+									});
+								})(jQuery);
+							});
+						</script>
+					<?php endif ?>
+				<?php endforeach ?>
+			</div>
+		</div>
+	</div>
+<?php else: ?>
+	<div class="message info empty"><div><?php echo __('Categories with Id are %1 does not exist', $this->getData('category_ids')) ?></div></div>
+<?php endif ?>

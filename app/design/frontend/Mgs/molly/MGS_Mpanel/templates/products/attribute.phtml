@@ -1,0 +1,45 @@
+<?php if($this->attributeExist($this->getData('attribute'))): ?>
+	<?php $customClass = $this->getCustomClass() ?>
+	<?php if($this->hasData('title')): ?>
+		<div class="title-inline">
+			<h3 class="heading"><span><?php echo $this->getData('title') ?></span></h3>
+			<div class="text-desc"><span>
+				<?php if($this->hasData('note_text')): ?>
+					<?php echo $this->getData('note_text'); ?>
+				<?php endif; ?>
+			</span></div>
+		</div>
+	<?php endif ?>
+	<?php if($this->hasData('attribute')): ?>
+		<div class="content att-products">
+			<?php $_productCollection = $this->getProductCollection($this->getData('attribute')); ?>
+			<?php if (!$_productCollection->count()): ?>
+				<div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
+			<?php else: ?>
+				<div class="products wrapper grid products-grid">
+					<ol class="products list items product-items">
+						<?php 
+							$html = $this->getLayout()
+								->createBlock('MGS\Mpanel\Block\Products\Attributes')
+								->setAdditionalData($this->getData('attribute'))
+								->setProductsCount($this->getProductsCount())
+								->setPerRow($this->getProductsPerRow())
+								->setTemplate('products/items.phtml')
+								->toHtml();
+							echo $html;
+						?>
+					</ol>
+				</div>
+				<?php if($this->hasData('load_more') && $this->getData('load_more')=='1'): ?>
+					<a class="btn btn-default btn-lg btn-loadmore" href="<?php echo $this->getUrl('mpanel/index/loadmore', ['type'=>'attribute-tabs', 'attribute'=>$this->getData('attribute'), 'products_count'=>$this->getProductsCount(), 'perrow'=>$this->getProductsPerRow(), 'p'=>2]) ?>"><span></span><?php echo __('View More Products') ?></a>
+				<?php endif ?>
+			<?php endif; ?>
+		</div>
+	<?php else: ?>
+		<div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
+	<?php endif ?>
+<?php else: ?>
+	<div class="alert alert-danger no-product-display">
+        <p><?php echo __('There are no products matching the selection. Attribute %1 is not exist.', $this->getData('attribute')) ?></p>
+    </div>
+<?php endif ?>

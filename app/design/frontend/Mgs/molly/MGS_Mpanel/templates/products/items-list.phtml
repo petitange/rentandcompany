@@ -1,0 +1,80 @@
+<?php 
+	$_helper = $this->helper('Magento\Catalog\Helper\Output');
+	$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+	$themeSettings = $themeHelper->getThemeSettings();
+
+	$image = 'category_page_list';
+	$showDescription = false;
+	$templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+	if($this->getProductsPerRow()){
+		$perrow = $this->getProductsPerRow();
+	}else{
+		$perrow = $themeSettings['catalog']['per_row'];
+	}
+	$addData = $this->getAdditionalData();
+	$row = '';
+?>
+<?php $_productCollection = $this->getProductCollection($addData); ?>
+<?php if($_productCollection->count()): ?>
+	<?php foreach ($_productCollection as $_product): ?>
+		<li class="product-content product-list" style="min-height: 133px;">
+			<?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
+			<?php
+				$_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+				$size = $themeHelper->getImageMinSize();
+				$productImage = $_imagehelper->init($_product, $image)->resize($size['width'], $size['height'])->getUrl();
+				//$block->getImage($_product, $image);
+				
+			?>
+			<div class="product-top">
+				<a class="product-image" href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>">
+					<img alt="Lynn Skinny G-star" src="<?php echo $productImage; ?>" class="img-responsive">
+				</a>
+			</div>
+			<div class="product-details">
+				<div class="top-desc">
+					<div class="text-desc cate-name no-cp">
+						<?php $cats = $_product->getCategoryIds(); ?>
+						<?php if(count($cats) > 0): ?>
+							<?php $j=0; foreach ($cats as $category_id): $j++; ?>
+								<?php if($j ==2 ){ break; } ?>
+								<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+								<?php $currentCate = $objectManager->create('Magento\Catalog\Model\Category')->load($category_id); ?>
+								<div class="text">
+									<span><?php echo $currentCate->getName(); ?></span>
+								</div>
+							<?php endforeach; ?>
+						<?php else: ?>
+							<div class="text">
+								<span>&nbsp;</span>
+							</div>
+						<?php endif ?>
+					</div>
+					<?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && !$themeSettings['catalog']['wishlist_button']): ?>
+					<div class="controls">
+						<ul data-role="add-to-links" class="icon-links actions-secondary">
+							<li class="wl-item">
+								<a href="#"
+								   class="action towishlist <?php if(!$themeHelper->checkInWishilist($_product->getId())): ?>no-active<?php endif ?>"
+								   title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+								   aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
+								   data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_product); ?>'
+								   data-action="add-to-wishlist"
+								   role="button">
+									<i class="fa <?php if($themeHelper->checkInWishilist($_product->getId())): ?>fa-heart active<?php else: ?>fa-heart-o<?php endif ?>"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<?php endif ?>
+				</div>
+				<p class="product-name"><a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>"><?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a></p>
+				<div class="price-box">
+					<?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
+				</div>
+				<?php echo $block->getReviewsSummaryHtml($_product, $templateType,true); ?>
+			</div>
+		</li>
+	<?php endforeach; ?>
+		
+<?php endif ?>

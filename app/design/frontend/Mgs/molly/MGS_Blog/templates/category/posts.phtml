@@ -1,0 +1,53 @@
+<?php
+$helper = $this->helper('MGS\Blog\Helper\Data');
+$collection = $block->getCollection();
+$showThumbnail = $this->getConfig('general_settings/show_thumbnail');
+if ($this->getConfig('general_settings/thumbnail_width') != '') {
+    $width = $this->getConfig('general_settings/thumbnail_width');
+} else {
+    $width = 240;
+}
+if ($this->getConfig('general_settings/thumbnail_height') != '') {
+    $height = $this->getConfig('general_settings/thumbnail_height');
+} else {
+    $height = 180;
+}
+$categoryId = (int)$this->getRequest()->getParam('category_id', false);
+?>
+<?php if (!count($collection)): ?>
+    <div class="message info empty">
+        <div><?php echo __('Have no posts.') ?></div>
+    </div>
+<?php else: ?>
+    <div class="post-list">
+        <?php $i=0; foreach ($collection as $post): $i++; ?>
+            <div class="postWrapper <?php if($i == 1): ?> first<?php endif ?>">
+                <h2 class="title-blog">
+                    <a class="post-title-link" title="<?php echo $post->getTitle(); ?>" href="<?php echo $post->getPostUrlWithNoCategory(); ?>"><?php echo $post->getTitle(); ?></a>
+                </h2>
+				<div class="latest-post-decs text-desc">
+					<span class="user-author"><?php if ($post->getUpdatedByUser()): ?><?php echo $post->getUpdatedByUser() ?><?php else: ?><?php echo $post->getUser() ?><?php endif ?></span>
+					<span class="create-time"><?php echo __('%1', $block->formatDate($post->getCreatedAt(), \IntlDateFormatter::MEDIUM, false)); ?></span>
+					<?php if ($this->getConfig('comment_settings/enabled')): ?>
+						<?php $manyCm = ""; ?><?php if($post->getCommentCount() > 1){ $manyCm = "s"; } ?>
+						<span class="comments"><?php echo __('%1 Comment%2',$post->getCommentCount(), $manyCm) ?></span>
+					<?php endif; ?>
+				</div>
+				<?php if ($showThumbnail): ?>
+					<div class="post-img">
+						<a class="post-title-link" title="<?php echo $post->getTitle(); ?>" href="<?php echo $post->getPostUrlWithNoCategory(); ?>">
+                            <img class="img-responsive" alt="<?php echo $post->getTitle(); ?>" src="<?php echo $post->getThumbnailUrl(); ?>">
+                        </a>
+					</div>
+				<?php endif ?>
+                <?php if ($post->getShortContent()): ?>
+                    <div class="postContent">
+                        <?php echo $post->getShortContent(); ?>
+						<p style="margin: 0px;"><a class="aw-blog-read-more btn btn-lg btn-default" title="<?php echo __('Read More'); ?>" href="<?php echo $post->getPostUrlWithNoCategory(); ?>"><?php echo __('Read More'); ?></a></p>
+                    </div>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+     <div class="toolbar-bottom blog-toolbar"><div class="toolbar"><?php echo $block->getPagerHtml(); ?></div></div>
+<?php endif; ?>

@@ -1,0 +1,254 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Template for displaying products list widget
+ *
+ * @var $block \Magento\CatalogWidget\Block\Product\ProductsList
+ */
+?>
+<?php $_helper = $this->helper('Magento\Catalog\Helper\Output'); ?>
+<?php $themeHelper = $this->helper('MGS\Mpanel\Helper\Data'); ?>
+<?php $themeSettings = $themeHelper->getThemeSettings(); ?>
+<?php 
+
+	$conditions = $this->getData('conditions_encoded')
+		? $this->getData('conditions_encoded')
+		: $this->getData('conditions');
+	
+	$conditions = $themeHelper->getConditions($conditions);
+	foreach($conditions as $condition){
+		if(isset($condition['attribute'])){
+			if($condition['attribute'] == 'category_ids'){
+				$conditionCate = $condition['value'];
+				$conditionCate = explode(', ', $conditionCate);
+			}
+		}
+	}
+?>
+<?php if($this->getData('per_row') != null){
+	$perRow = $this->getData('per_row');
+}else {
+	$perRow = $themeSettings['catalog']['per_row'];
+} ?>
+<?php
+    $type = 'widget-product-grid';
+
+    $mode = 'grid';
+	$imageTwo = 'new_products_content_widget_grid_two';
+    $image = 'new_products_content_widget_grid';
+    $title = $block->getTitle() ? __($block->getTitle()) : '';
+    $items = $block->getProductCollection()->getItems();
+
+    $showWishlist = true;
+    $showCompare = true;
+    $showCart = true;
+    $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::DEFAULT_VIEW;
+    $description = false;
+?>
+<?php if ($title):?>
+	<div class="title-content">
+		<h3><?php /* @escapeNotVerified */ echo $title; ?></h3>
+	</div>
+<?php endif ?>
+<?php if(isset($conditionCate) && is_array($conditionCate)): ?>
+<div class="category-tabs">
+	<div class="tab-product-menu">
+		<button id="show-menu-tabs-1" class="visible-xs show-menu-tabs"><span class="fa fa-bars"></span></button>
+		<ul class="nav nav-tabs tab-product category-tabs">
+			<?php $i=0; foreach($conditionCate as $categoryId): $i++; ?>
+				<?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+				<?php $currentCate = $objectManager->create('Magento\Catalog\Model\Category')->load($categoryId); ?>
+				<li class="item title <?php if( $i == 1 ): ?>active<?php endif ?>">
+					<a data-number="<?php echo $i ?>" data-toggle="tab" href="#panel-product-<?php echo $categoryId ?>"><?php echo $currentCate->getName(); ?></a>
+				</li>
+			<?php endforeach ?>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="tab-content row">
+		<?php $j=0; foreach($conditionCate as $categoryId): $j++; ?>
+			<div id="panel-product-<?php echo $categoryId ?>" class="tab-pane tab-pane<?php echo $j ?> fade <?php if( $j == 1 ): ?>in active<?php endif ?>">
+				<?php $categoryProducts = $themeHelper->getCategoryProducts($categoryId); ?>
+				<?php $objectManager1 = \Magento\Framework\App\ObjectManager::getInstance(); ?>
+				<?php $currentCate1 = $objectManager->create('Magento\Catalog\Model\Category')->load($categoryId); ?>
+				<ol class="product-items products-grid">
+					<?php $iterator = 1; ?>
+					<?php $i=0; foreach ($categoryProducts as $_item): $i++; ?>
+						<?php if($i > $this->getProductsCount()){ break; } ?>
+						<?php $_productNameStripped = $block->stripTags($_item->getName(), null, true); ?>
+						<li class="item product product-item">
+							<div class="product-item-info product-content">
+								<div class="product-top">
+									<?php
+										$_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
+										$size = $themeHelper->getImageSize();
+										$productImage = $_imagehelper->init($_item, $image)->resize($size['width'], $size['height'])->getUrl();
+									?>
+									<a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_item) ?>" class="product-item-photo">
+										<img src="<?php echo $productImage; ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive product-image-photo img-thumbnail"/>
+										<?php if(basename($_item->getData('image')) !=  'no_selection'): ?>
+											<?php if(basename($_item->getData('image')) != basename($_item->getData('small_image'))): ?>
+												<?php $productImageTwo = $_imagehelper->init($_item, $imageTwo)->resize($size['width'], $size['height'])->getUrl(); ?>
+												<img src="<?php echo $productImageTwo; ?>" alt="<?php echo $_productNameStripped ?>" class="img-responsive img-two product-image-photo img-thumbnail"/>
+											<?php endif ?>
+										<?php endif ?>
+									</a>
+									<?php echo $themeHelper->getProductLabel($_item) ?>
+								</div>
+								<div class="product-item-details details product-desc">
+									<div class="top-desc">
+										<div class="text-desc cate-name">
+											<div class="text">
+												<span><?php echo $currentCate1->getName(); ?></span>
+											</div>
+										</div>
+										<div class="controls">
+											<?php if(!$themeSettings['catalog']['wishlist_button'] || !$themeSettings['catalog']['compare_button']): ?>
+												<?php if ($showWishlist || $showCompare): ?>
+													<ul class="actions-secondary" data-role="add-to-links">
+														<?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && $showWishlist && !$themeSettings['catalog']['wishlist_button']): ?>
+															<li><a href="#"
+															   data-post='<?php /* @escapeNotVerified */ echo $block->getAddToWishlistParams($_item); ?>'
+															   class="action <?php if(!$themeHelper->checkInWishilist($_item->getId())): ?>no-active<?php endif ?> towishlist" data-action="add-to-wishlist"
+															   title="<?php /* @escapeNotVerified */ echo __('Add to Wish List') ?>">
+																<i class="fa <?php if($themeHelper->checkInWishilist($_item->getId())): ?>fa-heart active<?php else: ?>fa-heart-o<?php endif ?>"></i>
+															</a></li>
+														<?php endif; ?>
+														<?php if ($block->getAddToCompareUrl() && $showCompare && !$themeSettings['catalog']['compare_button']): ?>
+															<?php $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');?>
+															<li><a href="#" class="action tocompare"
+															   data-post='<?php /* @escapeNotVerified */ echo $compareHelper->getPostDataParams($_item);?>'
+															   title="<?php /* @escapeNotVerified */ echo __('Add to Compare') ?>">
+																<i class="fa fa-sliders"></i>
+															</a></li>
+														<?php endif; ?>
+													</ul>
+												<?php endif; ?>
+											<?php endif; ?>
+										</div>
+									</div>
+									<p class="product name product-item-name">
+										<a title="<?php echo $block->escapeHtml($_item->getName()) ?>"
+										   href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_item) ?>"
+										   class="product-item-link">
+											<?php echo $block->escapeHtml($_item->getName()) ?>
+										</a>
+									</p>
+									<div class="desc-prd">
+										<div class="information-prd">
+											<?php echo $block->getProductPriceHtml($_item, $type); ?>
+											<?php if ($templateType): ?>
+												<?php echo $block->getReviewsSummaryHtml($_item, $templateType, true) ?>
+											<?php endif; ?>
+										</div>
+										<?php if ($showCart): ?>
+											<div class="add-cart-item">
+												<div class="product-item-actions">
+													<?php if ($showCart): ?>
+														<div class="actions-primary">
+															<?php if ($_item->isSaleable()): ?>
+																<?php if ($_item->getTypeInstance()->hasRequiredOptions($_item)): ?>
+																	<button class="action tocart primary btn btn-primary"
+																			data-mage-init='{"redirectUrl":{"url":"<?php /* @escapeNotVerified */ echo $block->getAddToCartUrl($_item) ?>"}}'
+																			type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
+																		<span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+																	</button>
+																<?php else: ?>
+																	<?php
+																		$postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
+																		$postData = $postDataHelper->getPostData($block->getAddToCartUrl($_item), ['product' => $_item->getEntityId()])
+																	?>
+																	<button class="action tocart primary btn btn-primary"
+																			data-post='<?php /* @escapeNotVerified */ echo $postData; ?>'
+																			type="button" title="<?php /* @escapeNotVerified */ echo __('Add to Cart') ?>">
+																		<span><span class="fa fa-shopping-cart"></span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+																	</button>
+																<?php endif; ?>
+															<?php else: ?>
+																<?php if ($_item->getIsSalable()): ?>
+																	<div class="stock available"><span><?php /* @escapeNotVerified */ echo __('In stock') ?></span></div>
+																<?php else: ?>
+																	<div class="stock unavailable"><span><?php /* @escapeNotVerified */ echo __('Out of stock') ?></span></div>
+																<?php endif; ?>
+															<?php endif; ?>
+														</div>
+													<?php endif; ?>
+												</div>
+											</div>
+										<?php endif; ?>
+									</div>
+								</div>
+							</div>
+						</li>
+					<?php endforeach ?>
+				</ol>
+			</div>
+			<script type="text/javascript">
+				require([
+				'jquery',
+				'MGS_Mpanel/js/owl.carousel.min'
+				], function(jQuery){
+					(function($) {
+						$("#panel-product-<?php echo $categoryId ?> .products-grid").owlCarousel({
+							items: <?php echo $perRow ?>,
+							nav: true,
+							navText: ["<i class='fa fa-angle-left'	></i>","<i class='fa fa-angle-right'></i>"],
+							dots: false,
+							autoplay: false,
+							responsive:{
+								0 : {items: 2},
+								480 : {items: 2},
+								768 : {items: 2},
+								980 : {items: 3},
+								1200 : {items: <?php echo $perRow ?>}
+							}
+						});
+					})(jQuery);
+				});
+			</script>
+		<?php endforeach ?>
+	</div>
+</div>
+<?php else: ?>
+	<div class="alert alert-danger">
+		<?php echo __('Please choose multiple category for tab product') ?>
+	</div>
+<?php endif ?>
+<script type="text/javascript">
+require([
+	'jquery'
+	], function(jQuery){
+		(function($) {
+			$(document).ready(function() {
+				$(".nav-tabs.tab-product li a").click(function(){
+					$(this).parent().parent().parent().parent().find('.tab-pane').removeClass("ready");
+					var numberClick = $(this).attr("data-number");
+					for (i = 1; i < numberClick; i++) {
+						if(i == numberClick){
+							return false;
+						}
+						$(this).parent().parent().parent().parent().find('.tab-pane'+i).addClass("ready");
+					}
+				});
+				$("#show-menu-tabs-1").click(function(){
+					$(this).parent().find('.nav-tabs').slideToggle('fast');
+					$(this).parent().find('.nav-tabs').addClass('menu-tab-mobile');
+				});
+				$(".nav-tabs").click(function(){
+					if($(this).hasClass('menu-tab-mobile')){
+						$(this).hide();
+					}
+				});
+			});
+		})(jQuery);
+	});
+
+</script>
