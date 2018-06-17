@@ -37,9 +37,8 @@
 					<container name="product.info.main" htmlTag="div" htmlClass="product-info-main col-lg-6 col-md-6 col-sm-12 col-xs-12" after="product.info.media">
 						<container name="product.infomation" label="Product info auxiliary container" htmlTag="div" htmlClass="product-infomation" after="-">
 							<block class="Magento\Catalog\Block\Product\View" name="product.info.name" template="product/view/name.phtml" after="-"/>
-							<block class="Magento\Catalog\Block\Product\View" name="product.info.review" template="product/view/review.phtml" after="product.info.name" ifconfig="mpanel/product_details/reviews_summary"/>
-							<container name="product.info.price" label="Product info auxiliary container" htmlTag="div" htmlClass="product-info-price" after="product.info.review">
-								<block class="Magento\Catalog\Pricing\Render" name="product.price.final" after="product.info.review">
+							<container name="product.info.price" label="Product info auxiliary container" htmlTag="div" htmlClass="product-info-price" after="product.info.name">
+								<block class="Magento\Catalog\Pricing\Render" name="product.price.final" after="product.info.name">
 									<arguments>
 										<argument name="price_render" xsi:type="string">product.price.render.default</argument>
 										<argument name="price_type_code" xsi:type="string">final_price</argument>
