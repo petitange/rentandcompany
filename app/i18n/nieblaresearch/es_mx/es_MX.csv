@@ -7653,6 +7653,7 @@ Unconfirmed,"Sin confirmar",module,Magento_Newsletter
 "Web Site","Sitio Web",module,Magento_Newsletter
 Store,Tienda,module,Magento_Newsletter
 "Store View","Vista de Tienda",module,Magento_Newsletter
+"Newsletter Singup","Newsletter",module,Magento_Newsletter
 "Newsletter Subscriptions","Suscripciones al Boletín",module,Magento_Newsletter
 "Stored Payment Methods","Mis Métodos de Pago",module,Magento_OfflinePayments
 "You have no stored payment methods.","Aún no tiene métodos de Pago.",module,Magento_OfflinePayments
