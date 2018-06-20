@@ -24,6 +24,7 @@ define([
             _render: function () {
                 this._appendCatalogCrumbs();
                 this._super();
+                $('.breadcrumbs ul').addClass('breadcrumb text-center');
             },
 
             /**
