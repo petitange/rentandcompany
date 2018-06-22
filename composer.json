@@ -71,7 +71,8 @@
         "ext-pdo_mysql": "*",
         "ext-soap": "*",
         "ramsey/uuid": "~3.7.3",
-        "vishwassoni/magento2-module-product-hideprice": "dev-master"
+        "vishwassoni/magento2-module-product-hideprice": "dev-master",
+        "mageplaza/module-smtp": "^1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.2.0",
