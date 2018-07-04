@@ -527,7 +527,7 @@ Separately,"Por separado",module,Magento_Bundle
 "The options you selected are not available.","Las opciones que ha solicitado no están disponibles.",module,Magento_Bundle
 "The required options you selected are not available.","Las opciones requeridas que ha seleccionado no están disponibles.",module,Magento_Bundle
 "Please select all required options.","Por favor seleccione todas las opciones requeridas.",module,Magento_Bundle
-"We can't add this item to your shopping cart right now.","No podemos añadir este elemento a su carrito de compras en este momento.",module,Magento_Bundle
+"We can't add this item to your shopping cart right now.","No podemos añadir este elemento a su pedido de compras en este momento.",module,Magento_Bundle
 N/A,N/D,module,Magento_Bundle
 Percent,Porcentaje,module,Magento_Bundle
 "We can't save custom-defined options for bundles with dynamic pricing.","No podemos guardar las opciones personalizadas para conjuntos de productos con precio dinámico.",module,Magento_Bundle
@@ -567,7 +567,7 @@ From,Desde,module,Magento_Bundle
 To,Hasta,module,Magento_Bundle
 "Buy %1 with %2 discount each","Compre %1 con %2 de descuento",module,Magento_Bundle
 "Go back to product details","Regresar a los detalles del producto",module,Magento_Bundle
-"Customize and Add to Cart","Personalizar y añadir al carrito",module,Magento_Bundle
+"Customize and Add to Cart","Personalizar y añadir al pedido",module,Magento_Bundle
 "* Required Fields","* Campos Obligatorios",module,Magento_Bundle
 "Your Customization","Su Personalización",module,Magento_Bundle
 Availability,Disponibilidad,module,Magento_Bundle
@@ -755,7 +755,7 @@ name,nombre,module,Magento_CatalogSearch
 "Product Attribute","Atributo de Producto",module,Magento_CatalogWidget
 SKU,SKU,module,Magento_CatalogWidget
 "Please choose a condition to add.","Por favor elija una condición para añadir.",module,Magento_CatalogWidget
-"Add to Cart","Añadir al Carrito",module,Magento_CatalogWidget
+"Add to Cart","Añadir al pedido",module,Magento_CatalogWidget
 "In stock","En existencias",module,Magento_CatalogWidget
 "Out of stock","Sin existencias",module,Magento_CatalogWidget
 "Add to Wish List","Añadir a Lista de Deseos",module,Magento_CatalogWidget
@@ -1109,7 +1109,7 @@ Disabled,Deshabilitado,module,Magento_Catalog
 "The configuration item option instance in options group is incorrect.","La instancia de opción del elemento de configuración en el grupo de opciones es incorrecta.",module,Magento_Catalog
 "The configuration item instance in options group is incorrect.","La instancia del elemento configuración en el grupo de opciones es incorrecta .",module,Magento_Catalog
 "The BuyRequest instance in options group is incorrect.","La instancia BuyRequest en el grupo de opciones es incorrecta.",module,Magento_Catalog
-"We can't add the product to the cart because of an option validation issue.","No podemos añadir el producto al carrito por un problema de validación de opción.",module,Magento_Catalog
+"We can't add the product to the cart because of an option validation issue.","No podemos añadir el producto al pedido por un problema de validación de opción.",module,Magento_Catalog
 "%1 doesn't extends \Magento\Catalog\Model\Product\Option\Type\DefaultType","%1 no extiende \Magento\Catalog\Model\Product\Option\Type\DefaultType",module,Magento_Catalog
 "The file options format is not valid.","El formato del archivo de opciones no es válido.",module,Magento_Catalog
 px.,px.,module,Magento_Catalog
@@ -1207,7 +1207,7 @@ Required,Obligatorio,module,Magento_Catalog
 "An up-sell item is offered to the customer as a pricier or higher-quality alternative to the product the customer is looking at.","Los elementos más vendidos son ofrecidos a los clientes como una alternativa más cara o con mejor calidad que el producto que está viendo.",module,Magento_Catalog
 "Add Up-Sell Products","Añadir Productos Más Vendidos",module,Magento_Catalog
 "Up-Sell Products","Productos Más Vendidos",module,Magento_Catalog
-"These ""impulse-buy"" products appear next to the shopping cart as cross-sells to the items already in the shopping cart.","Estos productos de ""compra impulsiva"" aparecen junto al carrito de compra como más referenciados a los elementos que ya están en el carrito de compras.",module,Magento_Catalog
+"These ""impulse-buy"" products appear next to the shopping cart as cross-sells to the items already in the shopping cart.","Estos productos de ""compra impulsiva"" aparecen junto al pedido de compra como más referenciados a los elementos que ya están en el pedido de compras.",module,Magento_Catalog
 "Add Cross-Sell Products","Añadir Productos Más Referenciados",module,Magento_Catalog
 "Cross-Sell Products","Productos Más Referenciados",module,Magento_Catalog
 "Add Selected Products","Añadir Productos Seleccionados",module,Magento_Catalog
@@ -1252,8 +1252,8 @@ Groups,Grupos,module,Magento_Catalog
 "Manage Stock","Administrar Existencias",module,Magento_Catalog
 Qty,Cantidad,module,Magento_Catalog
 "Out-of-Stock Threshold","Límite de Sin Existencias",module,Magento_Catalog
-"Minimum Qty Allowed in Shopping Cart","Cantidad Mínima Permitida en Carrito de Compras",module,Magento_Catalog
-"Maximum Qty Allowed in Shopping Cart","Cantidad Máxima Permitida en Carrito de Compras",module,Magento_Catalog
+"Minimum Qty Allowed in Shopping Cart","Cantidad Mínima Permitida en pedido de Compras",module,Magento_Catalog
+"Maximum Qty Allowed in Shopping Cart","Cantidad Máxima Permitida en pedido de Compras",module,Magento_Catalog
 "Qty Uses Decimals","La cantidad Usa Decimales",module,Magento_Catalog
 Backorders,"Pedidos Pendientes",module,Magento_Catalog
 "Notify for Quantity Below","Notificar para Cantidad Baja",module,Magento_Catalog
@@ -1309,7 +1309,7 @@ Role,Rol,module,Magento_Catalog
 "Compare Products","Compare Productos",module,Magento_Catalog
 "Print This Page","Imprima Esta Página",module,Magento_Catalog
 "Remove Product","Remover Producto",module,Magento_Catalog
-"Add to Cart","Añadir al Carrito",module,Magento_Catalog
+"Add to Cart","Añadir al pedido",module,Magento_Catalog
 "In stock","En existencias",module,Magento_Catalog
 "Out of stock","Sin existencias",module,Magento_Catalog
 "Add to Wish List","Añadir a Lista de Deseos",module,Magento_Catalog
@@ -1324,7 +1324,7 @@ Next,Siguiente,module,Magento_Catalog
 "Learn More","Entérese de Más",module,Magento_Catalog
 "We found other products you might like!","¡Encontramos otros productos que pueden interesarle!",module,Magento_Catalog
 "More Choices:","Más Opciones:",module,Magento_Catalog
-"Check items to add to the cart or","Revise los elementos para añadir al carrito o",module,Magento_Catalog
+"Check items to add to the cart or","Revise los elementos para añadir al pedido o",module,Magento_Catalog
 "select all","seleccionar todo",module,Magento_Catalog
 "Items %1-%2 of %3","Elementos %1-%2 de %3",module,Magento_Catalog
 "%1 Item","%1 Elemento",module,Magento_Catalog
@@ -1377,21 +1377,21 @@ Manually,Manualmente,module,Magento_CheckoutAgreements
 "Unable to save checkout agreement %1","No es posible guardar el acuerdo de pedido %1",module,Magento_CheckoutAgreements
 "Unable to remove checkout agreement %1","No es posible remover el acuerdo de pedido %1",module,Magento_CheckoutAgreements
 "Checkout agreement with specified ID ""%1"" not found.","No se encuentra el acuerdo de pedido con el ID ""%1"".",module,Magento_CheckoutAgreements
-"Shopping Cart","Carrito de Compras",module,Magento_Checkout
+"Shopping Cart","pedido de Compras",module,Magento_Checkout
 "Invalid method: %1","Método no válido: %1",module,Magento_Checkout
 City,Ciudad,module,Magento_Checkout
 Country,País,module,Magento_Checkout
 State/Province,Estado/Provincia,module,Magento_Checkout
 "Zip/Postal Code","Código Postal",module,Magento_Checkout
-"My Cart (1 item)","Mi Carrito (1 elemento)",module,Magento_Checkout
-"My Cart (%1 items)","Mi Carrito (%1 elementos)",module,Magento_Checkout
-"My Cart","Mi Carrito",module,Magento_Checkout
+"My Cart (1 item)","Mi pedido (1 elemento)",module,Magento_Checkout
+"My Cart (%1 items)","Mi pedido (%1 elementos)",module,Magento_Checkout
+"My Cart","Mi pedido",module,Magento_Checkout
 "For delivery questions.","Para preguntas de envíos.",module,Magento_Checkout
 "Customer is already registered","El cliente ya está registrado",module,Magento_Checkout
 "Your session has expired","Su sesión ya ha expirado",module,Magento_Checkout
 "A letter with further instructions will be sent to your email.","Una carta con más instrucciones será enviada a su email.",module,Magento_Checkout
-"You added %1 to your shopping cart.","Añadió %1 a su carrito de compras.",module,Magento_Checkout
-"We can't add this item to your shopping cart right now.","No podemos añadir este elemento a su carrito de compras en este momento.",module,Magento_Checkout
+"You added %1 to your shopping cart.","Añadió %1 a su pedido de compras.",module,Magento_Checkout
+"We can't add this item to your shopping cart right now.","No podemos añadir este elemento a su pedido de compras en este momento.",module,Magento_Checkout
 "Out of stock","Sin existencias",module,Magento_Checkout
 "We can't find the quote item.","No podemos encontrar el elemento citado.",module,Magento_Checkout
 "We cannot configure the product.","No podemos configurar el producto.",module,Magento_Checkout
@@ -1400,7 +1400,7 @@ State/Province,Estado/Provincia,module,Magento_Checkout
 "You canceled the coupon code.","Canceló el código del cupón.",module,Magento_Checkout
 "We cannot apply the coupon code.","No podemos aplicar el código del cupón.",module,Magento_Checkout
 "We can't remove the item.","No podemos remover el elemento.",module,Magento_Checkout
-"%1 was updated in your shopping cart.","%1 fue actualizado en su carrito de compras.",module,Magento_Checkout
+"%1 was updated in your shopping cart.","%1 fue actualizado en su pedido de compras.",module,Magento_Checkout
 "We can't update the item right now.","No podemos actualizar el elemento en este momento.",module,Magento_Checkout
 "We can't update the shopping cart.","We can't update the shopping cart.",module,Magento_Checkout
 "One-page checkout is turned off.","El pedido en una página está desactivado.",module,Magento_Checkout
@@ -1417,16 +1417,16 @@ Checkout,Pedido,module,Magento_Checkout
 "Quantity was recalculated from %1 to %2","La cantidad se calculó de %1 a %2",module,Magento_Checkout
 "We adjusted product quantities to fit the required increments.","Ajustamos las cantidades de producto para que cupieran en los incrementos requeridos.",module,Magento_Checkout
 "This quote item does not exist.","Este elemento citado no existe.",module,Magento_Checkout
-"Display number of items in cart","Despliega el número de elementos en el carrito",module,Magento_Checkout
+"Display number of items in cart","Despliega el número de elementos en el pedido",module,Magento_Checkout
 "Display item quantities","Despliega las cantidades del elemento",module,Magento_Checkout
 "Unable to place order. Please try again later.","No se pudo colocar la orden. Por favor intente más tarde.",module,Magento_Checkout
 "Shipping address is not set","No se ha fijado la dirección de envío",module,Magento_Checkout
 "Unable to save shipping information. Please check input data.","No se puede gardar la información de envío. Por favor revise los datos ingresados.",module,Magento_Checkout
 "Carrier with such method not found: %1, %2","No se encontró al transportista con ese método: %1, %2",module,Magento_Checkout
-"Shipping method is not applicable for empty cart","El método de envío no es aplicable a un carrito vacío",module,Magento_Checkout
+"Shipping method is not applicable for empty cart","El método de envío no es aplicable a un pedido vacío",module,Magento_Checkout
 " item"," elemento",module,Magento_Checkout
 " items"," elementos",module,Magento_Checkout
-"Totals calculation is not applicable to empty cart","El cálculo de totales no es aplicable a un carrito vacío",module,Magento_Checkout
+"Totals calculation is not applicable to empty cart","El cálculo de totales no es aplicable a un pedido vacío",module,Magento_Checkout
 "Invalid data","Datos no válidos",module,Magento_Checkout
 "The customer address is not valid.","La dirección del cliente no es válida.",module,Magento_Checkout
 "Invalid shipping method","Método de envío no válido",module,Magento_Checkout
@@ -1444,21 +1444,21 @@ Message,Mensaje,module,Magento_Checkout
 "Enter discount code","Ingrese el código de descuento",module,Magento_Checkout
 "Apply Discount","Aplicar Descuento",module,Magento_Checkout
 "Cancel Coupon","Cancelar Cupón",module,Magento_Checkout
-"Shopping Cart Items","Elementos del Carrito de Compras",module,Magento_Checkout
+"Shopping Cart Items","Elementos del pedido de Compras",module,Magento_Checkout
 Item,Elemento,module,Magento_Checkout
 Price,Precio,module,Magento_Checkout
 Qty,Cantidad,module,Magento_Checkout
 Subtotal,Subtotal,module,Magento_Checkout
 "Continue Shopping","Continuar Comprando",module,Magento_Checkout
-"Clear Shopping Cart","Limpiar Carrito de Compras",module,Magento_Checkout
-"Update Shopping Cart","Actualizar Carrito de Compras",module,Magento_Checkout
-"Update Cart","Actualizar Carrito",module,Magento_Checkout
+"Clear Shopping Cart","Limpiar pedido de Compras",module,Magento_Checkout
+"Update Shopping Cart","Actualizar pedido de Compras",module,Magento_Checkout
+"Update Cart","Actualizar pedido",module,Magento_Checkout
 "See price before order confirmation.","Vea el precio antes de confirmar la orden.",module,Magento_Checkout
 "What's this?","¿Qué es esto?",module,Magento_Checkout
 "Edit item parameters","Editar parámetros del elemento",module,Magento_Checkout
 Edit,Editar,module,Magento_Checkout
 "Remove item","Remover elemento",module,Magento_Checkout
-"You have no items in your shopping cart.","No tiene elementos en su carrito de compras.",module,Magento_Checkout
+"You have no items in your shopping cart.","No tiene elementos en su pedido de compras.",module,Magento_Checkout
 "Click <a href=""%1"">here</a> to continue shopping.","Haga <a href=""%1"">click aquí</a> para continuar comprando.",module,Magento_Checkout
 "Estimate Tax","Estimar Impuestos",module,Magento_Checkout
 "Estimate Shipping and Tax","Estimar Costo de Envío e Impuestos",module,Magento_Checkout
@@ -1684,7 +1684,7 @@ Summary,Resumen,module,Magento_ConfigurableProduct
 "Value index is not specified for an option.","El índice de valor no está especificado para una opción.",module,Magento_ConfigurableProduct
 "Product with id ""%1"" does not contain required attribute ""%2"".","El producto con el ID ""%1"" no contiene el atributo obligatorio ""%2"".",module,Magento_ConfigurableProduct
 "Products ""%1"" and ""%2"" have the same set of attribute values.","Los productos ""%1"" y ""%2"" tienen el mismo juego de valores de atributos.",module,Magento_ConfigurableProduct
-"You can't add the item to shopping cart.","No puede añadir el elemento al carrito de compras.",module,Magento_ConfigurableProduct
+"You can't add the item to shopping cart.","No puede añadir el elemento al pedido de compras.",module,Magento_ConfigurableProduct
 "You need to choose options for your item.","Necesita elejir opciones para su elemento.",module,Magento_ConfigurableProduct
 "Some product variations fields are not valid.","Algunas campos de variaciones de producto no son válidos.",module,Magento_ConfigurableProduct
 "Configuration must have specified attributes","La configuración debe tener los atributos especificados",module,Magento_ConfigurableProduct
@@ -1855,7 +1855,7 @@ Total,Total,module,Magento_Customer
 Action,Acción,module,Magento_Customer
 Configure,Configuración,module,Magento_Customer
 Delete,Borrar,module,Magento_Customer
-"Shopping Cart from %1","Carrito de Compras para %1",module,Magento_Customer
+"Shopping Cart from %1","pedido de Compras para %1",module,Magento_Customer
 Newsletter,"Boletín",module,Magento_Customer
 "Newsletter Information","Información del Boletín",module,Magento_Customer
 "Subscribed to Newsletter","Suscrito al Boletín",module,Magento_Customer
@@ -1881,7 +1881,7 @@ Purchased,Comprado,module,Magento_Customer
 "Order Total","Total de la Orden",module,Magento_Customer
 "Purchase Point","Punto de Compra",module,Magento_Customer
 "Customer View","Vista de Cliente",module,Magento_Customer
-"There are no items in customer's shopping cart.","No hay elementos en el carrito de compras del cliente.",module,Magento_Customer
+"There are no items in customer's shopping cart.","No hay elementos en el pedido de compras del cliente.",module,Magento_Customer
 Qty,Cantidad,module,Magento_Customer
 Confirmed,Confirmado,module,Magento_Customer
 "Confirmation Required","Se Requiere Confirmación",module,Magento_Customer
@@ -2658,12 +2658,12 @@ Kilograms,Kilogramos,module,Magento_Fedex
 status,estado,module,Magento_Fedex
 "Empty response","Respuesta vacía",module,Magento_Fedex
 None,Ningún,module,Magento_Fedex
-"Gift Messages are not applicable for empty cart","No pueden aplicarse Mensajes de Regalo para un carrito vacío",module,Magento_GiftMessage
+"Gift Messages are not applicable for empty cart","No pueden aplicarse Mensajes de Regalo para un pedido vacío",module,Magento_GiftMessage
 "Gift Messages are not applicable for virtual products","No se pueden aplicar Mensajes de Regalo para productos virtuales",module,Magento_GiftMessage
 "Gift Message is not available","No está disponible un Mensaje de Regalo",module,Magento_GiftMessage
-"Could not add gift message to shopping cart","No se puede añadir un mensaje de regalo al carrito de compras",module,Magento_GiftMessage
-"There is no item with provided id in the cart","No hay un elemento con el ID proporcionado en el carrito de compras",module,Magento_GiftMessage
-"There is no product with provided  itemId: %1 in the cart","No hay un producto con el ID de elemento proporcionado: %1 en el carrito",module,Magento_GiftMessage
+"Could not add gift message to shopping cart","No se puede añadir un mensaje de regalo al pedido de compras",module,Magento_GiftMessage
+"There is no item with provided id in the cart","No hay un elemento con el ID proporcionado en el pedido de compras",module,Magento_GiftMessage
+"There is no product with provided  itemId: %1 in the cart","No hay un producto con el ID de elemento proporcionado: %1 en el pedido",module,Magento_GiftMessage
 "There is no item with provided id in the order","No hay un elemento con el ID proporcionado en la orden",module,Magento_GiftMessage
 "There is no item with provided id in the order or gift message isn't allowed","No hay un elemento con el ID proporcionado en la orden o no se permite un mensaje de regalo",module,Magento_GiftMessage
 "Could not add gift message to order: ""%1""","No se puede añadir un mensaje de regalo a la orden: ""%1""",module,Magento_GiftMessage
@@ -3011,10 +3011,10 @@ Database,"Base de Datos",module,Magento_MediaStorage
 "File with an extension ""%value%"" is protected and cannot be uploaded","El archivo con la extensión ""%value%"" está protegido y no puede subirse",module,Magento_MediaStorage
 "Unable to create directory: %1","No se puede crear la carpeta: %1",module,Magento_MediaStorage
 "Unable to save file: %1","No se puede guardar el archivo: %1",module,Magento_MediaStorage
-"To see product price, add this item to your cart. You can always remove it later.","Para ver el precio del producto, añada este elemento a su carrito. Siempre podrá removerlo más tarde.",module,Magento_Msrp
+"To see product price, add this item to your cart. You can always remove it later.","Para ver el precio del producto, añada este elemento a su pedido. Siempre podrá removerlo más tarde.",module,Magento_Msrp
 "See price before order confirmation.","Vea el precio antes de confirmar la orden.",module,Magento_Msrp
 "On Gesture","En Gesto",module,Magento_Msrp
-"In Cart","En Carrito",module,Magento_Msrp
+"In Cart","En pedido",module,Magento_Msrp
 "Before Order Confirmation","Antes de la Confirmación de Orden",module,Magento_Msrp
 "Use config","Usar configuración",module,Magento_Msrp
 "Click for price","Click para precio",module,Magento_Msrp
@@ -3023,7 +3023,7 @@ Database,"Base de Datos",module,Magento_MediaStorage
 "You will see the order total before you submit the order.","Podrá ver el total de la orden antes de hacer la orden.",module,Magento_Msrp
 Price,Precio,module,Magento_Msrp
 "Actual Price","Precio Actual",module,Magento_Msrp
-"Add to Cart","Añadir al Carrito",module,Magento_Msrp
+"Add to Cart","Añadir al pedido",module,Magento_Msrp
 "Change Billing Address","Cambiar Dirección de Facturación",module,Magento_Multishipping
 "Ship to Multiple Addresses","Enviar a Varias Direcciones",module,Magento_Multishipping
 "Billing Information - %1","Información de Facturación - %1",module,Magento_Multishipping
@@ -3071,7 +3071,7 @@ Actions,Acciones,module,Magento_Multishipping
 "Go to Shipping Information","Ir a la Información de Envío",module,Magento_Multishipping
 "Update Qty &amp; Addresses","Actualizar Cantidades y Direcciones",module,Magento_Multishipping
 "Enter a New Address","Ingrese una Nueva Dirección",module,Magento_Multishipping
-"Back to Shopping Cart","Regresar al Carrito de Compras",module,Magento_Multishipping
+"Back to Shopping Cart","Regresar al pedido de Compras",module,Magento_Multishipping
 "Billing Address","Dirección de Facturación",module,Magento_Multishipping
 Change,Cambiar,module,Magento_Multishipping
 "Payment Method","Método de Pago",module,Magento_Multishipping
@@ -3694,8 +3694,8 @@ Create...,Crear...,module,Magento_Paypal
 Edit,Editar,module,Magento_Paypal
 "Buy now with PayPal","Compre ahora con PayPal",module,Magento_Paypal
 "Edit Payment Information","Editar Información de Pago",module,Magento_Paypal
-"Items in Your Shopping Cart","Elementos en su Carrito de Compreas,module,Magento_Paypal
-"Edit Shopping Cart","Editar Carrito de Compras",module,Magento_Paypal
+"Items in Your Shopping Cart","Elementos en su pedido de Compreas,module,Magento_Paypal
+"Edit Shopping Cart","Editar pedido de Compras",module,Magento_Paypal
 "Place Order","Colocar Orden",module,Magento_Paypal
 "Submitting order information...","Enviando información de orden...",module,Magento_Paypal
 Item,Elemento,module,Magento_Paypal
@@ -3714,14 +3714,14 @@ Continue,Continuar,module,Magento_Paypal
 "What is PayPal?","¿Qué es PayPal?",module,Magento_Paypal
 "Sign a billing agreement to streamline further purchases  with PayPal.","Firme un acuerdo de facturación para facilitar sus compras futuras con PayPal.",module,Magento_Paypal
 "Not you?","¿No es usted?",module,Magento_Persistent
-"Your shopping cart has been updated with new prices.","Su carrito de compras ha sido actualizado con nuevos precios.",module,Magento_Persistent
+"Your shopping cart has been updated with new prices.","Su pedido de compras ha sido actualizado con nuevos precios.",module,Magento_Persistent
 "Welcome, %1!","¡Bienvenido, %1!",module,Magento_Persistent
 "We cannot load the configuration from file %1.","No podemos cargar la configuración desde el archivo %1.",module,Magento_Persistent
 "Method ""%1"" is not defined in ""%2""","El método ""%1"" no está definido en ""%2""",module,Magento_Persistent
 "To check out, please sign in using your email address.","Para hacer el pedido, por favor ingrese usando su email.",module,Magento_Persistent
 "Remember Me",Recordarme,module,Magento_Persistent
 "What's this?","¿Qué es esto?",module,Magento_Persistent
-"Check &quot;Remember Me&quot; to access your shopping cart on this computer even if you are not signed in.","Marque &quot;Recordarme&quot; para accesar a su carrito de compras en este equipo aunque no haya ingresado.",module,Magento_Persistent
+"Check &quot;Remember Me&quot; to access your shopping cart on this computer even if you are not signed in.","Marque &quot;Recordarme&quot; para accesar a su pedido de compras en este equipo aunque no haya ingresado.",module,Magento_Persistent
 "You saved the alert subscription.","Guardó la suscripción de alertas.",module,Magento_ProductAlert
 "There are not enough parameters.","No hay parámetros suficientes.",module,Magento_ProductAlert
 "We can't update the alert subscription right now.","No podemos actualizar la suscripción de alertas en este momento.",module,Magento_ProductAlert
@@ -3765,11 +3765,11 @@ Uploaded:,Subido:,module,Magento_ProductVideo
 Uploader:,"Subido por:",module,Magento_ProductVideo
 Duration:,Duración:,module,Magento_ProductVideo
 "Unable to save address. Please check input data.","No podemos guardar la dirección. Por favor revise los datos de entrada.",module,Magento_Quote
-"Cart %1 doesn't contain products","El carrito %1 no contiene productos",module,Magento_Quote
+"Cart %1 doesn't contain products","El pedido %1 no contiene productos",module,Magento_Quote
 "Could not apply coupon code","No se puede aplicar el código del cupón",module,Magento_Quote
 "Coupon code is not valid","El código del cupón no es válido",module,Magento_Quote
 "Could not delete coupon code","No se puede borrar el código del cupón",module,Magento_Quote
-"Cannot assign customer to the given cart. You don't have permission for this operation.","No podemos asignar un cliente al carrito.",module,Magento_Quote
+"Cannot assign customer to the given cart. You don't have permission for this operation.","No podemos asignar un cliente al pedido.",module,Magento_Quote
 "Shipping address is not set","No se ha fijado una dirección de envío",module,Magento_Quote
 "The requested Payment Method is not available.","El Método de Pago solicitado no está disponible.",module,Magento_Quote
 "We found an invalid request for adding product to quote.","Encontramos una solicitud no válida para añadir un producto a la cotización.",module,Magento_Quote
@@ -3793,9 +3793,9 @@ Subtotal,Subtotal,module,Magento_Quote
 "Some of the selected options are not currently available.","Algunas de las opciones seleccionadas no están disponibles ahora.",module,Magento_Quote
 "Selected option(s) or their combination is not currently available.","La(s) opción(es) seleccionada(s) o su combinación no está(n) disponible(s) ahora.",module,Magento_Quote
 "Some item options or their combination are not currently available.","Algunas de las opciones del elemento o su combinación no están disponibles ahora.",module,Magento_Quote
-"Cart %1 does not contain item %2","El carrito de compra %1 no contiene el elemento %2",module,Magento_Quote
+"Cart %1 does not contain item %2","El pedido de compra %1 no contiene el elemento %2",module,Magento_Quote
 "Could not save quote","No se puede guardar la cotización",module,Magento_Quote
-"Cart %1 doesn't contain item  %2","El carrito %1 no contiene el elemento  %2",module,Magento_Quote
+"Cart %1 doesn't contain item  %2","El pedido %1 no contiene el elemento  %2",module,Magento_Quote
 "Could not remove item from quote","No se puede remover el elemento de la cotización",module,Magento_Quote
 "The qty value is required to update quote item.","El valor de cantidad es necesario para actualizar la cotización del elemento.",module,Magento_Quote
 "Minimum order amount is %1","La cantidad mínima de orden es %1",module,Magento_Quote
@@ -3803,9 +3803,9 @@ Subtotal,Subtotal,module,Magento_Quote
 "Invalid address id %1","El ID de dirección no es válido %1",module,Magento_Quote
 "Invalid customer address id %1","El ID de dirección de cliente no es válido %1",module,Magento_Quote
 "Cannot create quote","No se puede crear la cotización",module,Magento_Quote
-"Cannot assign customer to the given cart. The cart belongs to different store.","No podemos asignar el cliente al carrito. El carrito pertenece a una tienda diferente.",module,Magento_Quote
-"Cannot assign customer to the given cart. The cart is not anonymous.","No podemos asignar el cliente al carrito. El carrito no es anónimo.",module,Magento_Quote
-"Cannot assign customer to the given cart. Customer already has active cart.","No podemos asignar el cliente al carrito. El cliente ya tiene un carrito activo.",module,Magento_Quote
+"Cannot assign customer to the given cart. The cart belongs to different store.","No podemos asignar el cliente al pedido. El pedido pertenece a una tienda diferente.",module,Magento_Quote
+"Cannot assign customer to the given cart. The cart is not anonymous.","No podemos asignar el cliente al pedido. El pedido no es anónimo.",module,Magento_Quote
+"Cannot assign customer to the given cart. Customer already has active cart.","No podemos asignar el cliente al pedido. El cliente ya tiene un pedido activo.",module,Magento_Quote
 "Unable to place order. Please try again later.","No se puede colocar la orden. Por favor intente más tarde.",module,Magento_Quote
 "Only 1 shipping assignment can be set","Sólo se puede hacer una asignación de envío",module,Magento_Quote
 "This item price or quantity is not valid for checkout.","El precio de este elemento o su cantidad no son válidos para hacer el pedido.",module,Magento_Quote
@@ -3816,11 +3816,11 @@ Subtotal,Subtotal,module,Magento_Quote
 "Store Credit","Crédito de Tienda",module,Magento_Quote
 Discount,Descuento,module,Magento_Quote
 Tax,Impuesto,module,Magento_Quote
-"Cart contains virtual product(s) only. Shipping address is not applicable.","El carrito contiene sólo producto(s) virtual(es). No aplica una dirección de envío.",module,Magento_Quote
+"Cart contains virtual product(s) only. Shipping address is not applicable.","El pedido contiene sólo producto(s) virtual(es). No aplica una dirección de envío.",module,Magento_Quote
 "Shipping address not set.","No se ha fijado una dirección de envío.",module,Magento_Quote
 "Cannot set shipping method. %1","No se puede fijar una dirección de envío. %1",module,Magento_Quote
-"Shipping method is not applicable for empty cart","El método de envío no es aplicable a un carrito vacío",module,Magento_Quote
-"Cart contains virtual product(s) only. Shipping method is not applicable.","El carrito contiene sólo producto(s) virtual(es). No aplica un método de envío.",module,Magento_Quote
+"Shipping method is not applicable for empty cart","El método de envío no es aplicable a un pedido vacío",module,Magento_Quote
+"Cart contains virtual product(s) only. Shipping method is not applicable.","El pedido contiene sólo producto(s) virtual(es). No aplica un método de envío.",module,Magento_Quote
 error123,error123,module,Magento_Quote
 error345,error345,module,Magento_Quote
 "New Accounts","Cuentas Nuevas",module,Magento_Reports
@@ -3908,7 +3908,7 @@ Carrier/Method,Transportista/Método,module,Magento_Reports
 "Order Taxes Report Grouped by Tax Rate","Reporte de Impuestos de Orden Agrupado por Tarifa de Impuesto",module,Magento_Reports
 Rate,Tarifa,module,Magento_Reports
 "Tax Amount","Monto de Impuesto",module,Magento_Reports
-"Abandoned carts","Carritos abandonados",module,Magento_Reports
+"Abandoned carts","pedidos abandonados",module,Magento_Reports
 Email,Email,module,Magento_Reports
 Products,Productos,module,Magento_Reports
 Quantity,Cantidad,module,Magento_Reports
@@ -3919,9 +3919,9 @@ Customers,Clientes,module,Magento_Reports
 ID,ID,module,Magento_Reports
 "First Name","Nombre",module,Magento_Reports
 "Last Name","Apellido",module,Magento_Reports
-"Items in Cart","Elementos en Carrito",module,Magento_Reports
-"Products in carts","Productos en carritos",module,Magento_Reports
-Carts,Carritos,module,Magento_Reports
+"Items in Cart","Elementos en pedido",module,Magento_Reports
+"Products in carts","Productos en pedidos",module,Magento_Reports
+Carts,pedidos,module,Magento_Reports
 Name,Nombre,module,Magento_Reports
 "Wish Lists","Listas de Deseos",module,Magento_Reports
 "Wish List Purchase","Compra de Lista de Deseos",module,Magento_Reports
@@ -3958,10 +3958,10 @@ Coupons,Cupones,module,Magento_Reports
 "Orders Report","Reporte de Órdenes",module,Magento_Reports
 "Shipping Report","Reporte de Envíos",module,Magento_Reports
 "Tax Report","Reporte de Impuestos",module,Magento_Reports
-"Shopping Cart","Carrito de Compras",module,Magento_Reports
-"Abandoned Carts","Carritos Abandonados",module,Magento_Reports
-"Customer Shopping Carts","Carritos de Compras de Clientes",module,Magento_Reports
-"Products in Carts","Productos en Carritos",module,Magento_Reports
+"Shopping Cart","pedido de Compras",module,Magento_Reports
+"Abandoned Carts","pedidos Abandonados",module,Magento_Reports
+"Customer Shopping Carts","pedidos de Compras de Clientes",module,Magento_Reports
+"Products in Carts","Productos en pedidos",module,Magento_Reports
 Statistics,Estadísticas,module,Magento_Reports
 "No report code is specified.","No se especificó un código de reporte.",module,Magento_Reports
 "You refreshed lifetime statistics.","Ha refrescado las estadísticas totales.",module,Magento_Reports
@@ -3987,7 +3987,7 @@ Error,Error,module,Magento_Reports
 "Show Report For:","Mostrar Reporte Para:",module,Magento_Reports
 "All Websites","Todos los Sitios Web",module,Magento_Reports
 "Recently Viewed","Vistos Recientemente",module,Magento_Reports
-"Add to Cart","Añadir al Carrito",module,Magento_Reports
+"Add to Cart","Añadir al pedido",module,Magento_Reports
 "In stock","En existencias",module,Magento_Reports
 "Out of stock","Sin existencias",module,Magento_Reports
 "Add to Wish List","Añadir a la Lista de Deseos",module,Magento_Reports
@@ -4160,7 +4160,7 @@ Category,Categoría,module,Magento_Rule
 "Open Chooser","Abrir Selector",module,Magento_Rule
 "Unknown condition operator","Operador de condición desconocido",module,Magento_Rule
 "There is no information about associated entity type ""%1"".","No existe información acerca del tipo de entidad asociada ""%1"".",module,Magento_Rule
-"Cart Price Rules","Reglas de Precio de Carrito",module,Magento_SalesRule
+"Cart Price Rules","Reglas de Precio de pedido",module,Magento_SalesRule
 "Add New Rule","Añadir Nueva Regla",module,Magento_SalesRule
 Delete,Borrar,module,Magento_SalesRule
 "Are you sure you want to delete this?","¿Está seguro(a) de querer hacer esto?",module,Magento_SalesRule
@@ -4168,7 +4168,7 @@ Reset,Reiniciar,module,Magento_SalesRule
 "Save and Continue Edit","Guardar y Continuar Edición",module,Magento_SalesRule
 Save,Guardar,module,Magento_SalesRule
 Actions,Acciones,module,Magento_SalesRule
-"Apply the rule only to cart items matching the following conditions (leave blank for all items).","Aplicar la regla sólo a los elementos del carrito que coinciden con las siguientes condiciones (dejar en blanco para todos los elementos).",module,Magento_SalesRule
+"Apply the rule only to cart items matching the following conditions (leave blank for all items).","Aplicar la regla sólo a los elementos del pedido que coinciden con las siguientes condiciones (dejar en blanco para todos los elementos).",module,Magento_SalesRule
 "Apply To","Aplicar A",module,Magento_SalesRule
 Conditions,Condiciones,module,Magento_SalesRule
 "Apply the rule only if the following conditions are met (leave blank for all products).","Aplicar la regla sólo si una de las siguientes condiciones se cumple (dejar en blanco para todos los productos).",module,Magento_SalesRule
@@ -4207,7 +4207,7 @@ Promotions,Promociones,module,Magento_SalesRule
 "This rule no longer exists.","Esta regla ya no existe.",module,Magento_SalesRule
 "Edit Rule","Editar Regla",module,Magento_SalesRule
 "New Rule","Nueva Regla",module,Magento_SalesRule
-"New Cart Price Rule","Nueva Regla de Precio de Carrito",module,Magento_SalesRule
+"New Cart Price Rule","Nueva Regla de Precio de pedido",module,Magento_SalesRule
 "Rule is not defined","No se ha definido la regla",module,Magento_SalesRule
 "Invalid data provided","Los datos proporcionados no son válidos",module,Magento_SalesRule
 "%1 coupon(s) have been generated.","Se han generado %1 cupón(es).",module,Magento_SalesRule
@@ -4250,16 +4250,16 @@ Subtotal,Subtotal,module,Magento_SalesRule
 "Product attribute combination","Combinación de atributo de producto",module,Magento_SalesRule
 "Products subselection","Subselección de productos",module,Magento_SalesRule
 "Conditions combination","Combinación de condiciones",module,Magento_SalesRule
-"Cart Attribute","Atributo de Carrito",module,Magento_SalesRule
-"Quantity in cart","Cantidad en carrito",module,Magento_SalesRule
-"Price in cart","Precio en carrito",module,Magento_SalesRule
-"Row total in cart","Total de fila en carrito",module,Magento_SalesRule
+"Cart Attribute","Atributo de pedido",module,Magento_SalesRule
+"Quantity in cart","Cantidad en pedido",module,Magento_SalesRule
+"Price in cart","Precio en pedido",module,Magento_SalesRule
+"Row total in cart","Total de fila en pedido",module,Magento_SalesRule
 "Conditions Combination","Combinación de Condiciones",module,Magento_SalesRule
-"Cart Item Attribute","Atributo de Elemento de Carrito",module,Magento_SalesRule
-"Product Attribute","Atributo de Carrito",module,Magento_SalesRule
+"Cart Item Attribute","Atributo de Elemento de pedido",module,Magento_SalesRule
+"Product Attribute","Atributo de pedido",module,Magento_SalesRule
 FOUND,ENCONTRADO,module,Magento_SalesRule
 "NOT FOUND","NO ENCONTRADO",module,Magento_SalesRule
-"If an item is %1 in the cart with %2 of these conditions true:","Si un elemento es %1 en el carrito con %2 de estas condiciones verdaderas:",module,Magento_SalesRule
+"If an item is %1 in the cart with %2 of these conditions true:","Si un elemento es %1 en el pedido con %2 de estas condiciones verdaderas:",module,Magento_SalesRule
 "total quantity","cantidad total",module,Magento_SalesRule
 "total amount","monto total",module,Magento_SalesRule
 is,es,module,Magento_SalesRule
@@ -4270,10 +4270,10 @@ is,es,module,Magento_SalesRule
 "less than","menor que",module,Magento_SalesRule
 "is one of","es uno de",module,Magento_SalesRule
 "is not one of","no es uno de",module,Magento_SalesRule
-"If %1 %2 %3 for a subselection of items in cart matching %4 of these conditions:","Si %1 %2 %3 para una subselección de elementos en el carrito coincidiendo %4 de estas condiciones:",module,Magento_SalesRule
+"If %1 %2 %3 for a subselection of items in cart matching %4 of these conditions:","Si %1 %2 %3 para una subselección de elementos en el pedido coincidiendo %4 de estas condiciones:",module,Magento_SalesRule
 "Percent of product price discount","Porcentaje de descuento de precio de producto",module,Magento_SalesRule
 "Fixed amount discount","Monto fijo de decuento",module,Magento_SalesRule
-"Fixed amount discount for whole cart","Monto fijo de descuento para todo el carrito",module,Magento_SalesRule
+"Fixed amount discount for whole cart","Monto fijo de descuento para todo el pedido",module,Magento_SalesRule
 "Buy X get Y free (discount amount is Y)","Compre X y obtenga Y gratis (el monto de decuento es Y)",module,Magento_SalesRule
 Active,Activo,module,Magento_SalesRule
 Inactive,Inactivo,module,Magento_SalesRule
@@ -4281,7 +4281,7 @@ Inactive,Inactivo,module,Magento_SalesRule
 "Error occurred when generating coupons: %1","Ocurrió un error al generar cupones: %1",module,Magento_SalesRule
 "Some coupons are invalid.","Algunos de los cupones no son válidos.",module,Magento_SalesRule
 "Item totals are not set for the rule.","Los totales del elemento no se fijaron para la regla.",module,Magento_SalesRule
-"%1 Cart Price Rules based on ""%2"" attribute have been disabled.","%1 Reglas de Precio de Carrito con base en el atributo ""%2"" se han deshabilitado.",module,Magento_SalesRule
+"%1 Cart Price Rules based on ""%2"" attribute have been disabled.","%1 Reglas de Precio de pedido con base en el atributo ""%2"" se han deshabilitado.",module,Magento_SalesRule
 "Entity Sequence profile not added to meta active profile","El perfil de Secuencia de Entidad no se añadió al meta perfil activo",module,Magento_SalesSequence
 "Not enough arguments","No hay argumentos suficientes",module,Magento_SalesSequence
 "Credit Memos","Notas de Crédito",module,Magento_Sales
@@ -4336,9 +4336,9 @@ Quantity,Cantidad,module,Magento_Sales
 "Shipping Address","Dirección de Envío",module,Magento_Sales
 "Shipping Method","Método de Envío",module,Magento_Sales
 "Update Changes","Actualizar Cambios",module,Magento_Sales
-"Shopping Cart","Carrito de Compras",module,Magento_Sales
-"Are you sure you want to delete all items from shopping cart?","¿Está seguro(a) de querer borrar todos los elementos del carrito de compras?",module,Magento_Sales
-"Clear Shopping Cart","Limpiar Carrito de Compras",module,Magento_Sales
+"Shopping Cart","pedido de Compras",module,Magento_Sales
+"Are you sure you want to delete all items from shopping cart?","¿Está seguro(a) de querer borrar todos los elementos del pedido de compras?",module,Magento_Sales
+"Clear Shopping Cart","Limpiar pedido de Compras",module,Magento_Sales
 "Products in Comparison List","Productos en Lista de Comparación",module,Magento_Sales
 "Recently Compared Products","Productos Recientemente Comparados",module,Magento_Sales
 "Recently Viewed Products","Productos Recientemente Vistos",module,Magento_Sales
@@ -4445,7 +4445,7 @@ Transactions,Transacciones,module,Magento_Sales
 Any,Cualquiera,module,Magento_Sales
 Specified,Espeficicado,module,Magento_Sales
 "Applies to Any of the Specified Order Statuses except canceled orders","Aplica a Cualquiera de los Estados de las Órdenes Especificadas exceptuando las órdenes canceladas",module,Magento_Sales
-"Cart Price Rule","Regla de Precio de Carrito",module,Magento_Sales
+"Cart Price Rule","Regla de Precio de pedido",module,Magento_Sales
 Yes,Sí,module,Magento_Sales
 No,No,module,Magento_Sales
 "Show Actual Values","Mostrar Valores Actuales",module,Magento_Sales
@@ -4472,7 +4472,7 @@ Value,Valor,module,Magento_Sales
 "Print Order # %1","Imprimir Orden # %1",module,Magento_Sales
 "Grand Total to be Charged","Grand Total a ser Cargado",module,Magento_Sales
 Unassign,Desasignar,module,Magento_Sales
-"We can't add this item to your shopping cart right now.","No podemos añadir este elemento a su carrito de compras en este momento.",module,Magento_Sales
+"We can't add this item to your shopping cart right now.","No podemos añadir este elemento a su pedido de compras en este momento.",module,Magento_Sales
 "You sent the message.","Envió el mensaje.",module,Magento_Sales
 Sales,Ventas,module,Magento_Sales
 "Invoice capturing error","Error de captura de factura",module,Magento_Sales
@@ -4568,7 +4568,7 @@ Sales,Ventas,module,Magento_Sales
 Home,Inicio,module,Magento_Sales
 "Go to Home Page","Ir a la Página de Inicio",module,Magento_Sales
 "We can't find this wish list.","No podemos encontrar esta lista de deseos.",module,Magento_Sales
-"We could not add a product to cart by the ID ""%1"".","No podemos añadir un producto al carrito por el ID ""%1"".",module,Magento_Sales
+"We could not add a product to cart by the ID ""%1"".","No podemos añadir un producto al pedido por el ID ""%1"".",module,Magento_Sales
 "There is an error in one of the option rows.","Hay un error en una de las líneas de opción.",module,Magento_Sales
 "Shipping Address: ","Dirección de Envío: ",module,Magento_Sales
 "Billing Address: ","Dirección de Facturación: ",module,Magento_Sales
@@ -4775,7 +4775,7 @@ Subtotal:,Subtotal:,module,Magento_Sales
 "Tier Pricing","Precio por Niveles",module,Magento_Sales
 "Custom Price","Precio Personalizado",module,Magento_Sales
 "Please select","Por favor seleccione",module,Magento_Sales
-"Move to Shopping Cart","Mover al Carrito de Compras",module,Magento_Sales
+"Move to Shopping Cart","Mover al pedido de Compras",module,Magento_Sales
 "Move to Wish List","Mover a la Lista de Deseos",module,Magento_Sales
 "Subscribe to Newsletter","Suscribir al Boletín",module,Magento_Sales
 "Click to change shipping method","Click para cambiar el método de envío",module,Magento_Sales
@@ -4900,7 +4900,7 @@ Close,Cerrar,module,Magento_Sales
 "View All","Ver Todas",module,Magento_Sales
 "Gift Message for This Order","Mensaje de Regalo para Esta Orden",module,Magento_Sales
 "Recently Ordered","Recientemente Ordenado",module,Magento_Sales
-"Add to Cart","Añadir al Carrito",module,Magento_Sales
+"Add to Cart","Añadir al pedido",module,Magento_Sales
 Search,Buscar,module,Magento_Sales
 "Search Term","Buscar Término",module,Magento_Search
 Results,Resultados,module,Magento_Search
@@ -6049,12 +6049,12 @@ Page,Página,module,Magento_Widget
 "We can't specify a product.","No podemos especificar un producto.",module,Magento_Wishlist
 "We can't add the item to Wish List right now: %1.","No podemos añadir el elemento a la Lista de Deseos en este momento: %1.",module,Magento_Wishlist
 "We can't add the item to Wish List right now.","No podemos añadir el elemento a la Lista de Deseos en este momento.",module,Magento_Wishlist
-"You added %1 to your shopping cart.","Añadió %1 a su carrito de compras.",module,Magento_Wishlist
+"You added %1 to your shopping cart.","Añadió %1 a su pedido de compras.",module,Magento_Wishlist
 "This product(s) is out of stock.","Este(os) producto(s) no está(n) en existencias.",module,Magento_Wishlist
-"We can't add the item to the cart right now.","No podemos añadir el elemento al carrito en este momento.",module,Magento_Wishlist
+"We can't add the item to the cart right now.","No podemos añadir el elemento al pedido en este momento.",module,Magento_Wishlist
 "We can't load the Wish List item right now.","No podemos cargar el elemento de la Lista de Deseos en este momento.",module,Magento_Wishlist
 "We can't configure the product right now.","No podemos configurar el producto en este momento.",module,Magento_Wishlist
-"The requested cart item doesn't exist.","El elemento solicitado del carrito no existe.",module,Magento_Wishlist
+"The requested cart item doesn't exist.","El elemento solicitado del pedido no existe.",module,Magento_Wishlist
 "%1 has been moved to your wish list.","%1 ha sido movido a su lista de deseos.",module,Magento_Wishlist
 "We can't move the item to the wish list.","No podemos mover el elemento a la lista de deseos.",module,Magento_Wishlist
 "We can't delete the item from Wish List right now because of an error: %1.","No podemos borrar el elemento de la Lista de Deseos en este momento debido a un error: %1.",module,Magento_Wishlist
@@ -6082,10 +6082,10 @@ Comment,Comentario,module,Magento_Wishlist
 "Product is not salable.","El producto no es vendible.",module,Magento_Wishlist
 "Invalid item option format.","Formato de opción de elemento no válido.",module,Magento_Wishlist
 "%1 for ""%2"".","%1 por ""%2"".",module,Magento_Wishlist
-"We can't add this item to your shopping cart right now.","No podemos añadir este elemento a su carrito de compras en este momento.",module,Magento_Wishlist
-"We couldn't add the following product(s) to the shopping cart: %1.","No podemos añadir el/los siguiente(s) producto(s) al carrito de compras: %1.",module,Magento_Wishlist
+"We can't add this item to your shopping cart right now.","No podemos añadir este elemento a su pedido de compras en este momento.",module,Magento_Wishlist
+"We couldn't add the following product(s) to the shopping cart: %1.","No podemos añadir el/los siguiente(s) producto(s) al pedido de compras: %1.",module,Magento_Wishlist
 "We can't update the Wish List right now.","No podemos actualizar la Lista de Deseos en este momento.",module,Magento_Wishlist
-"%1 product(s) have been added to shopping cart: %2.","Se añadió(eron) %1 product(os) al carrito de compras: %2.",module,Magento_Wishlist
+"%1 product(s) have been added to shopping cart: %2.","Se añadió(eron) %1 product(os) al pedido de compras: %2.",module,Magento_Wishlist
 Comment:,Comentario:,module,Magento_Wishlist
 "We cannot retrieve the Wish List.","No podemos obtener la Lista de Deseos.",module,Magento_Wishlist
 "%1's Wishlist","Lista de Deseos de %1",module,Magento_Wishlist
@@ -6100,12 +6100,12 @@ LocalizedException,LocalizedException,module,Magento_Wishlist
 "Localized Exception.","Excepción de Localización.",module,Magento_Wishlist
 "Are you sure you want to remove this item?","¿Está seguro(a) de querer remover este elemento?",module,Magento_Wishlist
 "Share Wish List","Compartir Lista de Deseos",module,Magento_Wishlist
-"Add All to Cart","Añadir Todo al Carrito",module,Magento_Wishlist
+"Add All to Cart","Añadir Todo al pedido",module,Magento_Wishlist
 "Update Wish List","Actualizar Lista de Deseos",module,Magento_Wishlist
 "Move to Wishlist","Mover a Lista de Deseos",module,Magento_Wishlist
 "View Product","Ver Producto",module,Magento_Wishlist
 Qty,Cantidad,module,Magento_Wishlist
-"Add to Cart","Añadir al Carrito",module,Magento_Wishlist
+"Add to Cart","Añadir al pedido",module,Magento_Wishlist
 Availability,Disponibilidad,module,Magento_Wishlist
 "In stock","En existencias",module,Magento_Wishlist
 "Out of stock","Sin existencias",module,Magento_Wishlist
@@ -6174,18 +6174,18 @@ item,elemento,module,Magento_Checkout
 items,elementos,module,Magento_Checkout
 "Go to Checkout","Ir a ordenar",module,Magento_Checkout
 "Recently added item(s)","Elemento(s) recientemente añadido(s)",module,Magento_Checkout
-"View and edit cart","Ver y editar carrito",module,Magento_Checkout
+"View and edit cart","Ver y editar pedido",module,Magento_Checkout
 "See Details","Ver Detalles",module,Magento_Checkout
 "Options Details","Detalles de Opciones",module,Magento_Checkout
 Remove,Remover,module,Magento_Checkout
-"Cart Subtotal","Subtotal del Carrito",module,Magento_Checkout
+"Cart Subtotal","Subtotal del pedido",module,Magento_Checkout
 "No Payment Methods","No Hay Métodos de Pago",module,Magento_Checkout
 "Payment Information","Información de Pago",module,Magento_Checkout
 "No Payment method available.","No hay un Método de Pago disponible.",module,Magento_Checkout
 "You can track your order status by creating an account.","Puede rastrear el estado de su orden creando una cuenta.",module,Magento_Checkout
 "Place Order","Colocar Orden",module,Magento_Checkout
 "Forgot an Item?","¿Olvidó un Elemento?",module,Magento_Checkout
-"Edit Your Cart","Editar Su Carrito",module,Magento_Checkout
+"Edit Your Cart","Editar Su pedido",module,Magento_Checkout
 "Ship Here","Enviar Aquí",module,Magento_Checkout
 "Ship To:","Enviar A:",module,Magento_Checkout
 edit,editar,module,Magento_Checkout
@@ -6198,8 +6198,8 @@ edit,editar,module,Magento_Checkout
 Next,Siguiente,module,Magento_Checkout
 "Sorry, no quotes are available for this order at this time","Lo sentimos, no hay cotizaciones disponibles para esta orden en este momento",module,Magento_Checkout
 "Order Summary","Resumen de la Orden",module,Magento_Checkout
-"Item in Cart","Elemento en Carrito",module,Magento_Checkout
-"Items in Cart","Elementos en Carrito",module,Magento_Checkout
+"Item in Cart","Elemento en pedido",module,Magento_Checkout
+"Items in Cart","Elementos en pedido",module,Magento_Checkout
 "View Details","Ver Detalles",module,Magento_Checkout
 "Contact Form","Forma de Contacto",module,Magento_Contact
 "Name: %name","Nombre: %name",module,Magento_Contact
@@ -6267,11 +6267,11 @@ Delete,Borrar,module,Magento_GiftMessage
 "Place Order","Colocar Orden",module,Magento_OfflinePayments
 "Place Order","Colocar Orden",module,Magento_Payment
 "Forgot an Item?","¿Olvidó un Elemento?",module,Magento_Payment
-"Edit Your Cart","Editar Su Carrito",module,Magento_Payment
+"Edit Your Cart","Editar Su pedido",module,Magento_Payment
 "Sign a billing agreement to streamline further purchases with PayPal.","Firmar un acuerdo de facturación para facilitar compras futuras con PayPal.",module,Magento_Paypal
 "Continue to PayPal","Continuar a PayPal",module,Magento_Paypal
 "Save credit card information for future use.","Guardar información de tarjeta de crédito para uso futuro.",module,Magento_Paypal
-"Check 'Remember Me' to access your shopping cart on this computer even if you are not signed in.","Seleccione 'Recordarme' para accesar a su carrito de compras en esta computadora incluso sin haber ingresado.",module,Magento_Persistent
+"Check 'Remember Me' to access your shopping cart on this computer even if you are not signed in.","Seleccione 'Recordarme' para accesar a su pedido de compras en esta computadora incluso sin haber ingresado.",module,Magento_Persistent
 "Product alerts Cron error","Error de Cron de alertas de Producto",module,Magento_ProductAlert
 "Product alerts cron warnings","Advertencias de cron de alertas de Producto",module,Magento_ProductAlert
 "Products price changed alert","Alertas de cambios de precio de Productos",module,Magento_ProductAlert
@@ -6885,7 +6885,7 @@ Debug,Depurar,module,Magento_Braintree
 "Override Merchant Name","Anular Nombre de Comerciante",module,Magento_Braintree
 "Require Customer's Billing Address","Requerir Dirección de Facturación del Cliente",module,Magento_Braintree
 "Allow to Edit Shipping Address Entered During Checkout on PayPal Side","Permitir Editar la Dirección de Envío Ingresada Durante la Compra del Lado de PayPal",module,Magento_Braintree
-"Display on Shopping Cart","Mostrar en Carrito de Compras",module,Magento_Braintree
+"Display on Shopping Cart","Mostrar en pedido de Compras",module,Magento_Braintree
 "3D Secure Verification Settings","Configuración de Verificación Segura 3D",module,Magento_Braintree
 "3D Secure Verification","Verificación Segura 3D",module,Magento_Braintree
 "Threshold Amount","Monto Límite",module,Magento_Braintree
@@ -6940,13 +6940,13 @@ Inventory,Inventario,module,Magento_CatalogInventory
 "Only X left Threshold","Límite para Sólo X disponibles",module,Magento_CatalogInventory
 "Display Products Availability in Stock on Storefront","Mostrar Disponibilidad de Productos en Existencias en Escaparate",module,Magento_CatalogInventory
 "Product Stock Options","Opciones de Existencias de Producto",module,Magento_CatalogInventory
-"Please note that these settings apply to individual items in the cart, not to the entire cart.","Por favor observe que estas configuraciones aplican elementos artículos individuales en el carrito, no al carrito entero.",module,Magento_CatalogInventory
+"Please note that these settings apply to individual items in the cart, not to the entire cart.","Por favor observe que estas configuraciones aplican elementos artículos individuales en el pedido, no al pedido entero.",module,Magento_CatalogInventory
 "Manage Stock","Administrar Existencias",module,Magento_CatalogInventory
 Backorders,"Pedidos Pendientes",module,Magento_CatalogInventory
 "Changing can take some time due to processing whole catalog.","Cambiar esto puede tardar, debido a que se procesará todo el catálogo.",module,Magento_CatalogInventory
-"Maximum Qty Allowed in Shopping Cart","Cantidad Máxima Permitida en Carrito de Compras",module,Magento_CatalogInventory
+"Maximum Qty Allowed in Shopping Cart","Cantidad Máxima Permitida en pedido de Compras",module,Magento_CatalogInventory
 "Out-of-Stock Threshold","Límite de Sin Existencias",module,Magento_CatalogInventory
-"Minimum Qty Allowed in Shopping Cart","Cantidad Mínima Permitida en Carrito de Compras",module,Magento_CatalogInventory
+"Minimum Qty Allowed in Shopping Cart","Cantidad Mínima Permitida en pedido de Compras",module,Magento_CatalogInventory
 "Notify for Quantity Below","Notificar Cuando Cantidad Menor",module,Magento_CatalogInventory
 "Automatically Return Credit Memo Item to Stock","Regresar Automáticamente a Existencias al Elemento de Nota de Crédito",module,Magento_CatalogInventory
 "Enable Qty Increments","Habilitar Incrementos de Cantidad",module,Magento_CatalogInventory
@@ -7138,11 +7138,11 @@ Details,Detalles,module,Magento_Catalog
 "Enable Onepage Checkout","Habilitar Ordenar en Una Página",module,Magento_Checkout
 "Allow Guest Checkout","Permitir Ordenar como Invitado",module,Magento_Checkout
 "Quote Lifetime (days)","Caducidad de Cotización (días)",module,Magento_Checkout
-"After Adding a Product Redirect to Shopping Cart","Redirigir a Carrito de Compras Luego de Añadir Producto",module,Magento_Checkout
-"My Cart Link","Enlace a Mi Carrito",module,Magento_Checkout
-"Display Cart Summary","Mostrar Resumen de Carrito",module,Magento_Checkout
-"Shopping Cart Sidebar","Barra Lateral de Carrito",module,Magento_Checkout
-"Display Shopping Cart Sidebar","Mostrar Barra Lateral de Carrito",module,Magento_Checkout
+"After Adding a Product Redirect to Shopping Cart","Redirigir a pedido de Compras Luego de Añadir Producto",module,Magento_Checkout
+"My Cart Link","Enlace a Mi pedido",module,Magento_Checkout
+"Display Cart Summary","Mostrar Resumen de pedido",module,Magento_Checkout
+"Shopping Cart Sidebar","Barra Lateral de pedido",module,Magento_Checkout
+"Display Shopping Cart Sidebar","Mostrar Barra Lateral de pedido",module,Magento_Checkout
 "Maximum Display Recently Added Item(s)","Despliegue Máximo de Elemento(s) Recientemente Añadido(s)",module,Magento_Checkout
 "Payment Failed Emails","Emails de Pago No Exitoso",module,Magento_Checkout
 "Payment Failed Email Sender","Remitente de Email de Pago No Exitoso",module,Magento_Checkout
@@ -7455,7 +7455,7 @@ Downloads,Descargas,module,Magento_Downloadable
 "Default Link Title","Título de Enlace por Defecto",module,Magento_Downloadable
 "Open Links in New Window","Abrir Enlaces en Nueva Ventana",module,Magento_Downloadable
 "Use Content-Disposition","Usar Content-Disposition",module,Magento_Downloadable
-"Disable Guest Checkout if Cart Contains Downloadable Items","Deshabilitar Orenar por Invitado si el Carrito Contiene Elementos Descargables",module,Magento_Downloadable
+"Disable Guest Checkout if Cart Contains Downloadable Items","Deshabilitar Orenar por Invitado si el pedido Contiene Elementos Descargables",module,Magento_Downloadable
 "Guest checkout will only work with shareable.","Ordenar por invitado sólo funcionara con compartible.",module,Magento_Downloadable
 "EAV types and attributes","Tipos y Atributos EAV",module,Magento_Eav
 "Entity types declaration cache","Caché de declaración de tipos de entidad",module,Magento_Eav
@@ -7802,7 +7802,7 @@ Position,Posición,module,Magento_Paypal
 Size,Tamaño,module,Magento_Paypal
 "Catalog Category Page","Página de Categoría de Catálogo",module,Magento_Paypal
 "Catalog Product Page","Página de Producto de Catálogo",module,Magento_Paypal
-"Checkout Cart Page","Página de Ordenar en Carrito",module,Magento_Paypal
+"Checkout Cart Page","Página de Ordenar en pedido",module,Magento_Paypal
 "Basic Settings - PayPal Express Checkout","Configuraciones Básicas - Compras PayPal Express",module,Magento_Paypal
 Title,Título,module,Magento_Paypal
 "It is recommended to set this value to ""PayPal"" per store views.","Se recomienda fijar este valor como ""PayPal"" en vistas de tienda.",module,Magento_Paypal
@@ -7816,13 +7816,13 @@ Title,Título,module,Magento_Paypal
 "Number of Child Authorizations","Número de Autorizaciones Dependientes",module,Magento_Paypal
 "The default number of child authorizations in your PayPal account is 1. To do multiple authorizations please contact PayPal to request an increase.","El número ipor defecto de autorizaciones dependientes en su cuenta PayPal es de 1. Para hacer varias autorizaciones por favor contacte a PayPal para solicitar un incremento.",module,Magento_Paypal
 "Advanced Settings","Configuraciones Avanzadas",module,Magento_Paypal
-"Display on Shopping Cart","Mostrar en Carrito de Compras",module,Magento_Paypal
-"Also affects mini-shopping cart.","También afecta al mini carrito de compras.",module,Magento_Paypal
+"Display on Shopping Cart","Mostrar en pedido de Compras",module,Magento_Paypal
+"Also affects mini-shopping cart.","También afecta al mini pedido de compras.",module,Magento_Paypal
 "Payment Applicable From","Pago Aplicable Desde",module,Magento_Paypal
 "Countries Payment Applicable From","Países de Pago Aplicable Desde",module,Magento_Paypal
 "Debug Mode","Modo Depuración",module,Magento_Paypal
 "Enable SSL verification","Habilitar verificación SSL",module,Magento_Paypal
-"Transfer Cart Line Items","Transferir Elementos de Línea de Carrito",module,Magento_Paypal
+"Transfer Cart Line Items","Transferir Elementos de Línea de pedido",module,Magento_Paypal
 "Transfer Shipping Options","Transferir Opciones de Envío",module,Magento_Paypal
 "If this option is enabled, customer can change shipping address and shipping method on PayPal website. In live mode works via HTTPS protocol only.","Si esta opción está habilitada, el cliente puede cambiar la dirección de envío y el método de envío en el sitio web de PayPal. En modo directo sólo funciona por el protocolo HTTPS.",module,Magento_Paypal
 "Notice that PayPal can handle up to 10 shipping options. That is why Magento will transfer only first 10 cheapest shipping options if there are more than 10 available.","Note que PayPay puede manejar hasta 10 opciones de envío. Por esto Magento va a transferir sólo las 10 opciones de envío más económicas si hay más de 10 disponibles.",module,Magento_Paypal
@@ -7986,14 +7986,14 @@ User,Usuario,module,Magento_Paypal
                                 El Programa de Anuncios de PayPal ha mostrado que genera compras adicionales además de incrementar el promedio de compras en un 15%
                                 o más. <a href=""https:/financing.paypal.com/ppfinportal/content/forrester"" target=""_blank"">Ver Detalles</a>.
                 ",module,Magento_Paypal
-"Persistent Shopping Cart","Carrito de Compras Persistente",module,Magento_Persistent
+"Persistent Shopping Cart","pedido de Compras Persistente",module,Magento_Persistent
 "General Options","Opciones Generales",module,Magento_Persistent
 "Enable Persistence","Habilitar Persistencia",module,Magento_Persistent
 "Persistence Lifetime (seconds)","Caducidad de Persistencia (segundos)",module,Magento_Persistent
 "Enable ""Remember Me""","Habilitar ""Recordarme""",module,Magento_Persistent
 """Remember Me"" Default Value","Valor por Defecto de ""Recordarme""",module,Magento_Persistent
 "Clear Persistence on Sign Out","Limpiar Persistencia al Salir",module,Magento_Persistent
-"Persist Shopping Cart","Carrito de Compras Persistente",module,Magento_Persistent
+"Persist Shopping Cart","pedido de Compras Persistente",module,Magento_Persistent
 "Product Alerts","Alertas de Producto",module,Magento_ProductAlert
 "Allow Alert When Product Price Changes","Permitir Alerta Cuando el Precio de Producto Cambie",module,Magento_ProductAlert
 "Allow Alert When Product Comes Back in Stock","Permitir Alerta Cuando el Producto Regresa a Existencias",module,Magento_ProductAlert
@@ -8016,10 +8016,10 @@ Frequency,Frecuencia,module,Magento_ProductAlert
 "Auto restart video","Auto reiniciar video",module,Magento_ProductVideo
 "Images And Videos","Imágenes y Videos",module,Magento_ProductVideo
 Carts,Carrritos,module,Magento_Quote
-"Manage carts","Administrar carritos",module,Magento_Quote
+"Manage carts","Administrar pedidos",module,Magento_Quote
 Marketing,Publicidad,module,Magento_Reports
-"Products in Cart","Productos en Carrito",module,Magento_Reports
-"Abandoned Cart","Carrito Abandonado",module,Magento_Reports
+"Products in Cart","Productos en pedido",module,Magento_Reports
+"Abandoned Cart","pedido Abandonado",module,Magento_Reports
 "Search Terms","Términos de Búsqueda",module,Magento_Reports
 "By Customers","Por Clientes",module,Magento_Reports
 "By Products","Por Productos",module,Magento_Reports
@@ -8086,7 +8086,7 @@ Promotion,Promoción,module,Magento_SalesRule
 "Auto Generated Specific Coupon Codes","Códigos de Cupón Específico Auto Generados",module,Magento_SalesRule
 "Web Site","Sitio Web",module,Magento_SalesRule
 Priority,Prioridad,module,Magento_SalesRule
-"Cart Price Rule","Regla de Precio de Carrito",module,Magento_SalesRule
+"Cart Price Rule","Regla de Precio de pedido",module,Magento_SalesRule
 Back,Atrás,module,Magento_SalesRule
 "Rule Information","Información de Regla",module,Magento_SalesRule
 "Rule Name","Nombre de Regla",module,Magento_SalesRule
@@ -8143,12 +8143,12 @@ Enable,Habilitar,module,Magento_Sales
 "Subtotal after discount","Subtotal despues de descuento",module,Magento_Sales
 "Include Tax to Amount","Incluir Impuesto en Cantidad",module,Magento_Sales
 "Description Message","Mensaje de Descripción",module,Magento_Sales
-"This message will be shown in the shopping cart when the subtotal (after discount) is lower than the minimum allowed amount.","Este mensaje se mostrará en el carrito de compras cuando el subtotal (despues de descuento) es más bajo que la cantidad mínima permitida.",module,Magento_Sales
-"Error to Show in Shopping Cart","Error al Mostrar Carrito de Compra",module,Magento_Sales
+"This message will be shown in the shopping cart when the subtotal (after discount) is lower than the minimum allowed amount.","Este mensaje se mostrará en el pedido de compras cuando el subtotal (despues de descuento) es más bajo que la cantidad mínima permitida.",module,Magento_Sales
+"Error to Show in Shopping Cart","Error al Mostrar pedido de Compra",module,Magento_Sales
 "Validate Each Address Separately in Multi-address Checkout","Validar Cada Dirección por Separado en Compras Multi Dirección",module,Magento_Sales
 "Multi-address Description Message","Mensaje de Descipción Multi Dirección",module,Magento_Sales
 "We'll use the default description above if you leave this empty.","Se usará la descripción por defecto arriba si deja esto vacío.",module,Magento_Sales
-"Multi-address Error to Show in Shopping Cart","Error Multi Dirección al Mostrar Carrito de Compra",module,Magento_Sales
+"Multi-address Error to Show in Shopping Cart","Error Multi Dirección al Mostrar pedido de Compra",module,Magento_Sales
 "We'll use the default error above if you leave this empty.","Usaremos el mensaje de error por defecto arriba si deja esto vacío.",module,Magento_Sales
 Dashboard,Tablero,module,Magento_Sales
 "Use Aggregated Data","Usar Datos Agregados",module,Magento_Sales
@@ -8372,7 +8372,7 @@ Taxes,Impuestos,module,Magento_Tax
 "Price Display Settings","Configuraciones de Despliegue de Precio",module,Magento_Tax
 "Display Product Prices In Catalog","Desplegar Precios de Producto en Catálogo",module,Magento_Tax
 "Display Shipping Prices","Desplegar Precios de Envío",module,Magento_Tax
-"Shopping Cart Display Settings","Configuraciones de Despliegue de Carrito de Compra",module,Magento_Tax
+"Shopping Cart Display Settings","Configuraciones de Despliegue de pedido de Compra",module,Magento_Tax
 "Display Prices","Desplegar Precios",module,Magento_Tax
 "Display Subtotal","Desplegar Subtotal",module,Magento_Tax
 "Display Shipping Amount","Desplegar Cantidad de Envío",module,Magento_Tax
