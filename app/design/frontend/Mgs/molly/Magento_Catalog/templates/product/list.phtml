@@ -187,6 +187,16 @@ $themeSettings = $themeHelper->getThemeSettings();
 									<a class="product-item-link"
 									   href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>"><?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
 									</a>
+									<br/>
+											ID: <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getSku(), 'sku'); ?>
+										<br/>
+										<?php
+										 if($_helper->productAttribute($_product, $_product->getSize(), 'size')) {
+										?>	
+											Tamaño: <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getSize(), 'size'); ?>
+										<?php
+										 }
+										?>	
 								</p>
 								<?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
 								<?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
