@@ -1265,7 +1265,6 @@ body:not(.cms-index-index) {
             position: relative;
         }
         span:after {
-            border-top: 1px solid #e0e0e0;
             content: "";
             position: absolute;
             top: 10px;
@@ -4302,7 +4301,7 @@ body:not(.cms-index-index) {
                         left: 0;
                         right: 0;
                         bottom: 0;
-                        top:12px;
+                        top: 15%;
                         content: "";
                         background: rgba(0,0,0,0.2);
                         .transform(scaleY(0));
@@ -4333,7 +4332,7 @@ body:not(.cms-index-index) {
                         left: 0;
                         right: 0;
                         bottom: 0;
-                        top:12px;
+                        top: 14%;
                         content: "";
                         background: rgba(0,0,0,0.2);
                         .transform(scaleY(0));
@@ -6097,7 +6096,8 @@ body:not(.cms-index-index) .page.messages .messages .message {
 }
 .slider_mgs_carousel {
     position: relative;
-    margin-top: 363px;
+    margin-top: 364px;
+
     .owl-dots {
         position: absolute;
         left: 50%;
@@ -6580,6 +6580,59 @@ body:not(.cms-index-index) .page.messages .messages .message {
     width: 200px !important;
     height: auto !important;
 }
+
+
+.product-item-photo {
+    height: 312px;
+    display: inline-block;
+}
+
+.product.photo.product-item-photo {
+    height: 252px;
+    display: inline-block;
+}
+
+
+.owl-text-overlay {
+    position: absolute;
+    text-align: center;
+    width: 33%;
+    top: 50%;
+    transform: translateY(-40%);
+    left: 15%;
+    right: 0;
+    /* margin-left: auto; */
+    margin-right: auto;
+    color: #222;
+    background-color: #FFF;
+    /* background: rgba(0, 0, 0, 0.4); */
+    padding-bottom: 20px;
+    font-family: "Open Sans", sans-serif;
+    border-radius: 15px 50px 30px 5px;
+  }
+  
+  h2.owl-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  p.owl-caption {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  
+  .owl-theme .owl-controls .owl-page span:active {
+    background: #fff !important;
+  }
+  
+  /* hide previous and next */
+  
+  .owl-buttons {
+    visibility: hidden;
+    display: none;
+  }
+
 
 .header-sticky-menu .logo-container .logo img {
     display:none;
