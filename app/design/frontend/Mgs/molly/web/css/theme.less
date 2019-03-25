@@ -125,8 +125,7 @@ body {
 
 // Setting font
 .text-desc,.sidebar_deal .deal-timer .time-note > span {
-    font-family: 'Droid Serif', serif;
-    font-style: italic;
+  
 }
 // Forms
 .radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline {
@@ -309,9 +308,7 @@ ul,ol {
     font-size: 2rem;
     margin: 0;
 }
-.swatch-option {
-    height: auto !important;
-}
+
 .swatch-option.color {
     height: 20px !important;
 }
@@ -358,7 +355,7 @@ ul,ol {
     .top-header-content {
         padding: 0;
         background-color: #fff;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #fff;
         color:#999;
         height:50px;
         .header-social{
@@ -443,7 +440,7 @@ ul,ol {
 
             .header-newsletter{
                 color:#222;
-                border-left: 1px solid #eee;
+                border-left: 1px solid #fff;
                 padding: 0 27px 0 30px;                                
                 text-align: center;
                 line-height: 50px;
@@ -499,7 +496,7 @@ ul,ol {
     .logo-container{
         text-align: center;
         margin-top: 35px;
-        margin-bottom: 40px;
+        margin-bottom: 0px;
 
         width:100%;
         .logo{
@@ -508,7 +505,6 @@ ul,ol {
             margin-bottom: 25px;
         }
         .title-logo{
-            font-family: "Droid Serif",serif;
             font-size: 13px;
             font-style: italic;
             line-height: 1;
@@ -586,8 +582,6 @@ ul,ol {
         display: none;
     }
     float: right;
-    border-left:1px solid #eee;
-    border-right: 1px solid #eee;
     padding:0 15px;
     line-height: 50px;
     text-align:center; 
@@ -913,7 +907,8 @@ nav.navigation {
     .block-title {
         h3 {
             margin-bottom: 0;
-            padding: 20px 0;
+            padding: 0;
+            font-size: 1.8em;
         }
     }
     .product-items {
@@ -1278,7 +1273,6 @@ body:not(.cms-index-index) {
     } 
     .text-desc {
         text-align: right;
-        font-style: italic;
         font-size: 13px;
         color: #666666;
         float: right;
@@ -1441,6 +1435,7 @@ body:not(.cms-index-index) {
                             color: #666666;
                             font-size: 13px;
                             font-style: italic;
+                            font-family: "Montserrat";
                         }
                     }
                 }
@@ -1838,7 +1833,7 @@ body:not(.cms-index-index) {
         right: 20px;
     }
     &.new-label {
-        background-color: #3398db;
+        background-color: #017243;
         left: 20px;
     }
     &.sold-label {
@@ -2268,6 +2263,7 @@ body:not(.cms-index-index) {
     .info.detailed {
         border-bottom: 1px solid #eeeeee;
         padding-bottom: 40px;
+        display: none;
         .detailed-menu {
             .item.title a {
                 border-bottom: 1px solid #eeeeee;
@@ -3805,8 +3801,12 @@ body:not(.cms-index-index) {
             float:left;
             display:block;
             top:0;
-            margin: 7px 0 0;
-            width:auto;
+            margin: 0px 0 0;
+            background-image: url(/pub/media/logo/stores/1/comp-www-logo_1.png);
+            width: 176px;
+            background-position: 0 5px;
+            height: 60px;
+            background-size: cover;
         }
     }
     .top-bar-right{
@@ -4095,6 +4095,7 @@ body:not(.cms-index-index) {
     position: fixed;
     right: 0;
     top: 0;
+    z-index: 899 !important;
 }
 // Toolbar
 .hidden-top .toolbar .top-toolbar,
@@ -4292,7 +4293,7 @@ body:not(.cms-index-index) {
     .item {
         .product-content {
             .product-top {
-                padding-top: 12px;
+                padding-top: 0px;
                 position: relative;
                 .product-item-photo {
                     &:after {
@@ -4412,6 +4413,7 @@ body:not(.cms-index-index) {
                 }
                 .desc-prd {
                     position: relative;
+                    margin-bottom: 10px;
                     .information-prd {
                         opacity: 1;
                         .transform (translateY(0px));
@@ -4715,6 +4717,7 @@ body:not(.cms-index-index) {
 }
 .product-custom-static {
     margin-top: 30px;
+    display: none;
 }
 .filter-options-block {
     .panel-heading {
@@ -4892,8 +4895,6 @@ body:not(.cms-index-index) {
     }
 }
 .text-desc{
-    font-family: "Droid Serif",serif;
-    font-style: italic;
 }
 .block-to-deals{
 
@@ -5472,7 +5473,6 @@ footer {
         color: #666666;
         font-size: 16px;
         margin-bottom: 5px;
-        font-family: "Droid Serif",serif;
         font-style: italic;
     }
     .counter {
@@ -5607,7 +5607,7 @@ footer {
     }
 }
 .products-grid .item {
-    margin-bottom: 23px;
+    margin-bottom: 0px;
 }
 // Deal
 .deals-special {
@@ -5658,7 +5658,6 @@ footer {
                 width: 25%;
                 text-align: center;
                 font-style: italic;
-                font-family: 'Droid Serif', serif;
             }
         }
     }
@@ -5698,6 +5697,9 @@ div[class^="swatch-opt-"] {
         }
         .text-desc {
             color: #212121;
+            padding: 0 35px;
+            font-size: 18px;
+            line-height: 20px;
         }
     }	
     .promo {
@@ -5780,6 +5782,7 @@ div[class^="swatch-opt-"] {
     }
 }
 .header-v4 {
+    background-color: #000;
     .navbar-collapse {
         background-color: transparent;
     }
@@ -6093,8 +6096,8 @@ body:not(.cms-index-index) .page.messages .messages .message {
 }
 .slider_mgs_carousel {
     position: relative;
-    margin-top: 264px;
-    
+    margin-top: 364px;
+
     .owl-dots {
         position: absolute;
         left: 50%;
@@ -6551,8 +6554,10 @@ body:not(.cms-index-index) .page.messages .messages .message {
 		float: left !important;
 	}
 	.page-header {
-		text-align: center;
-		padding-bottom: 30px;
+        text-align: center;
+        background-color: black;
+        padding-bottom: 0;
+        margin: 0;
 	}
 	.opc-payment {
 		.payment-methods {
@@ -6567,6 +6572,15 @@ body:not(.cms-index-index) .page.messages .messages .message {
 		}
 	}
 }
+.subtotal {display:none}
+.table-totals, .col-price {
+	display:none !important;;
+}
+.header .logo-container .logo img {
+    width: 200px !important;
+    height: auto !important;
+}
+
 
 .product-item-photo {
     height: 312px;
@@ -6620,6 +6634,33 @@ body:not(.cms-index-index) .page.messages .messages .message {
   }
 
 
+.header-sticky-menu .logo-container .logo img {
+    display:none;
+}
+.img-exp {
+    display: -webkit-box;
+    margin: 0 auto;
+}
+.block-compare {
+    display: none;
+}
+.page-main .price, .page-main .price-box .price {
+    display: none;
+}
+.cart-totals {
+    display: none;
+}
 
-
+#block-discount {
+    display: none;
+}
+.discount-code {
+    display: none;
+}
+.title-widget {
+    h3 {
+        color: #444444;
+        font-weight: 700;
+    }
+}
 

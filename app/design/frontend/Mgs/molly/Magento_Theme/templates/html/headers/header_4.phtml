@@ -12,6 +12,7 @@
 			<div class="col-lg-8 col-md-8 col-sm-7 col-xs-12 top-bar-right pull-right">
 				<div class="header-account">
 					<?php echo $block->getChildHtml('topSearch') ?>
+					<?php echo $block->getChildHtml('minicart') ?>
 					<?php include ($block->getTemplateFile('Magento_Newsletter::header-subscribe.phtml')) ?>
 					<?php echo $block->getChildHtml('store_language') ?>
 					<?php echo $block->getChildHtml('currency') ?>
@@ -27,6 +28,7 @@
 								"parentClass":"active",
 								"defaultDialogClass":"dropdown-menu",
 								"buttons":null}}'>
+								<li><a href="<?php echo $this->getUrl('wishlist') ?>">Wishlist</a></li>
 							<?php echo $block->getChildHtml('top.links') ?>
 						</ul>
 					</div>

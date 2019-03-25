@@ -24,10 +24,14 @@
 	<tbody>
 		<?php if($themeSettings['product_details']['sku']): ?>
 		<tr>
-			<td class="title"><?php /* @escapeNotVerified */ echo __('SKU') ?>:</td>
+			<td class="title"><?php /* @escapeNotVerified */ echo __('ID') ?>:</td>
 			<td class="text-desc"><?php echo $_product->getSku(); ?></td>
 		</tr>
 		<?php endif ?>
+		<tr>
+			<td class="title"><?php /* @escapeNotVerified */ echo __('Size') ?>:</td>
+			<td class="text-desc"><?php echo $_product->getSize(); ?></td>
+		</tr>
 		<?php if(count($cats) > 0): ?> 
 			<tr>
 				<td class="title"><?php /* @escapeNotVerified */ echo __('Categories') ?>:</td>

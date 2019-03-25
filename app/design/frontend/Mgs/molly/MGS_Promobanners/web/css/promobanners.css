@@ -5,7 +5,7 @@
 }
 .promobanner .text {
 	position: absolute;
-    padding: 15px;
+    padding: 0;
     z-index: 99;
 	bottom: 0;
 	color: #fff;
@@ -36,7 +36,8 @@
 .promobanner .top-middle {
 	top: 0;
 	width: 100%;
-	text-align: center;
+    text-align: center;
+    height: 0px;
 }
 .promobanner .middle-center {
 	transform: translate(-50%, -50%);

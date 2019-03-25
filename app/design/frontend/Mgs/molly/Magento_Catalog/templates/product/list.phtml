@@ -116,6 +116,16 @@ $themeSettings = $themeHelper->getThemeSettings();
 										   href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>">
 											<?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
 										</a>
+										<br/>
+											ID: <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getSku(), 'sku'); ?>
+										<br/>
+										<?php
+										 if($_helper->productAttribute($_product, $_product->getSize(), 'size')) {
+										?>	
+											Tamaño: <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getSize(), 'size'); ?>
+										<?php
+										 }
+										?>	
 									</p>
 									<?php echo $block->getProductDetailsHtml($_product); ?>
 									<div class="desc-prd">
@@ -142,7 +152,7 @@ $themeSettings = $themeHelper->getThemeSettings();
 															<button type="submit"
 																	title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
 																	class="action tocart primary">
-																<span><span class="fa fa-shopping-cart"></span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+																<span><span class="fa fa-list-alt"></span><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
 															</button>
 														</form>
 													<?php else: ?>
@@ -177,6 +187,16 @@ $themeSettings = $themeHelper->getThemeSettings();
 									<a class="product-item-link"
 									   href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>"><?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
 									</a>
+									<br/>
+											ID: <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getSku(), 'sku'); ?>
+										<br/>
+										<?php
+										 if($_helper->productAttribute($_product, $_product->getSize(), 'size')) {
+										?>	
+											Tamaño: <?php /* @escapeNotVerified */ echo $_helper->productAttribute($_product, $_product->getSize(), 'size'); ?>
+										<?php
+										 }
+										?>	
 								</p>
 								<?php /* @escapeNotVerified */ echo $block->getProductPrice($_product) ?>
 								<?php echo $block->getReviewsSummaryHtml($_product, $templateType); ?>
@@ -197,7 +217,7 @@ $themeSettings = $themeHelper->getThemeSettings();
 													<button type="submit"
 															title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
 															class="btn btn-primary">
-														<span><em class="fa fa-shopping-cart"></em><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
+														<span><em class="fa fa-list-alt"></em><?php /* @escapeNotVerified */ echo __('Add to Cart') ?></span>
 													</button>
 												</form>
 											<?php else: ?>

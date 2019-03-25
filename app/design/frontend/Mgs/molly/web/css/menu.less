@@ -37,11 +37,9 @@
         }
         & > li{
             &:last-child{
-                border-right: 1px solid rgba(255,255,255,0.2);
             }
         }
         li.level0{
-            border-left: 1px solid rgba(255,255,255,0.2);
             cursor: pointer;
             display:table-cell;
             float:none;
@@ -122,12 +120,12 @@
         }
         
         .dropdown-menu{
-            border: 1px solid #ebebeb;
+            border: 1px solid #000;
             border-radius: 0;
             box-shadow: none;
             padding: 13px 10px;
             top: auto;
-            background-color: #fff;
+            background-color: #000;
             display: block;
             margin-left: -1px;
             opacity: 0;
@@ -267,9 +265,10 @@
     }
     .navigation{
         height:auto;
+        background-color: #fff !important;
         ul.nav-main{
             li.level0{
-                height:60px;
+                height:70px;
                 & > a.level0{
                     color:#222;
                     margin: 0 25px;
