@@ -16,6 +16,18 @@
 ?>
 <?php if ($_description = $block->getCurrentCategory()->getDescription()): ?>
     <div class="category-description">
-        <?php /* @escapeNotVerified */ echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
+    <?php
+        $_desc = $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description');
+        $_desc = str_replace('<p>','', $_desc);
+        $_desc = str_replace('</p>','', $_desc);
+        $_descHtml   = '';
+
+
+        $_descHtml = '<style> .breadcrumb.text-center:after { content: "'. $_desc .'" !important; display: block;font-size: 20px;}</style>';
+
+        /* @escapeNotVerified */ echo $_descHtml;
+
+    ?>
+        <?php /* @escapeNotVerified */ //echo $this->helper('Magento\Catalog\Helper\Output')->categoryAttribute($block->getCurrentCategory(), $_description, 'description') ?>
     </div>
 <?php endif; ?>

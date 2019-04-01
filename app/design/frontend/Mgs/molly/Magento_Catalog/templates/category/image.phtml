@@ -19,7 +19,10 @@
     $_category  = $block->getCurrentCategory();
     $_imgHtml   = '';
     if ($_imgUrl = $_category->getImageUrl()) {
-        $_imgHtml = '<div class="category-image"><img src="' . $_imgUrl . '" alt="' . $block->escapeHtml($_category->getName()) . '" title="' . $block->escapeHtml($_category->getName()) . '" class="image" /></div>';
+
+        //$_imgHtml = '<div class="category-image"><img src="' . $_imgUrl . '" alt="' . $block->escapeHtml($_category->getName()) . '" title="' . $block->escapeHtml($_category->getName()) . '" class="image" /></div>';
+        $_imgHtml = '<style> .breadcrumbs { background-image: url(' . $_imgUrl . ') !important;}</style>';
+
         $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
         /* @escapeNotVerified */ echo $_imgHtml;
     }
