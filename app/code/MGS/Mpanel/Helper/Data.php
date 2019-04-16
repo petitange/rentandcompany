@@ -318,7 +318,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $newToDate = $product->getNewsToDate();
         $newToDate = date($dateTimeFormat, strtotime($newToDate));
 		if ((!(empty($newToDate) && empty($newFromDate)) && ($newFromDate < $now || empty($newFromDate)) && ($newToDate > $now || empty($newToDate)) && ($newLabel != '')) || ((empty($newToDate) && ($newFromDate < $now)) && ($newLabel != ''))) {
-			$html.='<span class="product-label new-label"><span>'.$newLabel.'</span></span>';
+			$html.='<span class="product-label new-label"><img src="/pub/media/assets/nuevo-tag.svg" /></span>';
 		}
 		
 		return $html;
