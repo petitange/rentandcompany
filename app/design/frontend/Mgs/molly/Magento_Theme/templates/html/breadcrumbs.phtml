@@ -7,6 +7,37 @@
 // @codingStandardsIgnoreFile
 
 ?>
+<?php  
+$objectManagerCms = \Magento\Framework\App\ObjectManager::getInstance();
+$cmsPage = $objectManagerCms->get('\Magento\Cms\Model\Page');
+$identifier = $cmsPage->getIdentifier();
+
+
+
+if (strpos($identifier , 'destination') !== false) {
+    $_imgUrl = "/pub/media/assets/destinations.jpg";
+} elseif (strpos($identifier , 'corporate') !== false) {
+	$_imgUrl = "/pub/media/assets/corporate.jpg";
+} elseif (strpos($identifier , 'experiencia') !== false) {
+	$_imgUrl = "/pub/media/assets/experiencias.jpg";
+} elseif (strpos($identifier , 'look') !== false) {
+	$_imgUrl = "/pub/media/assets/looks.jpg";
+} elseif (strpos($identifier , 'showroom') !== false) {
+	$_imgUrl = "/pub/media/assets/showroom.jpg";
+} elseif (strpos($identifier , 'tendencia') !== false) {
+	$_imgUrl = "/pub/media/assets/tendencias.jpg";
+} elseif (strpos($identifier , 'plano') !== false) {
+	$_imgUrl = "/pub/media/assets/planos.jpg";
+} else {
+	$_imgUrl = "";
+}
+
+if($_imgUrl !== "" ) {
+	$_imgHtml = '<style> .breadcrumbs { background-image: url(' . $_imgUrl . ') !important;}</style>';
+	/* @escapeNotVerified */ echo $_imgHtml;	
+}
+?>
+
 <?php if ($crumbs && is_array($crumbs)) : ?>
 <div class="breadcrumbs">
 	<div class="container">
