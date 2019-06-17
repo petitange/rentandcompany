@@ -1,0 +1,138 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var \Magento\Planos\Block\Planos $block */
+?>
+<link rel="stylesheet" href="pub/styles/app.css">
+<style>
+ #maincontent {
+    width: 1439px;
+ }
+</style>
+<div id="contentParent" class="wrapper"
+		style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+		unselectable="on" onselectstart="return false;">
+		<div class="terreno-dialog">
+			<h1>Paso 1: Elige las dimensiones para tu plano</h1>
+			<div class="tools">
+				<div class="input">
+					<span class="input-text">Metros de Frente:</span>
+					<input type="text" placeholder="00" id="numFrente" min="5" max="200">
+				</div>
+				<div class="input">
+					<span class="input-text">Metros de Fondo:</span>
+					<input type="text" placeholder="00" id="numFondo" min="5" max="200">
+				</div>
+				<div class="bottom">
+					<button id="createTerrenoBtn" class="btn-styles">Crear Terreno</button>
+				</div>
+			</div>
+		</div>
+		<div class="lienzo-dialog">
+			<h1>Paso 2: Integra elementos en el espacio creado</h1>
+			<div class="tools-content">
+				<div class="product-content">
+					<div class="product">
+						<div class="img">
+							<img id="product-img" src="https://via.placeholder.com/300" alt="">
+							<div class="product-description">
+								<span id="product-name">
+									Silla metalik roja
+								</span>
+								<span><strong>ID:</strong> <span id="product-id">3377</span> </span>
+							</div>
+						</div>
+						<div class="buttons">
+							<div class="description">
+								Ingresa el ID del producto que desees integrar*
+							</div>
+							<div class="input-idProduct">
+								ID: <input type="text" id="idProduct">
+							</div>
+							<div class="bottom">
+								<button class="btn-styles" id="buscarItem">Integrar a espacio</button>
+								<!-- <button>Integrar a espacio</button> -->
+							</div>
+
+						</div>
+					</div>
+					<div class="instructions">
+						<span class="bold">*Solo funcionan id's de los siguientes productos:</span>
+						<br>
+						Mesas & barras (Comensales, Periqueras, Laterales & Centrales, Barras & Contrabarras y Cocktail
+						Petite); Sillas & Bancos; Sillones & Salas (Colecciones, Sillas de Acento, Bancas & Taburetes).
+					</div>
+				</div>
+				<div class="aditional-tools">
+					Elementos decorativos y de apoyo
+					<div class="tools">
+						<div class="tool uno" id="btnTool1" style="display:none;">
+							<span class="dd">
+								<div class="tool" id="btnTool1A">Mesa Circular 1.5m</div>
+								<div class="tool" id="btnTool1B">Mesa Circular 2m</div>
+								<div class="tool" id="btnTool1C">Mesa Circular 3m</div>
+								<div class="tool" id="btnTool1D">Mesa Circular</div>
+							</span>
+						</div>
+						<div class="tool dos" id="btnTool2" style="display:none;">
+							<span class="dd">
+								<div class="tool" id="btnTool2A">Mesa Cuadrada 1.5m</div>
+								<div class="tool" id="btnTool2B">Mesa Cuadrada 2m</div>
+								<div class="tool" id="btnTool2C">Mesa Cuadrada 3m</div>
+								<div class="tool" id="btnTool2D">Mesa Cuadrada</div>
+							</span>
+						</div>
+						<div class="tool tres" id="btnTool3"></div>
+						<div class="tool cuatro" id="btnTool4" style="display:none;">
+							<span class="dd">
+								<div class="tool" id="btnTool4A">Modelo 800, 0.81 x 0.63 m</div>
+								<div class="tool" id="btnTool4B">Modelo 700, 0.67 x 0.65 m </div>
+								<div class="tool" id="btnTool4C">Modelo 770, 0.51 x 0.6 m</div>
+								<div class="tool" id="btnTool4D">Modelo 100, 0.8 x 0.8 m</div>
+							</span>
+						</div>
+						<div class="tool cinco" id="btnTool5"></div>
+
+						<div class="tool seis" id="btnTool6" style="display: none;">LI</div>
+						<div class="tool siete" id="btnTool7" alt="Borra Todo">Borrar Todo</div>
+						<div class="tool nueve" id="btnTool9" alt="Borra Elemento">Borrar</div>
+						<div class="tool ocho" id="btnTool8">Rotar</div><br>
+						<!-- 
+						-->
+						<div class="tool2" style="display:none;">W: <input type="number" id="numW" value="1"> m</div>
+						<div class="tool2" style="display:none;">H: <input type="number" id="numH" value="1"> m</div>
+						<input type="text" id="id_element" value="1" style="display:none;">
+						<input type="text" id="type_element" value="1" style="display:none;">
+						<div class="desc">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="lienzoHtml">
+				<div class="H01">10 metros</div>
+				<div class="V01">5 metros</div>
+				<div id="canvasDiv2">
+					<canvas id="kanvas"></canvas>
+				</div>
+			</div>
+			<div class="bottom">
+				<button id="createPdfBtn" class="btn-styles">Crear PDF</button>
+				<button id="addQuotation" class="btn-styles">Añadir a la cotización</button>
+				<button id="createNewBtn" class="btn-styles">Crear Nuevo Terreno</button>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="pub/js/html2canvas.min.js"></script>
+	<script src="pub/js/jspdf.min.js"></script>
+	<script src="pub/js/jquery-1.7.2.min.js"></script>
+	<script src="pub/js/jquery-ui.min.js"></script>
+	<script src="pub/js/products.js"></script>
+	<script src="pub/js/coreB.js"></script>
