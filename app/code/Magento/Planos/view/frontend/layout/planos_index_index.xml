@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+            <css src="css/app.css" />
+            <script src="js/myjs.js"/>
+          	<script src="js/html2canvas.min.js" />
+            <script src="js/jspdf.min.js"/>
+            <script src="js/jquery-1.7.2.min.js"/>
+            <script src="js/jquery-ui.min.js"/>
+            <script src="js/products.js"/>
+            <script src="js/coreB.js"/>
+     </head> 
     <body>
         <referenceContainer name="content">
             <block class="Magento\Planos\Block\Planos" name="planos" template="Magento_Planos::planos.phtml" cacheable="false"></block>
