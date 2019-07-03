@@ -1,4 +1,5 @@
-console.log("products", products);
+console.log("products-planos", products);
+jQuery.noConflict()
 // Elemento de menú
 var CoreTerrenoApp  = function() {
 	this.menu = [];
@@ -11,10 +12,10 @@ var CoreTerrenoApp  = function() {
 	this.clickDrag = new Array();
 	this.canvasCtx = null;
 	this.canvas = null;
-	this.c = $('#canvasDiv2');
+this.c = jQuery('#canvasDiv2');
 	this.rotateMode = false;
 	this.deleteMode = false;
-	this.$dragging = null;
+this.jQuerydragging = null;
 	this.objSelected = null;
 	this.el_lw = 0;
 	this.el_lh = 0;
@@ -47,11 +48,14 @@ CoreTerrenoApp.prototype = {
 
 	},
 	setEvents: function(ctx) {
-		$('#createTerrenoBtn').click(function(e) {
-			ctx.mFrente = $('#numFrente').val();
-			ctx.mFondo = $('#numFondo').val();
+	jQuery('#createTerrenoBtn').click(function(e) {
+		ctx.mFrente = jQuery('#numFrente').val();
+		ctx.mFondo = jQuery('#numFondo').val();
 
-			onlyNumbers = /^[0-9]+$/;
+		onlyNumbers = /^[0-9]+$/;
+
+		console.log("yorch ctx.mFrente", ctx.mFrente);
+		console.log("yorch ctx.mFondo", ctx.mFondo);
 
 			if(ctx.mFrente === "" || ctx.mFondo === ""){
 				alert("Debes ingresar los metros de frente y fondo que tiene tu espacio.");
@@ -62,28 +66,29 @@ CoreTerrenoApp.prototype = {
 				return;
 			}
 
-			$('.lienzo-dialog').show();
-			$('.terreno-dialog').hide();
+		jQuery('.lienzo-dialog').show();
+		jQuery('.terreno-dialog').hide();
 			console.log(ctx.mFrente+'x'+ctx.mFondo);
 			ctx.getVisualScale(ctx);
 			console.log("ctx.mFrente", ctx.mFrente);
 			console.log("ctx.mFondo", ctx.mFondo);
 			console.log("ctx.scale", ctx.scale);
 			console.log("ctx.ratio", ctx.ratio);
-			$('.lienzoHtml').width((ctx.mFrente*ctx.scale*ctx.ratio)-200);
-			$('.lienzoHtml').height((ctx.mFondo*ctx.scale*ctx.ratio)-200);
-			$('.lienzoHtml .H01').html(ctx.mFrente+' m');
-			$('.lienzoHtml .V01').html(ctx.mFondo+' m');
+		jQuery('.lienzoHtml').width((ctx.mFrente*ctx.scale*ctx.ratio)-200);
+		jQuery('.lienzoHtml').height((ctx.mFondo*ctx.scale*ctx.ratio)-200);
+		jQuery('.lienzoHtml .H01').html(ctx.mFrente+' m');
+		jQuery('.lienzoHtml .V01').html(ctx.mFondo+' m');
 			ctx.initCanvas(ctx);
 		});
 
-		$('#createNewBtn').click(function(e) {
-			$('.lienzo-dialog').hide();
-			$('.terreno-dialog').show();
+	jQuery('#createNewBtn').click(function(e) {
+		// jQuery('.lienzo-dialog').hide();
+		// jQuery('.terreno-dialog').show();
+		window.location.href = "http://132.148.10.55/rentandcompany/planos/";
 		});
 
-		$('.tool').hover(function() {
-			var id = $(this).attr('id');
+	jQuery('.tool').hover(function() {
+		var id = jQuery(this).attr('id');
 			console.log(id);
 			var msg = '';
 			if( id == 'btnTool1' ) {
@@ -110,28 +115,83 @@ CoreTerrenoApp.prototype = {
 			else if( id == 'btnTool9' ) {
 				msg = 'Borrar Elemento';
 			}
-			$('.lienzo-dialog .desc').html(msg);
+		jQuery('.lienzo-dialog .desc').html(msg);
 		},function() {
-			$('.lienzo-dialog .desc').html('&nbsp;');
+		jQuery('.lienzo-dialog .desc').html('&nbsp;');
 		});
 
-		$('#createPdfBtn').click(function(e) {
+		jQuery('#createPdfBtn').click(function(e) {
 			var pdf = new jsPDF({
-				orientation: 'landscape',
+				orientation: 'portrait',
+				unit: 'mm',
+				format: 'letter' // 215 x 279.4mm
 			});
 			pdf.text(20, 20, 'Tu terreno creado:');
 
-			var frente = document.querySelector(".lienzoHtml").style.width;
-			var fondo = document.querySelector(".lienzoHtml").style.height;
+			var wi = Number(document.querySelector(".lienzoHtml").style.width.slice(0,-2));
+			var hi = Number(document.querySelector(".lienzoHtml").style.height.slice(0,-2));
 
-			console.log("frente: ", frente);
-			console.log("fondo: ", fondo);
+			console.log("canvas frente: ", wi); // en px
+			console.log("canvas fondo: ", hi); // en px
+			// sheet bounds 205 mm x 240 mm
+
+			var isLandscape = (wi >= hi);
+			var ratio = wi/hi
+			console.log("isLandscape: " + isLandscape);
+			console.log("ratio: " + ratio);
+
+			var w = 0, h = 0;
+			if( isLandscape ) {
+				w = 1;
+				h = 1/ratio;
+			}
+			else {
+				w = ratio;
+				h = 1;
+			}
+
+			console.log("w: "+ w +", h: " +h);
+
+			var wf = 0, hf = 0;
+			var alfa = 1;
+			var beta = 1;
+			if( isLandscape ) {
+				wf = w * alfa;
+				hf = h * alfa;
+			}
+			else {
+				wf = w * beta;
+				hf = h * beta;
+			}
+			console.log(pdf);
+			console.log(pdf.internal);
+			console.log(pdf.internal.pageSize);
+			var wdoc = pdf.internal.pageSize.width-10;
+			var hdoc = pdf.internal.pageSize.height-40;
+			// bounds
+			console.log("wdoc: "+ wdoc +", hdoc: " +hdoc);
+
+			var wfinal = 1;
+			var hfinal = 1;
+
+			if( isLandscape ) {
+				wfinal = wdoc;
+				hfinal = wfinal * h;
+			}
+			else {
+				hfinal = hdoc;
+				wfinal = hdoc *ratio;
+			}
+			console.log("wfinal: "+ wfinal +", hfinal: " +hfinal);
+
+			window.scrollTo(0,0);
   			//pdf.addImage(imgData, 'JPEG', 0, 0);
 			html2canvas(document.querySelector(".lienzoHtml")).then(canvas => {
 			    //document.body.appendChild(canvas)
 			    var imgData = canvas.toDataURL("image/jpeg", 1.0);
 				console.log(imgData);
-			    pdf.addImage(imgData, 'JPEG', 0, 30, parseInt(frente)/5, parseInt(fondo)/5);
+				//jQuery('#dudu').attr('src', imgData);
+			    pdf.addImage(imgData, 'JPEG', 5, 30, wfinal, hfinal);
 
 			    pdf.save("terreno_"+ Date.now() +".pdf");
 			});
@@ -197,108 +257,110 @@ CoreTerrenoApp.prototype = {
 	toggleDeletion: function(ctx) {
 		ctx.deleteMode = !ctx.deleteMode;
 	    console.log('deleteMode:' + ctx.deleteMode);
-	    $("#btnTool9").css('background',ctx.deleteMode?'#f44':'#fff');
+	jQuery("#btnTool9").css('background',ctx.deleteMode?'#f44':'#fff');
 	},
 	setDeletableElement: function(ctx, elSelector) {
-		//$(elSelector).click(function(e) {
-	    $('body').on("click", "#canvasDiv2 div", function(e) {
+	//jQuery(elSelector).click(function(e) {
+	jQuery('body').on("click", "#canvasDiv2 div", function(e) {
 	    	console.log('click');
-	    	ctx.objSelected = $(this);
-	    	$("#canvasDiv2 div").removeClass('OSel');
-	    	$(this).addClass('OSel');
+		ctx.objSelected = jQuery(this);
+		jQuery("#canvasDiv2 div").removeClass('OSel');
+		jQuery(this).addClass('OSel');
 	    	if(ctx.deleteMode) {
-	    		$(this).remove();
+			jQuery(this).remove();
 	    	}
 	    	//elseif(ctx.rotateMode)
 	    });
 	},
 	setToolboxEvents: function(ctx) {
-		$('#btnTool1').click(function(e) {
+	jQuery('#btnTool1').click(function(e) {
 			//ctx.drawCircularTable(ctx);
 			ctx.toggleDropdown(ctx, 1);
 		});
-		$('#btnTool2').click(function(e) {
+	jQuery('#btnTool2').click(function(e) {
 			//ctx.drawSquareTable(ctx);
 			ctx.toggleDropdown(ctx, 2);
 		});
-		$('#btnTool3').click(function(e) {
+	jQuery('#btnTool3').click(function(e) {
 			ctx.unToggleAllButton(ctx);
 			ctx.drawLine(ctx);
 		});
-		$('#btnTool4').click(function(e) {
+	jQuery('#btnTool4').click(function(e) {
 			//ctx.drawChair(ctx);
 			ctx.toggleDropdown(ctx, 4);
 		});
-		$('#btnTool5').click(function(e) {
+	jQuery('#btnTool5').click(function(e) {
 			ctx.unToggleAllButton(ctx);
 			ctx.drawTree(ctx);
 		});
-		$('#btnTool7').click(function(e) {
+	jQuery('#btnTool7').click(function(e) {
 			ctx.unToggleAllButton(ctx);
 			ctx.clearCanvas(ctx);
 		});
-		$('#btnTool8').click(function(e) {
+	jQuery('#btnTool8').click(function(e) {
 			ctx.unToggleAllButton(ctx);
 			ctx.rotateObject(ctx);
 		});
-		$('#btnTool9').click(function(e) {
+	jQuery('#btnTool9').click(function(e) {
 			ctx.unToggleAllButton(ctx);
 			ctx.toggleDeletion(ctx);
 		});
 
-		$('#btnTool1A').click(function(e) {
-			// $('#numW').val(5);
-			// $('#numH').val(5);
+	jQuery('#btnTool1A').click(function(e) {
+		// jQuery('#numW').val(5);
+		// jQuery('#numH').val(5);
 			ctx.drawCircularTable(ctx);
 		});
-		$('#btnTool1B').click(function(e) {
-			// $('#numW').val(2);
-			// $('#numH').val(2);
+	jQuery('#btnTool1B').click(function(e) {
+		// jQuery('#numW').val(2);
+		// jQuery('#numH').val(2);
 			ctx.drawCircularTable(ctx);
 		});
-		$('#btnTool1C').click(function(e) {
-			// $('#numW').val(3);
-			// $('#numH').val(3);
+	jQuery('#btnTool1C').click(function(e) {
+		// jQuery('#numW').val(3);
+		// jQuery('#numH').val(3);
 			ctx.drawCircularTable(ctx);
 		});
-		$('#btnTool1D').click(function(e) {
-			// $('#numW').val(.5);
-			// $('#numH').val(.5);
+	jQuery('#btnTool1D').click(function(e) {
+		// jQuery('#numW').val(.5);
+		// jQuery('#numH').val(.5);
 			ctx.drawCircularTable(ctx);
 		});
-		$('#btnTool2A').click(function(e) {
-			// $('#numW').val(1.5);
-			// $('#numH').val(1.5);
+	jQuery('#btnTool2A').click(function(e) {
+		// jQuery('#numW').val(1.5);
+		// jQuery('#numH').val(1.5);
 			ctx.drawSquareTable(ctx);
 		});
-		$('#btnTool2B').click(function(e) {
-			// $('#numW').val(2);
-			// $('#numH').val(2);
+	jQuery('#btnTool2B').click(function(e) {
+		// jQuery('#numW').val(2);
+		// jQuery('#numH').val(2);
 			ctx.drawSquareTable(ctx);
 		});
-		$('#btnTool2C').click(function(e) {
-			// $('#numW').val(3);
-			// $('#numH').val(3);
+	jQuery('#btnTool2C').click(function(e) {
+		// jQuery('#numW').val(3);
+		// jQuery('#numH').val(3);
 			ctx.drawSquareTable(ctx);
 		});
-		$('#btnTool2D').click(function(e) {
+	jQuery('#btnTool2D').click(function(e) {
 			ctx.drawSquareTable(ctx);
 		});
-		$('#btnTool4A').click(function(e) {
-			ctx.drawChair(ctx,2);
+	// CURVO	
+	jQuery('#btnTool4A').click(function(e) {
+			ctx.drawChair(ctx, 2);
 		});
-		$('#btnTool4B').click(function(e) {
-			ctx.drawChair(ctx,3);
+	// CONCAVO
+	jQuery('#btnTool4B').click(function(e) {
+			ctx.drawChair(ctx, 3);
 		});
-		$('#btnTool4C').click(function(e) {
+	jQuery('#btnTool4C').click(function(e) {
 			ctx.drawChair(ctx,4);
 		});
-		$('#btnTool4D').click(function(e) {
+	jQuery('#btnTool4D').click(function(e) {
 			ctx.drawChair(ctx,1);
 		});
-		$("#buscarItem").click(function(){
-			var inputIdProduct = $("#idProduct").val();
-			var host = 'http://ec2-13-58-120-128.us-east-2.compute.amazonaws.com/';
+	jQuery("#buscarItem").click(function(){
+		var inputIdProduct = jQuery("#idProduct").val();
+			var host = 'http://132.148.10.55/rentandcompany/';
 
 			if(inputIdProduct !== ''){
 				console.log("se ha hecho click", inputIdProduct);
@@ -308,29 +370,36 @@ CoreTerrenoApp.prototype = {
 
 				if(Array.isArray(product) && product.length > 0){
 					console.log("product", product);
-					$("#product-name").html(product[0].name);
-					$("#product-id").html(product[0].id);
-					$("#product-img").attr({"src" : host + product[0].url});
+					jQuery("#product-name").html(product[0].name);
+					jQuery("#product-id").html(product[0].id);
+					jQuery("#product-img").attr({"src" : host + product[0].url});
 
 					var W = product[0].size.split("X")[0];
 					var H = product[0].size.split("X")[1];
 
-					$('#numW').val(W);
-					$('#numH').val(H);
-					$('#id_element').val(product[0].id);
-					$('#type_element').val(product[0].type);
-
+					jQuery('#numW').val(W);
+					jQuery('#numH').val(H);
+					jQuery('#id_element').val(product[0].id);
+					jQuery('#type_element').val(product[0].type);
+					console.log("");
 					switch(product[0].type){
-						case'Mesas':
-							if(product[0].name.indexOf("REDONDA") != -1) {
-								$('#numW').val(W);
-								$('#numH').val(W);
-								$('#btnTool1A').click();
+						case'Mesa':
+							if(product[0].shape === "circulo" || product[0].shape === "ovalo") {
+								jQuery('#numW').val(W);
+								jQuery('#numH').val(W);
+								jQuery('#btnTool1A').click();
 							}
-							else  $('#btnTool2A').click();
+							else  jQuery('#btnTool2A').click();
 							break;
-						case'Sillas':
-							$('#btnTool4D').click();
+						case'Silla':
+							jQuery('#btnTool4D').click();
+							break;
+						case'Sillon':
+							if(product[0].shape === "concavo") {
+								jQuery('#btnTool4A').click();
+							} else if(product[0].shape === "curvo"){
+								jQuery('#btnTool4B').click();
+							}
 							break;
 					}
 					// if(product[0].type && product[0].type === 'Mesas' && )
@@ -342,48 +411,82 @@ CoreTerrenoApp.prototype = {
 				alert("Debes agregar un producto");
 			}
 		});
-		$("#addQuotation").click(function(){
-			// sillas="[{id:1, qty: 5}]"&mesas=[{id:4, qty: 9}, {id: 78, qty; 4}]
-			console.log("agregar a cotización --------------------");
-			var k = $("#kanvas").siblings();
-			console.log(k);
-			[...k].map(function(item){
-				console.log(item);
+	jQuery("#addQuotation").click(function(){
+			// products=1022=10,2299=5
+			var k = jQuery("#kanvas").siblings();
+			var uniqueItems = [];
+			var allItems = [];
+			var url = 'http://132.148.10.55/rentandcompany/pedido?products=';
+			
+			k.map(function(item){
+				console.log('items --- item: ',item);
+				var i = k[item].getAttribute('data-element') ? k[item].getAttribute('data-element').split("-")[0] : null;
+				console.log('items --- i:', i);
+				if(i !== null){
+					if(uniqueItems.indexOf(i) === -1){
+						uniqueItems.push(i);
+					}
+					allItems.push(i);
+				}
 			});
+
+			console.log("uniqueItems", uniqueItems);
+			console.log("allItems", allItems);
+
+
+			for (let i = 0; i < uniqueItems.length; i++) {
+
+				var product = uniqueItems[i];
+				var counter = 0;
+				
+				for (let j = 0; j < allItems.length; j++) {
+					if(product === allItems[j]){
+						counter++;
+					}
+				}
+
+				url += product + '=' + counter + ',';
+				
+			}
+
+			console.log('url: ', url);
+			
+			window.location.href = url.slice(0, -1);
+			
 		});
 	},
 	toggleDropdown: function(ctx, id) {
 		
 		var sel2 = '#btnTool' + id;
 		var sel = sel2 + ' span';
-		var d = $(sel).data('tg');
+	var d = jQuery(sel).data('tg');
 
 		ctx.unToggleAllButton(ctx);
 		
 		if( d ) {
-			$(sel).hide();
-			$(sel2).removeClass('toggled');
-			$(sel).data('tg', false);
+		jQuery(sel).hide();
+		jQuery(sel2).removeClass('toggled');
+		jQuery(sel).data('tg', false);
 		}
 		else {
-			$(sel).show();
-			$(sel2).addClass('toggled');
-			$(sel).data('tg', true);
+		jQuery(sel).show();
+		jQuery(sel2).addClass('toggled');
+		jQuery(sel).data('tg', true);
 		}
 		
 	},
 	unToggleAllButton: function(ctx) {
 		var sel3 = '.tool.toggled';
-		$(sel3+ ' .dd').hide();
-		$(sel3+' span').data('tg', false);
-		$(sel3).removeClass('toggled');
+	jQuery(sel3+ ' .dd').hide();
+	jQuery(sel3+' span').data('tg', false);
+	jQuery(sel3).removeClass('toggled');
 	},
 	clearCanvas: function(ctx) {
 		//var txt;
 		var r = confirm("Se borrara completamente el diseno, esta operacion es irreversible, ¿desea continuar?.");
 		if (r == true) {
 		    //txt = "You pressed OK!";
-		    $('#canvasDiv2 div').remove();
+		jQuery('#canvasDiv2 div').remove();
 		    ctx.canvasCtx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 		} else {
 		    //txt = "You pressed Cancel!";
@@ -413,8 +516,8 @@ CoreTerrenoApp.prototype = {
   		}
 	},*/
 	addDraggable: function(ctx, id, stopCallback) {
-		//$('#'+prefix+'-'+ctx.objId).draggable({
-		$('#'+id).draggable({
+	//jQuery('#'+prefix+'-'+ctx.objId).draggable({
+	jQuery('#'+id).draggable({
     		containment: '#canvasDiv2',
     		stop: function(event, ui) {
     			console.log(stopCallback);
@@ -426,61 +529,55 @@ CoreTerrenoApp.prototype = {
     	//ctx.objId++;
 	},
 	drawSquareTable: function(ctx) {
-    	var w = $('#numW').val()*ctx.scale;
-		var h = $('#numH').val()*ctx.scale;
-		var id = $('#id_element').val();
-		var type = $('#type_element').val();
+	var w = jQuery('#numW').val()*ctx.scale;
+	var h = jQuery('#numH').val()*ctx.scale;
+	var id = jQuery('#id_element').val();
+	var type = jQuery('#type_element').val();
 
     	var style = 'style="width:'+w+'px; height:'+h+'px;"';
     	ctx.c.append('<div id="osq-'+ctx.objId+'" class="OSQ1" '+style+' data-element="'+ id +'-'+ type +'" ></div>');
     	ctx.addDraggable(ctx,'osq-'+ctx.objId+'');
-    	$('#osq-'+ctx.objId).width(w*ctx.ratio);
-		$('#osq-'+ctx.objId).height(h*ctx.ratio);
+	jQuery('#osq-'+ctx.objId).width(w*ctx.ratio);
+	jQuery('#osq-'+ctx.objId).height(h*ctx.ratio);
     	ctx.objId++;
 	},
 	drawCircularTable: function(ctx) {
 
-		console.log( $('#numW').val() + ' ' + $('#numH').val() );
-		var w = $('#numW').val()*ctx.scale;
-    	var h = $('#numH').val()*ctx.scale;
-		var r = $('#numW').val()*ctx.scale/.5;
-		var id = $('#id_element').val();
-		var type = $('#type_element').val();
+	console.log( jQuery('#numW').val() + ' ' + jQuery('#numH').val() );
+	var w = jQuery('#numW').val()*ctx.scale;
+	var h = jQuery('#numH').val()*ctx.scale;
+	var r = jQuery('#numW').val()*ctx.scale/.5;
+	var id = jQuery('#id_element').val();
+	var type = jQuery('#type_element').val();
 
     	var style = 'style="width:'+w+'px; height:'+h+'px; border-radius:'+r+'px;"';
     	ctx.c.append('<div id="ocl-'+ctx.objId+'" class="OCL1" '+style+' data-element="'+ id +'-'+ type +'" ></div>');
     	ctx.addDraggable(ctx,'ocl-'+ctx.objId+'');
-    	$('#ocl-'+ctx.objId).width(w*ctx.ratio); // (80*ctx.ratio
-		$('#ocl-'+ctx.objId).height(h*ctx.ratio);
+	jQuery('#ocl-'+ctx.objId).width(w*ctx.ratio); // (80*ctx.ratio
+	jQuery('#ocl-'+ctx.objId).height(h*ctx.ratio);
     	ctx.objId++;
 	},
 	drawChair: function(ctx, typeId) {
-		var id = $('#id_element').val();
-		var type = $('#type_element').val();
+	var id = jQuery('#id_element').val();
+	var type = jQuery('#type_element').val();
 		ctx.c.append('<div id="och-'+ctx.objId+'" class="OCH'+typeId+'" data-element="'+ id +'-'+ type +'" ></div>');
 		ctx.addDraggable(ctx,'och-'+ctx.objId+'');
 		var w = 42, h = 42;
-		if(typeId == 2) {
-			w = 54;
+		if(typeId == 2 || typeId == 3) {
+			w = jQuery('#numW').val()*ctx.scale;
+			h = jQuery('#numH').val()*ctx.scale;
 		}
-		else if(typeId == 3) {
-			w = 45;
-			h = 43;
-		}
-		else if(typeId == 4) {
-			w = 34;
-			h = 40;
-		}
+
 		
-		$('#och-'+ctx.objId).width(w*ctx.ratio); // // 42*ctx.ratio
-		$('#och-'+ctx.objId).height(h*ctx.ratio);
+	jQuery('#och-'+ctx.objId).width(w*ctx.ratio); // // 42*ctx.ratio
+	jQuery('#och-'+ctx.objId).height(h*ctx.ratio);
 		ctx.objId++;
 	},
 	drawTree: function(ctx) {
 		ctx.c.append('<div id="otr-'+ctx.objId+'" class="OTR1"></div>');
 		ctx.addDraggable(ctx,'otr-'+ctx.objId+'');
-		$('#otr-'+ctx.objId).width(80*ctx.ratio);
-		$('#otr-'+ctx.objId).height(80*ctx.ratio);
+	jQuery('#otr-'+ctx.objId).width(80*ctx.ratio);
+	jQuery('#otr-'+ctx.objId).height(80*ctx.ratio);
 		ctx.objId++;
 	},
 	drawLine: function(ctx) {
@@ -499,7 +596,7 @@ CoreTerrenoApp.prototype = {
 			ctx.drawAllLines(ctx);
 		});
 		ctx.c.append('<div class="OLN1" id="'+lineObj.pfin+'"></div>');
-		$('#'+lineObj.pfin).css('top','200px');
+	jQuery('#'+lineObj.pfin).css('top','200px');
 		ctx.addDraggable(ctx,lineObj.pfin,function(e, ui) {
 			//ctx.drawCanvasLine(ctx, lineObj);
 			ctx.drawAllLines(ctx);
@@ -523,8 +620,8 @@ CoreTerrenoApp.prototype = {
 		ctx.canvasCtx.fillStyle = "#FF0000";
 		ctx.canvasCtx.beginPath();
         ctx.canvasCtx.lineWidth = 5;
-        var el1pos = $('#'+lineObj.pini).position();
-        var el2pos = $('#'+lineObj.pfin).position();
+	var el1pos = jQuery('#'+lineObj.pini).position();
+	var el2pos = jQuery('#'+lineObj.pfin).position();
         console.log(el1pos);
         console.log(el2pos);
         var fs = 1;
@@ -536,6 +633,6 @@ CoreTerrenoApp.prototype = {
 
 var CoreTerrenoAppInstance = null;
 
-$(function() {
+jQuery(function() {
 	CoreTerrenoAppInstance = new CoreTerrenoApp();
 });

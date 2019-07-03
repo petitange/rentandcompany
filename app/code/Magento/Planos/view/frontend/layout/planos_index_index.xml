@@ -2,17 +2,21 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
             <css src="css/app.css" />
-            <script src="js/myjs.js"/>
-          	<script src="js/html2canvas.min.js" />
-            <script src="js/jspdf.min.js"/>
-            <script src="js/jquery-1.7.2.min.js"/>
-            <script src="js/jquery-ui.min.js"/>
-            <script src="js/products.js"/>
-            <script src="js/coreB.js"/>
+            <remove src="requirejs/require.js"/>
      </head> 
     <body>
         <referenceContainer name="content">
             <block class="Magento\Planos\Block\Planos" name="planos" template="Magento_Planos::planos.phtml" cacheable="false"></block>
         </referenceContainer>
+        <referenceContainer name="header.container">
+            <referenceBlock name="minicart" remove="true"/>
+        </referenceContainer>
+        <referenceBlock name="top.links">
+        <referenceBlock name="register-link" remove="true" />           <!--for Create Account Link-->
+        <referenceBlock name="authorization-link" remove="true" />      <!--for Sign In Link  -->
+        <referenceBlock name="wish-list-link" remove="true" />          <!--for WishList Link-->
+        <referenceBlock name="my-account-link" remove="true" />         <!--for My Account Link-->
+
+    </referenceBlock>
     </body>
 </page>
