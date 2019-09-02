@@ -19,9 +19,14 @@ $themeSettings = $themeHelper->getThemeSettings();
 ?>
 <?php if($themeSettings['contact_google_map']['display_google_map'] && ($themeSettings['contact_google_map']['address_google_map'] !='')): ?>
 	<?php $image = $currentUrl.'map/'.$themeSettings['contact_google_map']['pin_google_map'] ?>
-	<div class="map-container nopadding" style="margin-bottom: 30px;">
+	<div class="map-container nopadding col-lg-6" style="margin-bottom: 30px;">
 		<!--div id="map" style="height: 500px;"></div-->
 		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6620478279387!2d-99.21394508538042!3d19.427002586887465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d201f52c221c1b%3A0xadd1f18a29744bd9!2sAvenida+Prado+Norte+460%2C+Lomas+-+Virreyes%2C+Lomas+de+Chapultepec+V+Secc%2C+11000+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1sen!2smx!4v1545197786158" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div class="row">
+			<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('contact_infomation_block')->toHtml();?>
+		</div>	
+	</div>
 	</div>
 	
 	<script src="http://maps.google.com/maps/api/js?key=AIzaSyBZqRRixboWggokB3fxhMpFbR9cIfe5pI4"></script>
@@ -90,3 +95,63 @@ $themeSettings = $themeHelper->getThemeSettings();
 	});
 	</script>
 <?php endif ?>
+
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="col-lg-6">
+	<div class="title-center title-contact-form">
+		<h3 class="heading text-uppercase"><span>CONTÁCTANOS
+	<?php /* @escapeNotVerified  echo __('Get in touch') */?></span></h3>
+		<div class="text-desc"> A la brevedad, una de nuestras ejecutivas responderá tu mensaje.<?php /* @escapeNotVerified echo __('Pellentesque id sem in nisl malesuada rhoncus')*/  ?></div>		
+	</div>
+	<div class="row">
+		<div class="contact-form col-lg-12 col-md-12 col-md-push-0 col-sm-8 col-sm-push-2 col-xs-12 col-xs-push-0 text-center">
+			<form class="form contact"
+				action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+				id="contact-form"
+				method="post"
+				data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>"
+				data-mage-init='{"validation":{}}'>
+				<fieldset class="fieldset">
+					<div class="field name required">
+						<div class="control">
+							<input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" placeholder="<?php /* @escapeNotVerified */ echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text" type="text" data-validate="{required:true}"/>
+						</div>
+					</div>
+					<div class="field email required">
+						<div class="control">
+							<input name="email" placeholder="<?php /* @escapeNotVerified */ echo __('Email') ?>" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+						</div>
+					</div>
+					<div class="field telephone">
+						<div class="control">
+							<input name="telephone" placeholder="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" id="telephone" title="<?php /* @escapeNotVerified */ echo __('Phone Number') ?>" value="" class="input-text" type="text" />
+						</div>
+					</div>
+					<div class="field comment required">
+						<div class="control">
+							<textarea placeholder="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('What’s on your mind?') ?>" class="input-text" cols="5" rows="8" data-validate="{required:true}"></textarea>
+						</div>
+					</div>
+					<?php echo $block->getChildHtml('form.additional.info'); ?>
+				</fieldset>
+				<div class="actions-toolbar">
+					<div class="primary text-center">
+						<input type="hidden" name="hideit" id="hideit" value="" />
+						<button type="submit" title="<?php /* @escapeNotVerified */ echo __('Send Message') ?>" class="action submit primary btn btn-lg btn-primary">
+							<span>ENVIAR MENSAJE<?php /* @escapeNotVerified  echo __('Send Message') */?></span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
