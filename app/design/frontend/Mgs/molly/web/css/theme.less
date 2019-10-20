@@ -2806,7 +2806,7 @@ body:not(.cms-index-index) {
             & > span {
                 color: #222;
                 &:before {
-                    background: #ff5501;
+                    background: #222;
                 }
             }
             & > span:after {
@@ -2814,7 +2814,7 @@ body:not(.cms-index-index) {
                 content: "\f00c";
             }
             &:before {
-                background: #ff5501;
+                background: #222;
             }
         }
     }
@@ -2836,12 +2836,12 @@ body:not(.cms-index-index) {
         .step-content {
             margin: 0 0 40px;
             .shipping-address-item.selected-item {
-                border-color: #ff5501;
+                border-color: #222;
                 .action-select-shipping-item {
                     visibility: hidden;
                 }
                 &:after {
-                    background: #ff5501 none repeat scroll 0 0;
+                    background: #222 none repeat scroll 0 0;
                     color: #fff;
                     content: "\f00c";
                     font-family: FontAwesome;
@@ -4352,7 +4352,7 @@ body:not(.cms-index-index) {
                 .product-item-name {
                     font-size: 16px;
                     font-weight: 400;
-                    margin-bottom: 8px;			
+                    min-height: 50px;		
                 }
                 .top-desc {
                     padding-bottom: 7px;
@@ -4414,7 +4414,7 @@ body:not(.cms-index-index) {
                 }
                 .desc-prd {
                     position: relative;
-                    margin-bottom: 10px;
+                    margin-top: -15px;
                     .information-prd {
                         opacity: 1;
                         .transform (translateY(0px));
@@ -6747,7 +6747,7 @@ z-index: 47;
   padding-left: 25px;
   padding-right: 30px;
   position: absolute;
-  bottom: 146px;
+  bottom: 25%;
   right: 0px;
 }
 
@@ -6906,11 +6906,20 @@ z-index: 47;
   .cms-servicios-especiales h3 {
     padding: 0px 0 10px 0!important;
     margin-top: 10px;
+    line-height: 22px;
   }
   
   .cms-servicios-especiales .column.main {
     margin-top: 15px;
   }
+}
+
+.cms-showroom .breadcrumbs {
+    display: none;
+}
+
+.owl-dots {
+    display: none !important;
 }
 
 @media (min-width:992px) {
@@ -6965,10 +6974,6 @@ z-index: 47;
       color: #222 !important;
     margin: 0 25px;
       border: none;
-  }
-  
-  .cms-showroom .breadcrumbs {
-    display: none;
   }
   
   .cms-showroom .owl-item {
@@ -7059,8 +7064,11 @@ z-index: 47;
   
   .main-category {
     width: 92%;
-    margin: 30px auto 0px;
-    height: auto;
+    margin-top: 55%;
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 230px;
+    transform: translateY(-50%);
   }
 
 .bg-title.main-category:before {
@@ -7068,7 +7076,71 @@ z-index: 47;
     position: absolute;
     width: 30px;
     height: 30px;
+    margin-right: 1%;
     background: url('http://132.148.10.55/rentandcompany/pub/media/assets/logo-rent-dorado.svg');
-    top: 20px;
+    top: -7%;
     right: 45%;
+}
+
+.planos-index-index #maincontent {
+  width: 100%;
+}
+
+div[name='shippingAddress.country_id'] {
+    display: none;
+}
+
+div[name='shippingAddress.postcode'] {
+    display: none;
+}
+
+.authentication-wrapper {
+ display: none;
+}
+
+#top-cart-btn-checkout {
+    color: black;
+}
+
+.bg-title.main-category.slider-left {
+    position: absolute;
+    margin-top: 0;
+    top: 50%;
+    width: 30%;
+    left: 10%;
+}
+
+.bg-title.main-category.slider-left:before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+}
+
+.bg-title.main-category.slider-right {
+    position: absolute;
+    margin-top: 0;
+    top: 50%;
+    width: 30%;
+    right: 10%;
+}
+
+.bg-title.main-category.slider-right:before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+}
+
+@media (max-width:991px) {
+    .bg-title.main-category.slider-left {
+        top: 50%;
+        width: 90%;
+        left: 5%;
+        right: 5%;
+    }
+
+    .bg-title.main-category.slider-left:before {
+        width: 40px;
+        height: 40px;
+        top: -20px;
+    }
 }
