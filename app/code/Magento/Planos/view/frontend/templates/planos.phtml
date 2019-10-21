@@ -8,17 +8,25 @@
 
 /** @var \Magento\Planos\Block\Planos $block */
 ?>
-<style>
- #maincontent {
-    width: 1439px;
- }
-</style>
 <div id="contentParent" class="wrapper"
 		style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
 		unselectable="on" onselectstart="return false;">
 		<div class="terreno-dialog">
-			<h1>Paso 1: Elige las dimensiones para tu plano</h1>
-			<div class="tools">
+			<h1 class="col-12">Paso 1: Elige las dimensiones para tu plano</h1>
+			<div class="col-lg-6 col-md-6 col-sm-12">
+			Esta herramienta te ayudará a crear un plano de tu evento visualizando los productos que deseas para el mismo. Simplemente elige la medida de tu terreno, integra tus productos con el ID* de cada elemento a incorporar y al final:
+			<br/>
+			<br/>
+			<ul>
+				<li>&bull; Crea un pdf con tu plano final </li>
+				<li>&bull; Solicita una cotización de los productos que deseas rentar y permite que nuestro equipo te brinde apoyo personalmente.</li>
+			</ul>
+			<br/>
+			<p>
+			*EL CÓDIGO ID LO PUEDES ENCONTRAR EN LA DESCRIPCIÓN DE CADA PRODUCTO.
+			</p>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-12">
 				<div class="input">
 					<span class="input-text">Metros de Frente:</span>
 					<input type="text" placeholder="00" id="numFrente" min="5" max="200">
@@ -48,7 +56,7 @@
 						</div>
 						<div class="buttons">
 							<div class="description">
-								Ingresa el ID del producto que desees integrar*
+							Ingresa el ID del producto que desees agregar a tu terreno y da click en el botón de integrar a espacio.
 							</div>
 							<div class="input-idProduct">
 								ID: <input type="text" id="idProduct">
@@ -108,6 +116,9 @@
 						<input type="text" id="id_element" value="1" style="display:none;">
 						<input type="text" id="type_element" value="1" style="display:none;">
 						<div class="desc">&nbsp;</div>
+					</div>
+					<div class="col-12 fixed-bottom">
+						<b>Este apartado te ayudará a añadir elementos decorativos y a  borrar o rotar los que has añadido a tu terreno.</b>
 					</div>
 				</div>
 			</div>
