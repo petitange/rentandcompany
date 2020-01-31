@@ -1356,7 +1356,7 @@ body:not(.cms-index-index) {
 .owl-carousel:hover .owl-controls .owl-nav .owl-next {
     opacity: 1;
     visibility: visible;
-    background: none;
+    background: #FFFFFF;
     color: #444;
 }
 .owl-carousel:hover .owl-controls .owl-nav .owl-prev {
@@ -6786,16 +6786,16 @@ z-index: 47;
 
 @media (min-width:992px) {
     .contact-index-index .header .logo-container .logo {
-        position: fixed;
+      position: fixed;
       z-index: 1001;
       float: left;
       display: block;
       top: 0;
-      margin: 0px 0 0;
+      margin: 10px 0 0;
       background-image: url(/pub/media/assets/comp-www-logo.svg);
       width: 200px;
-      background-position: 0 5px;
-      height: 65px;
+      background-position: 0 0px;
+      height: 50px;
       background-size: auto;
       background-repeat: no-repeat;
   }
@@ -6843,7 +6843,7 @@ z-index: 47;
   }
   
   .cms-servicios-especiales .header .logo-container .logo {
-        position: fixed;
+      position: fixed;
       z-index: 1001;
       float: left;
       display: block;
@@ -7144,3 +7144,20 @@ div[name='shippingAddress.postcode'] {
         top: -20px;
     }
 }
+
+@media (min-width:991px) {
+    .owl-carousel .owl-stage-outer {
+      height: 300px;
+    }
+  
+    .slider_mgs_carousel {
+      height: 300px;
+    }
+    .promobanner.zoom .bg-title.main-category {
+      opacity:0;
+   } 
+   
+   .promobanner.zoom:hover .bg-title.main-category {
+     opacity:1;
+   } 
+  }
