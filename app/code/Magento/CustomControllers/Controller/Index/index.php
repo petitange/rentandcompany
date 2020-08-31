@@ -14,6 +14,44 @@ public function execute()
 {
     $params = $this->getRequest()->getParams();
    
+    if(isset($params['getProducts'])) {
+        $categoryIds = explode(",", $params['getProducts']);
+        $a = array();
+
+        foreach ($categoryIds as $categoryId) {
+            $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+            $categoryFactory = $objectManager->get('\Magento\Catalog\Model\CategoryFactory');
+            $category = $categoryFactory->create()->load($categoryId);
+            
+            $categoryProducts = $category->getProductCollection()
+                ->addAttributeToSelect('*');
+            foreach ($categoryProducts as $product) {
+                $size = $product->getData('size');
+                $shape = $product->getData('shape');
+
+                if(isset($size) && isset($shape)) {
+                    $object = (object) [
+                        'id' => $product->getSku(),
+                        'name' => $product->getName(),
+                        'size' => $size,
+                        'type' => $categoryId,
+                        'url' => "/pub/media/catalog/product".$product->getImage() ,
+                        'shape' => $shape
+                    ];
+        
+                    array_push($a, $object);
+                }
+            }
+        }
+
+        $response = (object) [
+            'data' => $a
+        ];
+
+        $myJSON = json_encode($response, JSON_UNESCAPED_UNICODE);
+        echo str_replace("\\/", "/", $myJSON);
+    }
+
     if(isset($params['products'])) {
        // RM: Products are exploded by ","
         $products = explode(",", $params['products']);

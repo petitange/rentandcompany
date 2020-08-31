@@ -364,7 +364,7 @@ CoreTerrenoApp.prototype = {
 
 			if(inputIdProduct !== ''){
 				console.log("se ha hecho click", inputIdProduct);
-				var product = products.filter(function(item){
+				var product = window.products.filter(function(item){
 					return item.id === inputIdProduct
 				});
 
@@ -383,7 +383,8 @@ CoreTerrenoApp.prototype = {
 					jQuery('#type_element').val(product[0].type);
 					console.log("");
 					switch(product[0].type){
-						case'Mesa':
+						case "10":
+						case "14":
 							if(product[0].shape === "circulo" || product[0].shape === "ovalo") {
 								jQuery('#numW').val(W);
 								jQuery('#numH').val(W);
