@@ -19,9 +19,9 @@
                 <th class="item-qty">
                     <?= /* @escapeNotVerified */  __('Qty') ?>
                 </th>
-                <th class="item-price">
+                <!--th class="item-price">
                     <?= /* @escapeNotVerified */  __('Price') ?>
-                </th>
+                </th-->
             </tr>
         </thead>
         <?php foreach ($_items as $_item): ?>
@@ -31,9 +31,9 @@
                 </tbody>
             <?php endif; ?>
         <?php endforeach; ?>
-        <tfoot class="order-totals">
+        <!--tfoot class="order-totals">
             <?= $block->getChildHtml('order_totals') ?>
-        </tfoot>
+        </tfoot-->
     </table>
     <?php if ($this->helper('Magento\GiftMessage\Helper\Message')->isMessagesAllowed('order', $_order, $_order->getStore()) && $_order->getGiftMessageId()): ?>
         <?php $_giftMessage = $this->helper('Magento\GiftMessage\Helper\Message')->getGiftMessage($_order->getGiftMessageId()); ?>
