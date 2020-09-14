@@ -18,10 +18,10 @@
                     </argument>
                 </action>
                 <action method="addCrumb">
-                    <argument name="crumbName" xsi:type="string">Login or Create Account</argument>
+                    <argument name="crumbName" xsi:type="string">Inicia sesión o Crea cuenta</argument>
                     <argument name="crumbInfo" xsi:type="array">
-                        <item name="title" xsi:type="string">Login or Create Account</item>
-                        <item name="label" xsi:type="string">Login or Create Account</item>
+                        <item name="title" xsi:type="string">Inicia sesión o Crea cuenta</item>
+                        <item name="label" xsi:type="string">Inicia sesión o Crea cuenta</item>
                         
                     </argument>
                 </action>

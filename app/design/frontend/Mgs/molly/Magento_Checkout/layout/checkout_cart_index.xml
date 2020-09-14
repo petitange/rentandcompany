@@ -24,10 +24,10 @@
 						</argument>
 					</action>
 					<action method="addCrumb" translate="crumbInfo.label crumbInfo.title">
-						<argument name="crumbName" xsi:type="string">Shopping Cart</argument>
+						<argument name="crumbName" xsi:type="string">Cotizador</argument>
 						<argument name="crumbInfo" xsi:type="array">
-							<item name="title" xsi:type="string">Shopping Cart</item>
-							<item name="label" xsi:type="string">Shopping Cart</item>
+							<item name="title" xsi:type="string">Cotizador</item>
+							<item name="label" xsi:type="string">Cotizador</item>
 							<item name="link" xsi:type="string">/checkout/cart</item>
 						</argument>
 					</action>

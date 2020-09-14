@@ -23,7 +23,7 @@ class AssertAddProductToWishlistSuccessMessage extends AbstractConstraint
     /**
      * Success add message
      */
-    const SUCCESS_MESSAGE = "%s has been added to your Wish List. Click here to continue shopping.";
+    const SUCCESS_MESSAGE = "%s ha sido agregado a tu Wish List. Click aquí para seguir cotizando.";
 
     /**
      * Assert that success message appears on My Wish List page after adding product to wishlist.
@@ -37,7 +37,7 @@ class AssertAddProductToWishlistSuccessMessage extends AbstractConstraint
         \PHPUnit_Framework_Assert::assertEquals(
             sprintf(self::SUCCESS_MESSAGE, $product->getName()),
             $wishlistIndex->getMessagesBlock()->getSuccessMessage(),
-            "Expected success message doesn't match actual."
+            "El mensaje de éxito esperado no coincide con el real."
         );
     }
 
@@ -48,6 +48,6 @@ class AssertAddProductToWishlistSuccessMessage extends AbstractConstraint
      */
     public function toString()
     {
-        return 'Success message appears on My Wish List page after adding product to Wish List.';
+        return 'El mensaje de éxito aparece en la página Wish List después de agregar un producto a la Wish List.';
     }
 }

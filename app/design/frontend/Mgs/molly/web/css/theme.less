@@ -2541,9 +2541,9 @@ body:not(.cms-index-index) {
     }
 	.checkout-methods-items {
 		button.checkout {
-			background: #e74c3c;
+			background: #bc9b1b;
 			color: #fff;
-			border: 1px solid #e74c3c;
+			border: 1px solid #bc9b1b;
 			padding: 14px 30px;
 			text-transform: uppercase;
 		}
@@ -6097,7 +6097,6 @@ body:not(.cms-index-index) .page.messages .messages .message {
 }
 .slider_mgs_carousel {
     position: relative;
-    margin-top: 364px;
 
     .owl-dots {
         position: absolute;
@@ -6851,7 +6850,7 @@ z-index: 47;
       margin: 0px 0 0;
       background-image: url(/pub/media/assets/comp-www-logo.svg);
       width: 200px;
-      background-position: 0 5px;
+      background-position: 0 0px;
       height: 65px;
       background-size: auto;
       background-repeat: no-repeat;
@@ -7143,7 +7142,7 @@ div[name='shippingAddress.postcode'] {
 
 @media (max-width:991px) {
     .bg-title.main-category.slider-left {
-        top: 50%;
+        top: 29%;
         width: 90%;
         left: 5%;
         right: 5%;
@@ -7163,6 +7162,7 @@ div[name='shippingAddress.postcode'] {
   
     .slider_mgs_carousel {
       height: auto;
+      margin-top: 364px;
     }
 
     .cms-index-index .owl-carousel .owl-item img {
@@ -7180,13 +7180,13 @@ div[name='shippingAddress.postcode'] {
   
   @media (min-width:991px) {
     .bg-title.main-category.slider-right {
-        top: 50%;
+        top: 29%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
     }
   
     .bg-title.main-category.slider-left {
-        top: 50%;
+        top: 29%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
     }
@@ -7210,4 +7210,44 @@ div[name='shippingAddress.postcode'] {
 
   .scroll-to-top-2 i {
     font-size:35px;
+  }
+
+  @media (max-width:991px) {
+    .slider_mgs_carousel {
+        margin-top: -6px;
+    }
+  }
+  .bg-title.main-category .text-desc{
+    padding: 20px;
+  }
+// Ajustes septiembre 2020
+  .account .account-nav ul li:nth-child(6){
+    display: none;
+  }
+
+  #cart-sidebar-reorder .account .product-item  a span{
+    padding-left: 20px;
+  }
+  #wishlist-sidebar .product-image-container {
+    padding-left: 0px !important;
+}
+#wishlist-sidebar .product-image-wrapper {
+    padding-left: 0px !important;
+}
+
+#wishlist-sidebar .product-item-details .product-item-link span{
+    padding-left: 0px !important;
+}
+
+#wishlist-sidebar .product-item-photo {
+    height: auto;
+}
+
+#minicart-content-wrapper .product-item-photo {
+    height: auto;
+  }
+
+  #minicart-content-wrapper .product-item-details {
+    padding-top: 0px !important;
+    margin-left: 0px !important;
   }
