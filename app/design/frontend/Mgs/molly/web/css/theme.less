@@ -4415,6 +4415,7 @@ body:not(.cms-index-index) {
                 .desc-prd {
                     position: relative;
                     margin-top: -15px;
+                    padding-bottom: 12px;
                     .information-prd {
                         opacity: 1;
                         .transform (translateY(0px));
@@ -7250,4 +7251,20 @@ div[name='shippingAddress.postcode'] {
   #minicart-content-wrapper .product-item-details {
     padding-top: 0px !important;
     margin-left: 0px !important;
+  }
+
+  #productos-especiales .product-item::after {
+    position:absolute;
+    top: 46px;
+    left: 6px;
+    content: '';
+    color: #FFF;
+    padding-top: 10px;
+    padding-left:33px;
+    font-size:35px;
+    background-image: url('/pub/media/assets/tg.png');
+    background-size: contain;
+    width:120px;
+    height:68px;
+    background-repeat:no-repeat;
   }
