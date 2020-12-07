@@ -8,12 +8,12 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-        <css src="css/bootstrap.min.css"/>
-        <css src="css/font-awesome.css"/>
-		<css src="css/responsive.css"/> 
-        <css src="css/pe-icon-7-stroke.css"/>
-        <css src="css/menu.css"/>
-        <css src="css/theme.css"/>       
+        <css rel="preload" src="css/bootstrap.min.css"/>
+        <css rel="preload" src="css/font-awesome.css"/>
+		<css rel="preload" src="css/responsive.css"/> 
+        <css rel="preload" src="css/pe-icon-7-stroke.css"/>
+        <css rel="preload" src="css/menu.css"/>
+        <css rel="preload" src="css/theme.css"/>       
         <script src="js::bootstrap.js"/>
         <script src="js::custom.js"/>
     </head>
